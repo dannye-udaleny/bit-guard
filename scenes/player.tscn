@@ -28,7 +28,7 @@ animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "run",
-"speed": 12.0
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -48,8 +48,6 @@ shape = SubResource( 1 )
 position = Vector2( 1, -23 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 2
-playing = true
 
 [node name="hitbox" type="Area2D" parent="."]
 visible = false

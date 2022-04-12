@@ -11,6 +11,10 @@ var _velocity := Vector2()
 onready var _sprite_pos: Vector2 = $sprite.position
 
 
+func _ready() -> void:
+	$sprite.playing = true
+
+
 func _process(delta: float) -> void:
 	var mouse = get_global_mouse_position()
 	# Разворачиваем спрайт игрока по направлению к мыши
@@ -25,4 +29,9 @@ func _physics_process(delta: float) -> void:
 	# Плавно движемся по направлению ввода
 	_velocity = _velocity.linear_interpolate(InputHandler.input_direction * move_speed, acceleration)
 	_velocity = move_and_slide(_velocity)
+	
+	if _velocity.length() < 5:
+		$sprite.animation = "idle"
+	else:
+		$sprite.animation = "run"
 
