@@ -7,6 +7,7 @@ export (float, 0, 1) var acceleration
 
 # Скорость персонажа на данный момент (px/s)
 var _velocity := Vector2()
+var _attack := false
 
 onready var _body_pos: Vector2 = $body_sprite.position
 onready var camera = $camera
@@ -14,10 +15,11 @@ onready var camera = $camera
 
 func _ready() -> void:
 	$body_sprite.playing = true
+	InputHandler.connect("mouse_pressed", self, "_on_mouse_pressed")
 
 
 func _process(delta: float) -> void:
-	var mouse = get_global_mouse_position()
+	var mouse := get_global_mouse_position()
 	# Разворачиваем спрайт игрока по направлению к мыши
 	if mouse != null:
 		if mouse.x > position.x:
@@ -37,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	
 		
 func _player_animation() -> void:
-	var mouse = get_global_mouse_position()
+	var mouse := get_global_mouse_position()
 	#Сверяем движется ли персонаж и как именно он движется(спиной/лицом) 
 	if _velocity.length() < 5:
 		$body_sprite.animation = "idle"
@@ -46,10 +48,8 @@ func _player_animation() -> void:
 	else:
 		$body_sprite.animation = "run"
 		
-	#if Input.action_press("shoot"):
 		
-		
-func _on_body_sprite_frame_changed():
+func _on_body_sprite_frame_changed() -> void:
 	if $body_sprite.animation == "run":
 		if $body_sprite.frame == 4 or $body_sprite.frame == 8:
 			$gun_sprite.position.y += 1 
@@ -65,4 +65,14 @@ func _on_body_sprite_frame_changed():
 			$gun_sprite.position.y += 1
 		else:
 			$gun_sprite.position = _body_pos
-			
+
+
+func _on_mouse_pressed() -> void:
+	_attack = true
+	if $gun_sprite.animation != "shoot":
+		$gun_sprite.play("shoot")
+
+
+func _on_gun_sprite_animation_finished() -> void:
+	if $gun_sprite.animation == "shoot":
+		_attack = false

@@ -55,7 +55,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ) ],
-"loop": true,
+"loop": false,
 "name": "shoot",
 "speed": 30.0
 } ]
@@ -126,3 +126,4 @@ __meta__ = {
 }
 
 [connection signal="frame_changed" from="body_sprite" to="." method="_on_body_sprite_frame_changed"]
+[connection signal="animation_finished" from="gun_sprite" to="." method="_on_gun_sprite_animation_finished"]
