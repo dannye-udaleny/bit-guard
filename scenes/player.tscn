@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player/run/body_run3.png" type="Texture" id=2]
@@ -15,6 +15,11 @@
 [ext_resource path="res://sprites/player/run/body_run2.png" type="Texture" id=13]
 [ext_resource path="res://sprites/light/test_light_2.png" type="Texture" id=14]
 [ext_resource path="res://sprites/player/idle/gun_idle.png" type="Texture" id=15]
+[ext_resource path="res://sprites/player/shadow.png" type="Texture" id=16]
+[ext_resource path="res://sprites/player/shoot/gun_shoot1.png" type="Texture" id=17]
+[ext_resource path="res://sprites/player/shoot/gun_shoot4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/player/shoot/gun_shoot2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/player/shoot/gun_shoot3.png" type="Texture" id=20]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
@@ -27,16 +32,20 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "run_back",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "run",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "run_back",
+"speed": 15.0
 } ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.0
+height = 16.0
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -44,34 +53,50 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 30.0
 } ]
-
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 8.0
-height = 16.0
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 move_speed = 100.0
 acceleration = 0.25
 
+[node name="shadow" type="Sprite" parent="."]
+light_mask = 0
+texture = ExtResource( 16 )
+
 [node name="light_front" type="Light2D" parent="."]
+visible = false
 position = Vector2( 1, -20 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 14 )
 range_item_cull_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="light_shadow" type="Light2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2( 0, -3 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 14 )
 shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3 )
 rotation = -1.5708
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="body_sprite" type="AnimatedSprite" parent="."]
 light_mask = 2
@@ -82,16 +107,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="gun_sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, -23 )
-frames = SubResource( 4 )
-animation = "idle"
-
 [node name="hitbox" type="Area2D" parent="."]
 visible = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( 0, -15 )
 shape = SubResource( 2 )
 
-[connection signal="frame_changed" from="gun_sprite" to="." method="_on_gun_sprite_frame_changed"]
+[node name="gun_sprite" type="AnimatedSprite" parent="."]
+light_mask = 2
+position = Vector2( 1, -23 )
+frames = SubResource( 4 )
+animation = "idle"
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="frame_changed" from="body_sprite" to="." method="_on_body_sprite_frame_changed"]
