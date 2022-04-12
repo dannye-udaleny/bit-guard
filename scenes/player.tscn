@@ -50,12 +50,12 @@ height = 16.0
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 15 ) ],
-"loop": true,
+"loop": false,
 "name": "idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ) ],
-"loop": false,
+"loop": true,
 "name": "shoot",
 "speed": 30.0
 } ]
@@ -106,7 +106,6 @@ __meta__ = {
 }
 
 [node name="hitbox" type="Area2D" parent="."]
-visible = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -118,12 +117,10 @@ shape = SubResource( 2 )
 [node name="gun_sprite" type="AnimatedSprite" parent="."]
 light_mask = 2
 position = Vector2( 1, -23 )
+rotation = -0.00881447
 frames = SubResource( 4 )
 animation = "idle"
 playing = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="frame_changed" from="body_sprite" to="." method="_on_body_sprite_frame_changed"]
 [connection signal="animation_finished" from="gun_sprite" to="." method="_on_gun_sprite_animation_finished"]

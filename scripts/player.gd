@@ -7,7 +7,6 @@ export (float, 0, 1) var acceleration
 
 # Скорость персонажа на данный момент (px/s)
 var _velocity := Vector2()
-var _attack := false
 
 onready var _body_pos: Vector2 = $body_sprite.position
 onready var camera = $camera
@@ -68,11 +67,11 @@ func _on_body_sprite_frame_changed() -> void:
 
 
 func _on_mouse_pressed() -> void:
-	_attack = true
 	if $gun_sprite.animation != "shoot":
 		$gun_sprite.play("shoot")
 
 
 func _on_gun_sprite_animation_finished() -> void:
 	if $gun_sprite.animation == "shoot":
-		_attack = false
+		pass
+	pass
