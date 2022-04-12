@@ -28,7 +28,8 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Плавно движемся по направлению ввода
 	_velocity = _velocity.linear_interpolate(InputHandler.input_direction * move_speed, acceleration)
-	_velocity = move_and_slide(_velocity)	
+	_velocity = move_and_slide(_velocity)
+	$body_sprite.position = _body_pos - position + position.round()
 	# Заявляем функцию по изменению анимаций персонажа
 	_player_animation()
 	

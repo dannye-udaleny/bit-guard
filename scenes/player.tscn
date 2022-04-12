@@ -73,11 +73,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="gun_sprite" type="AnimatedSprite" parent="."]
+
 [node name="hitbox" type="Area2D" parent="."]
 visible = false
 
 [node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( 0, -15 )
 shape = SubResource( 2 )
-
-[node name="gun_sprite" type="AnimatedSprite" parent="."]
