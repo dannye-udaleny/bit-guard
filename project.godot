@@ -12,9 +12,11 @@ config_version=4
 
 config/name="bit-guard"
 run/main_scene="res://scenes/world.tscn"
+boot_splash/image="res://sprites/pixel_grid.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://sprites/system/icon.png"
+config/windows_native_icon="res://sprites/system/icon.ico"
 
 [autoload]
 
@@ -81,6 +83,11 @@ down={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+shoot={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [node]
 
@@ -95,4 +102,3 @@ common/enable_pause_aware_picking=true
 2d/snapping/use_gpu_pixel_snap=true
 batching/precision/uv_contract=true
 environment/default_clear_color=Color( 0.0784314, 0, 0.164706, 1 )
-environment/default_environment="res://default_env.tres"

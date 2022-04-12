@@ -22,8 +22,10 @@ func _process(delta: float) -> void:
 	if mouse != null:
 		if mouse.x > position.x:
 			$body_sprite.flip_h = false
+			$gun_sprite.flip_h = false
 		elif mouse.x < position.x:
 			$body_sprite.flip_h = true
+			$gun_sprite.flip_h = true
 
 
 func _physics_process(delta: float) -> void:
@@ -43,5 +45,27 @@ func _player_animation() -> void:
 		$body_sprite.animation = "run_back"
 	else:
 		$body_sprite.animation = "run"
+		
+	#if Input.action_press("shoot"):
+		
 	
 	
+
+
+func _on_body_sprite_frame_changed():
+	if $body_sprite.animation == "run":
+		if $body_sprite.frame == 4 or $body_sprite.frame == 8:
+			$gun_sprite.position.y += 1 
+		else:
+			$gun_sprite.position = _body_pos
+	elif $body_sprite.animation == "run_back":
+		if $body_sprite.frame == 4 or $body_sprite.frame == 0:
+			$gun_sprite.position.y += 1 
+		else:
+			$gun_sprite.position = _body_pos
+	elif $body_sprite.animation == "idle":
+		if $body_sprite.frame == 2:
+			$gun_sprite.position.y += 1
+		else:
+			$gun_sprite.position = _body_pos
+			
