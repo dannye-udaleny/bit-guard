@@ -9,6 +9,7 @@ export (float, 0, 1) var acceleration
 var _velocity := Vector2()
 
 onready var _body_pos: Vector2 = $body_sprite.position
+onready var camera = $camera
 
 
 func _ready() -> void:
