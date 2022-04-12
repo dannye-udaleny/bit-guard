@@ -25,14 +25,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "run_back",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
 "speed": 15.0
 } ]
 
@@ -46,7 +46,7 @@ move_speed = 100.0
 acceleration = 0.25
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1 )
+position = Vector2( 0, -3 )
 rotation = -1.5708
 shape = SubResource( 1 )
 

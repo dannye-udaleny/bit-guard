@@ -12,7 +12,9 @@ config_version=4
 
 config/name="bit-guard"
 run/main_scene="res://scenes/world.tscn"
-config/icon="res://icon.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://sprites/system/icon.png"
 
 [autoload]
 
@@ -22,13 +24,15 @@ InputHandler="*res://scripts/input_handler.gd"
 
 window/size/width=640
 window/size/height=360
-window/size/fullscreen=true
-window/stretch/mode="viewport"
+window/size/test_width=1920
+window/size/test_height=1080
+window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
 [global]
 
 color=false
+boot_splash=false
 
 [importer_defaults]
 
