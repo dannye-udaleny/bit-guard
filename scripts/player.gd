@@ -9,7 +9,7 @@ export (float, 0, 1) var acceleration
 var _velocity := Vector2()
 
 onready var _body_pos: Vector2 = $body_sprite.position
-
+onready var _gun_pos: Vector2 = $gun_sprite.position
 
 func _ready() -> void:
 	$body_sprite.playing = true
@@ -45,3 +45,14 @@ func _player_animation() -> void:
 		$body_sprite.animation = "run"
 	
 	
+
+
+func _on_gun_sprite_frame_changed():
+	if $body_sprite.animation == 'run':
+		if $body_sprite.frame == 4 or $body_sprite.frame == 8:
+			_gun_pos.y += 1
+		else: _gun_pos = _body_pos
+	elif $body_sprite.animation == 'run_back':
+		if $body_sprite.frame == 4 or $body_sprite.frame == 0:
+			_gun_pos.y += 1
+		else: _gun_pos = _body_pos
