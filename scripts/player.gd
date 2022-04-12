@@ -28,10 +28,18 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Плавно движемся по направлению ввода
 	_velocity = _velocity.linear_interpolate(InputHandler.input_direction * move_speed, acceleration)
-	_velocity = move_and_slide(_velocity)
+	_velocity = move_and_slide(_velocity)	
+	_player_animation()
+	
+		
+func _player_animation() -> void:
+	var mouse = get_global_mouse_position()
 	
 	if _velocity.length() < 5:
 		$sprite.animation = "idle"
+	elif (mouse.x > position.x and _velocity.x < 0) or (mouse.x < position.x and _velocity.x > 0):
+		$sprite.animation = "run_back"
 	else:
 		$sprite.animation = "run"
-
+	
+	
