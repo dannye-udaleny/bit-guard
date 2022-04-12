@@ -47,10 +47,7 @@ func _player_animation() -> void:
 		
 	#if Input.action_press("shoot"):
 		
-	
-	
-
-
+		
 func _on_body_sprite_frame_changed():
 	if $body_sprite.animation == "run":
 		if $body_sprite.frame == 4 or $body_sprite.frame == 8:
