@@ -70,7 +70,6 @@ light_mask = 0
 texture = ExtResource( 16 )
 
 [node name="light_front" type="Light2D" parent="."]
-visible = false
 position = Vector2( 1, -20 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 14 )
@@ -80,7 +79,6 @@ __meta__ = {
 }
 
 [node name="light_shadow" type="Light2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2( 0, -3 )
 scale = Vector2( 3, 3 )
