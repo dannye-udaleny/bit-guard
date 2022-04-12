@@ -61,3 +61,5 @@ visible = false
 [node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( 0, -15 )
 shape = SubResource( 2 )
+
+[node name="gun" type="AnimatedSprite" parent="."]
