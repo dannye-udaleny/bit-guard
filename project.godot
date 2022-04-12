@@ -12,9 +12,11 @@ config_version=4
 
 config/name="bit-guard"
 run/main_scene="res://scenes/world.tscn"
+boot_splash/image="res://sprites/pixel_grid.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://sprites/system/icon.png"
+config/windows_native_icon="res://sprites/system/icon.ico"
 
 [autoload]
 
@@ -95,4 +97,3 @@ common/enable_pause_aware_picking=true
 2d/snapping/use_gpu_pixel_snap=true
 batching/precision/uv_contract=true
 environment/default_clear_color=Color( 0.0784314, 0, 0.164706, 1 )
-environment/default_environment="res://default_env.tres"
