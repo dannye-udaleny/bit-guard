@@ -30,4 +30,4 @@ smoothing_enabled = true
 script = ExtResource( 4 )
 
 [node name="canvas_modulate" type="CanvasModulate" parent="."]
-color = Color( 0.611765, 0.509804, 0.764706, 1 )
+color = Color( 0.607843, 0.6, 0.611765, 1 )

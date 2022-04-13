@@ -14,6 +14,7 @@ onready var camera = $camera
 
 func _ready() -> void:
 	$body_sprite.playing = true
+	$glow_effect.environment.glow_enabled = true
 	InputHandler.connect("mouse_pressed", self, "_on_mouse_pressed")
 
 
