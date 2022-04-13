@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="bit-guard"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/rooms/world.tscn"
 boot_splash/image="res://sprites/pixel_grid.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

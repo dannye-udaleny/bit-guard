@@ -14,7 +14,6 @@ onready var camera = $camera
 
 func _ready() -> void:
 	$body_sprite.playing = true
-	$light_gun.visible = false
 	InputHandler.connect("mouse_pressed", self, "_on_mouse_pressed")
 
 
@@ -25,13 +24,9 @@ func _process(delta: float) -> void:
 		if mouse.x > position.x:
 			$body_sprite.flip_h = false
 			$gun_sprite.flip_h = false
-			if $light_gun.position.x < 0:
-				$light_gun.position.x = -$light_gun.position.x
 		elif mouse.x < position.x:
 			$body_sprite.flip_h = true
 			$gun_sprite.flip_h = true
-			if $light_gun.position.x > 0:
-				$light_gun.position.x = -$light_gun.position.x
 
 
 func _physics_process(delta: float) -> void:
@@ -74,16 +69,13 @@ func _on_body_sprite_frame_changed() -> void:
 func _on_mouse_pressed() -> void:
 	if $gun_sprite.animation != "shoot":
 		$gun_sprite.play("shoot")
-		$light_gun.visible = true
 
 
 func _on_gun_sprite_animation_finished() -> void:
 	if  $gun_sprite.animation == "shoot":
 		$gun_sprite.play("idle")
-		$light_gun.visible = false
 		if Input.is_action_pressed("shoot"):
 			if $gun_sprite.animation != "shoot":
 				$gun_sprite.play("shoot")
-				$light_gun.visible = true
 				
 		
