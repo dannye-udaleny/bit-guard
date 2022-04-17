@@ -9,25 +9,25 @@ export (float, 0, 1) var acceleration
 var _velocity := Vector2()
 
 onready var _body_pos: Vector2 = $body_sprite.position
-onready var camera = $camera
 
 
 func _ready() -> void:
 	$body_sprite.playing = true
-	$glow_effect.environment.glow_enabled = true
 	InputHandler.connect("mouse_pressed", self, "_on_mouse_pressed")
 
 
 func _process(delta: float) -> void:
+	$body_sprite/body_flash_sprite.animation = $body_sprite.animation
+	$body_sprite/body_flash_sprite.flip_h = $body_sprite.flip_h
 	var mouse := get_global_mouse_position()
 	# Разворачиваем спрайт игрока по направлению к мыши
 	if mouse != null:
 		if mouse.x > position.x:
 			$body_sprite.flip_h = false
-			$gun_sprite.flip_h = false
+#			$gun_sprite.flip_h = false
 		elif mouse.x < position.x:
 			$body_sprite.flip_h = true
-			$gun_sprite.flip_h = true
+#			$gun_sprite.flip_h = true
 
 
 func _physics_process(delta: float) -> void:
@@ -50,33 +50,35 @@ func _player_animation() -> void:
 		
 		
 func _on_body_sprite_frame_changed() -> void:
-	if $body_sprite.animation == "run":
-		if $body_sprite.frame == 4 or $body_sprite.frame == 8:
-			$gun_sprite.position.y += 1 
-		else:
-			$gun_sprite.position = _body_pos
-	elif $body_sprite.animation == "run_back":
-		if $body_sprite.frame == 4 or $body_sprite.frame == 0:
-			$gun_sprite.position.y += 1 
-		else:
-			$gun_sprite.position = _body_pos
-	elif $body_sprite.animation == "idle":
-		if $body_sprite.frame == 2:
-			$gun_sprite.position.y += 1
-		else:
-			$gun_sprite.position = _body_pos
+#	if $body_sprite.animation == "run":
+#		if $body_sprite.frame == 4 or $body_sprite.frame == 8:
+#			$gun_sprite.position.y += 1 
+#		else:
+#			$gun_sprite.position = _body_pos
+#	elif $body_sprite.animation == "run_back":
+#		if $body_sprite.frame == 4 or $body_sprite.frame == 0:
+#			$gun_sprite.position.y += 1 
+#		else:
+#			$gun_sprite.position = _body_pos
+#	elif $body_sprite.animation == "idle":
+#		if $body_sprite.frame == 2:
+#			$gun_sprite.position.y += 1
+#		else:
+#			$gun_sprite.position = _body_pos
+	pass
 
 
 func _on_mouse_pressed() -> void:
-	if $gun_sprite.animation != "shoot":
-		$gun_sprite.play("shoot")
+#	if $gun_sprite.animation != "shoot":
+#		$gun_sprite.play("shoot")
+	pass
 
 
-func _on_gun_sprite_animation_finished() -> void:
-	if  $gun_sprite.animation == "shoot":
-		$gun_sprite.play("idle")
-		if Input.is_action_pressed("shoot"):
-			if $gun_sprite.animation != "shoot":
-				$gun_sprite.play("shoot")
+#func _on_gun_sprite_animation_finished() -> void:
+#	if  $gun_sprite.animation == "shoot":
+#		$gun_sprite.play("idle")
+#		if Input.is_action_pressed("shoot"):
+#			if $gun_sprite.animation != "shoot":
+#				$gun_sprite.play("shoot")
 				
 		
