@@ -18,6 +18,7 @@ var dash_direction := Vector2() # направление рывка
 
 func _ready() -> void:
 	$body_sprite.playing = true
+	$body_sprite/body_flash_sprite.playing = true
 	
 	InputHandler.connect("mouse_pressed", self, "_on_mouse_pressed")
 	InputHandler.connect("dash", self, "_dash")
@@ -27,6 +28,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$body_sprite/body_flash_sprite.animation = $body_sprite.animation
+	
 	$body_sprite/body_flash_sprite.flip_h = $body_sprite.flip_h
 	var mouse := get_global_mouse_position()
 	# Разворачиваем спрайт игрока по направлению к мыши

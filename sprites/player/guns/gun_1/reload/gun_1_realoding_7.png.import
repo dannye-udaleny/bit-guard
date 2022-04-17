@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gun_shoot4.png-767429a90491e92c702cdb9f5fa09261.stex"
+path="res://.import/gun_1_realoding_7.png-3f65b06ce7b663fd75656276145e0b7d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/shoot/gun_shoot4.png"
-dest_files=[ "res://.import/gun_shoot4.png-767429a90491e92c702cdb9f5fa09261.stex" ]
+source_file="res://sprites/player/guns/gun_1/reload/gun_1_realoding_7.png"
+dest_files=[ "res://.import/gun_1_realoding_7.png-3f65b06ce7b663fd75656276145e0b7d.stex" ]
 
 [params]
 
