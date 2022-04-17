@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="dash_effect" type="Sprite"]
+
+[node name="dash_particle" type="Particles2D" parent="."]
