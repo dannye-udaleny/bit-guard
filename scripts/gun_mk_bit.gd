@@ -23,6 +23,7 @@ func _process(delta) -> void:
 	$flash_sprite.flip_v = flip_v
 	$flash_sprite.animation = animation
 	$flash_sprite.offset = offset
+	_play_animation()
 
 
 func _rotation() -> void:
@@ -40,12 +41,24 @@ func _rotation() -> void:
 
 
 func _shoot_bullet() -> void:
-	var bullet = bullet_scene.instant()
-	bullet.rotation = rotation
-	bullet.direction = $end.position - $begin.position
-	bullet.global_position = $end.global_position
-	get_tree().get_root().add_child(bullet)
-	
+	if state == states.shoot:
+		var bullet = bullet_scene.instant()
+		bullet.rotation = rotation
+		bullet.direction = $end.position - $begin.position
+		bullet.global_position = $end.global_position
+		get_tree().get_root().add_child(bullet)
+
+
+func _play_animation() -> void:
+	match state:
+		states.idle: 
+			play('idle')
+		states.shoot:
+			play('shoot')
+		states.reload:
+			play('reload')
+
+
 
 func _state_machine():
 	if state == states.idle:
@@ -53,5 +66,3 @@ func _state_machine():
 			state = states.shoot
 		elif Input.is_action_just_pressed("reload"):
 			state = states.reload
-	elif state == states.shoot:
-		pass
