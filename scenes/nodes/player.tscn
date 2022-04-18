@@ -75,6 +75,7 @@ height = 16.0
 
 [sub_resource type="Environment" id=5]
 background_mode = 4
+tonemap_mode = 4
 tonemap_exposure = 0.75
 auto_exposure_scale = 0.01
 auto_exposure_min_luma = 0.0

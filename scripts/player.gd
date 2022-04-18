@@ -87,7 +87,7 @@ func _state_machine() -> void:
 		if InputHandler.input_direction != Vector2.ZERO:
 			state = states.run
 	elif state == states.run:
-		if Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash") and  dash_enable:
 			state = states.dash
 		elif InputHandler.input_direction == Vector2.ZERO:
 			state = states.idle
