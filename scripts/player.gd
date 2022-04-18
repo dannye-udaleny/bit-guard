@@ -37,12 +37,12 @@ func _process(delta: float) -> void:
 	$body_sprite/body_flash_sprite.flip_h = $body_sprite.flip_h
 	mouse = get_global_mouse_position()
 	_turn_to_mouse() # Разворачиваем спрайт игрока по направлению к мыши
-	if state == states.idle:
-		$label.set_text("idle")
-	elif state == states.dash:
-		$label.set_text("dash")
-	else:
-		$label.set_text("run")
+#	if state == states.idle:
+#		$label.set_text("idle")
+#	elif state == states.dash:
+#		$label.set_text("dash")
+#	else:
+#		$label.set_text("run")
 
 func _physics_process(delta: float) -> void:
 	_state_machine()

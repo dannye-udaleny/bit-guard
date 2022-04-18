@@ -7,6 +7,7 @@ var input_direction := Vector2()
 signal mouse_pressed 
 signal dash
 signal exit
+signal change_weapon(type)
 
 func _physics_process(delta: float) -> void:
 	input_direction = Vector2(
@@ -20,4 +21,11 @@ func _input(event: InputEvent) -> void:
 		emit_signal("dash")
 	if event.is_action_pressed("esc"):
 		emit_signal("exit")
-
+	if event.is_action_pressed("button_1"):
+		emit_signal("change_wepon", 1)
+	if event.is_action_pressed("button_2"):
+		emit_signal("change_wepon", 2)
+	if event.is_action_pressed("button_3"):
+		emit_signal("change_wepon", 3)
+	if event.is_action_pressed("button_4"):
+		emit_signal("change_wepon", 4)
