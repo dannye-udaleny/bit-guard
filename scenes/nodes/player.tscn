@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player/run/body_run3.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://sprites/player/run/body_run_light6.png" type="Texture" id=26]
 [ext_resource path="res://sprites/player/run/body_run_light7.png" type="Texture" id=27]
 [ext_resource path="res://scenes/nodes/dash_effect.tscn" type="PackedScene" id=28]
+[ext_resource path="res://scenes/nodes/gun_mk_bit.tscn" type="PackedScene" id=29]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.0
@@ -139,6 +140,7 @@ light_mask = 4
 position = Vector2( 1, -23 )
 frames = SubResource( 3 )
 animation = "idle"
+flip_h = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -178,6 +180,11 @@ margin_top = -57.0
 margin_right = 25.0
 margin_bottom = -43.0
 text = "state"
+
+[node name="gun_mk_bit" parent="." instance=ExtResource( 29 )]
+position = Vector2( 3, -27 )
+rotation = 3.14159
+flip_v = true
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash_reload" to="." method="_on_dash_reload_timeout"]

@@ -1,16 +1,34 @@
 extends AnimatedSprite
 
-
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+export(PackedScene) var bullet_scene
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	InputHandler.connect("left_button_clicked", self, "_shoot_bullet")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _process(delta) -> void:
+	_rotation()
+	$flash_sprite.flip_v = flip_v
+	$flash_sprite.animation = animation
+	$flash_sprite.offset = offset
+
+
+func _rotation() -> void:
+	look_at(get_parent().mouse)
+	if get_parent().get_node("body_sprite").flip_h == true:
+		self.flip_v = true
+		offset = Vector2(3, 5)
+		position = Vector2(3, -17)
+		$flash_sprite.position = Vector2(1, 1)
+	else:
+		self.flip_v = false
+		$flash_sprite.position = Vector2(-1, -1)
+		offset = Vector2(3, -5)
+		position = Vector2(-1, -17)
+
+
+func _shoot_bullet() -> void:
+	var bullet = bullet_scene.instant()
+	bullet.rotation = rotation
+	bullet.direction = $direction/direction_shape

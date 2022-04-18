@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dash_progress6.png-793e782af3b244fd17a3119d1a474fda.stex"
+path="res://.import/dash_progress6.png-c89c1cbae64c67eeaecfb9cd575cd279.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/hud/dash_progress6.png"
-dest_files=[ "res://.import/dash_progress6.png-793e782af3b244fd17a3119d1a474fda.stex" ]
+source_file="res://sprites/HUD/dash_progress6.png"
+dest_files=[ "res://.import/dash_progress6.png-c89c1cbae64c67eeaecfb9cd575cd279.stex" ]
 
 [params]
 
