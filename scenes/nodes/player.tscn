@@ -75,7 +75,6 @@ height = 16.0
 
 [sub_resource type="Environment" id=5]
 background_mode = 4
-tonemap_mode = 4
 tonemap_exposure = 0.75
 auto_exposure_scale = 0.01
 auto_exposure_min_luma = 0.0
@@ -98,6 +97,7 @@ dof_blur_near_amount = 0.0
 glow_enabled = true
 glow_intensity = 1.0
 glow_strength = 1.31
+glow_bicubic_upscale = true
 glow_high_quality = true
 
 [node name="player" type="KinematicBody2D"]
@@ -172,6 +172,7 @@ one_shot = true
 one_shot = true
 
 [node name="label" type="Label" parent="."]
+visible = false
 margin_left = -15.0
 margin_top = -57.0
 margin_right = 25.0

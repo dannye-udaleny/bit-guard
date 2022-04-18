@@ -1,7 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/effects_and_particles/shader_effect_texture.png" type="Texture" id=1]
 [ext_resource path="res://sprites/effects_and_particles/screen_png.png" type="Texture" id=2]
+[ext_resource path="res://sprites/HUD/ammo_signal.png" type="Texture" id=3]
+[ext_resource path="res://sprites/HUD/hp_signal.png" type="Texture" id=4]
+[ext_resource path="res://sprites/HUD/bullet_counter_1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/HUD/bullet_counter_2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/HUD/health_counter_2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/HUD/dash_progress3.png" type="Texture" id=8]
+[ext_resource path="res://sprites/HUD/dash_progress4.png" type="Texture" id=9]
+[ext_resource path="res://sprites/HUD/dash_progress2.png" type="Texture" id=10]
+[ext_resource path="res://sprites/HUD/dash_progress1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/HUD/dash_progress5.png" type="Texture" id=12]
+[ext_resource path="res://sprites/HUD/dash_progress6.png" type="Texture" id=13]
+[ext_resource path="res://sprites/HUD/health_counter_1.png" type="Texture" id=14]
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 6
+pause = true
+fps = 1.0
+frame_0/texture = ExtResource( 11 )
+frame_1/texture = ExtResource( 10 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 8 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 9 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 12 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 13 )
+frame_5/delay_sec = 0.0
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -44,13 +72,72 @@ void fragment()
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/scan_line_count = 50.0
-shader_param/lines = true
+shader_param/lines = false
 
 [node name="hud" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player_stats_interface" type="CanvasLayer" parent="."]
+
+[node name="ammo_sign" type="TextureRect" parent="player_stats_interface"]
+modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
+anchor_right = 0.317
+margin_left = -12.0
+margin_top = -10.0
+margin_right = -156.88
+margin_bottom = 55.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="health_sign" type="TextureRect" parent="player_stats_interface"]
+modulate = Color( 1, 0.282353, 0, 1 )
+margin_left = -12.0
+margin_top = -10.0
+margin_right = 46.0
+margin_bottom = 29.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="dash_bar" type="TextureRect" parent="player_stats_interface"]
+modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
+margin_left = -12.0
+margin_top = -10.0
+margin_right = 57.0
+margin_bottom = 82.0
+rect_scale = Vector2( 2, 2 )
+texture = SubResource( 3 )
+stretch_mode = 4
+
+[node name="health_bar" type="TextureProgress" parent="player_stats_interface"]
+modulate = Color( 1, 0.282353, 0, 1 )
+margin_left = 68.0
+margin_top = 16.0
+margin_right = 167.0
+margin_bottom = 29.0
+rect_scale = Vector2( 2, 2 )
+value = 100.0
+texture_under = ExtResource( 14 )
+texture_progress = ExtResource( 7 )
+
+[node name="ammo_bar" type="TextureProgress" parent="player_stats_interface"]
+modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
+margin_left = 68.0
+margin_top = 44.0
+margin_right = 131.0
+margin_bottom = 84.0
+rect_scale = Vector2( 2, 2 )
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 6 )
 
 [node name="effect_layer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="shader_effect" type="TextureRect" parent="effect_layer"]
 material = SubResource( 2 )
@@ -58,36 +145,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="monitor_effect" type="TextureRect" parent="effect_layer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
-
-[node name="player_stats_interface" type="CanvasLayer" parent="."]
-
-[node name="ammo_sign" type="TextureRect" parent="player_stats_interface"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="ammo_counter_bar" type="ProgressBar" parent="player_stats_interface"]
-visible = false
-margin_right = 4.0
-margin_bottom = 14.0
-
-[node name="health_sign" type="TextureRect" parent="player_stats_interface"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="health_counter_bar" type="ProgressBar" parent="player_stats_interface"]
-visible = false
-margin_right = 4.0
-margin_bottom = 14.0
-
-[node name="dash_counter_bar" type="TextureRect" parent="player_stats_interface"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
