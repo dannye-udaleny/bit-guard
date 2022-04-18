@@ -89,7 +89,7 @@ animation = "idle"
 playing = true
 
 [node name="begin" type="Position2D" parent="."]
-position = Vector2( 15, -1 )
+position = Vector2( 15, -1.5 )
 
 [node name="end" type="Position2D" parent="."]
-position = Vector2( 18, -1 )
+position = Vector2( 18, -1.5 )
