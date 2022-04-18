@@ -40,6 +40,15 @@ smoothing_enabled = true
 script = ExtResource( 4 )
 
 [node name="enviroment" parent="y_sort" instance=ExtResource( 7 )]
-position = Vector2( 197, 153 )
+position = Vector2( 808, 548 )
+
+[node name="enviroment3" parent="y_sort" instance=ExtResource( 7 )]
+position = Vector2( 864, 598 )
+
+[node name="enviroment2" parent="y_sort" instance=ExtResource( 7 )]
+position = Vector2( 911, 548 )
 
 [node name="hud" parent="." instance=ExtResource( 5 )]
+
+[node name="canvas_modulate" type="CanvasModulate" parent="."]
+color = Color( 0.941176, 0.839216, 0.972549, 1 )

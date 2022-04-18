@@ -77,42 +77,36 @@ shader_param/lines = false
 [node name="hud" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="player_stats_interface" type="CanvasLayer" parent="."]
 
 [node name="ammo_sign" type="TextureRect" parent="player_stats_interface"]
 modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
 anchor_right = 0.317
-margin_left = -12.0
-margin_top = -10.0
+margin_left = 24.0
+margin_top = 40.0
 margin_right = -156.88
 margin_bottom = 55.0
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
-stretch_mode = 4
 
 [node name="health_sign" type="TextureRect" parent="player_stats_interface"]
 modulate = Color( 1, 0.282353, 0, 1 )
-margin_left = -12.0
-margin_top = -10.0
+margin_left = 24.0
+margin_top = 14.0
 margin_right = 46.0
 margin_bottom = 29.0
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
-stretch_mode = 4
 
 [node name="dash_bar" type="TextureRect" parent="player_stats_interface"]
 modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
-margin_left = -12.0
-margin_top = -10.0
-margin_right = 57.0
-margin_bottom = 82.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 24.0
+margin_top = 68.0
+margin_right = 63.0
+margin_bottom = 80.0
+rect_scale = Vector2( 2.01714, 2 )
 texture = SubResource( 3 )
-stretch_mode = 4
 
 [node name="health_bar" type="TextureProgress" parent="player_stats_interface"]
 modulate = Color( 1, 0.282353, 0, 1 )
@@ -130,7 +124,7 @@ modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
 margin_left = 68.0
 margin_top = 44.0
 margin_right = 131.0
-margin_bottom = 84.0
+margin_bottom = 56.0
 rect_scale = Vector2( 2, 2 )
 value = 100.0
 texture_under = ExtResource( 5 )
