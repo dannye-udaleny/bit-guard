@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends Node2D
 
 export(PackedScene) var bullet_scene
 
@@ -18,26 +18,26 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
+	$flash_sprite.flip_v = $sprite.flip_v
+	$flash_sprite.animation = $sprite.animation
+	$flash_sprite.offset = $sprite.offset
 	_rotation()
 	_state_machine()
-	$flash_sprite.flip_v = flip_v
-	$flash_sprite.animation = animation
-	$flash_sprite.offset = offset
 	_play_animation()
 
 
 func _rotation() -> void:
 	look_at(get_parent().mouse)
 	if get_parent().get_node("body_sprite").flip_h == true:
-		self.flip_v = true
-		offset = Vector2(3, 5)
-		position = Vector2(3, -17)
+		$sprite.flip_v = true
+		$sprite.offset = Vector2(3, 5)
+		$sprite.position = Vector2(3, -17)
 		$flash_sprite.position = Vector2(1, 1)
 	else:
-		self.flip_v = false
+		$sprite.flip_v = false
 		$flash_sprite.position = Vector2(-1, -1)
-		offset = Vector2(3, -5)
-		position = Vector2(-1, -17)
+		$sprite.offset = Vector2(3, -5)
+		$sprite.position = Vector2(-1, -17)
 
 
 func _shoot_bullet() -> void:
@@ -50,19 +50,24 @@ func _shoot_bullet() -> void:
 
 
 func _play_animation() -> void:
-	match state:
-		states.idle: 
-			play('idle')
-		states.shoot:
-			play('shoot')
-		states.reload:
-			play('reload')
-
+	if state == states.idle: 
+		$sprite.play("idle")
+	if state == states.shoot:
+		$sprite.play("shoot")
+	if state == states.reload:
+		$sprite.play("reload")
 
 
 func _state_machine():
 	if state == states.idle:
+		get_parent().get_node("label").set_text("idle")
 		if Input.is_action_just_pressed("shoot"):
 			state = states.shoot
+			get_parent().get_node("label").set_text("shoot")
 		elif Input.is_action_just_pressed("reload"):
 			state = states.reload
+
+
+func _on_sprite_animation_finished():
+	if $sprite.animation == "shoot":
+		state = states.idle
