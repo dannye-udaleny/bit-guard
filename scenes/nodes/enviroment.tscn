@@ -4,8 +4,8 @@
 [ext_resource path="res://sprites/environment/environment_1.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 0.995937
-height = 22.0242
+radius = 4.97985
+height = 12.0403
 
 [node name="enviroment" type="StaticBody2D"]
 modulate = Color( 0.780392, 0.780392, 0.780392, 1 )
@@ -17,13 +17,12 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -11 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 5 )
+position = Vector2( 0, 4 )
 rotation = 1.5708
 scale = Vector2( 1.00404, 1 )
 shape = SubResource( 1 )
 
 [node name="light" type="Light2D" parent="."]
-visible = false
 light_mask = 0
 scale = Vector2( 1, 1.01188 )
 texture = ExtResource( 1 )
