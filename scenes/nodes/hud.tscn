@@ -95,9 +95,9 @@ texture = ExtResource( 3 )
 [node name="health_sign" type="TextureRect" parent="player_stats_interface"]
 modulate = Color( 1, 0.282353, 0, 1 )
 margin_left = 24.0
-margin_top = 14.0
+margin_top = 12.0
 margin_right = 46.0
-margin_bottom = 29.0
+margin_bottom = 27.0
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
@@ -113,9 +113,9 @@ texture = SubResource( 3 )
 [node name="health_bar" type="TextureProgress" parent="player_stats_interface"]
 modulate = Color( 1, 0.282353, 0, 1 )
 margin_left = 68.0
-margin_top = 16.0
-margin_right = 167.0
-margin_bottom = 29.0
+margin_top = 12.0
+margin_right = 169.0
+margin_bottom = 28.0
 rect_scale = Vector2( 2, 2 )
 value = 100.0
 texture_under = ExtResource( 14 )
@@ -123,9 +123,9 @@ texture_progress = ExtResource( 7 )
 
 [node name="ammo_bar" type="TextureProgress" parent="player_stats_interface"]
 modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
-margin_left = 68.0
+margin_left = 70.0
 margin_top = 44.0
-margin_right = 131.0
+margin_right = 133.0
 margin_bottom = 56.0
 rect_scale = Vector2( 2, 2 )
 value = 100.0

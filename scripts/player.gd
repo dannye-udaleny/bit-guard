@@ -14,6 +14,7 @@ var mouse := Vector2()# Глобальная позиция мыши
 var dash_counter = 0 # Кол-во доступных зарядов для рывков
 var dash_direction := Vector2() # Направление рывка
 var state # Текущее состояние
+var moved_platform = false
 
 enum states { # Возможные состояния
 	idle,
@@ -81,7 +82,6 @@ func _state_machine(dash_pressed : bool) -> void:
 	elif state == states.run:
 		if _velocity.length() > 50  and dash_counter != 0:
 			if dash_pressed and  dash_enable:
-				print("sm - ok")
 				state = states.dash
 				_dash()
 		elif _velocity.length() < 50:
@@ -92,7 +92,6 @@ func _state_machine(dash_pressed : bool) -> void:
 func _dash() -> void:
 	if dash_enable:
 		if state == states.dash and dash_counter != 0:
-			print("ds - ok")
 			dash_counter -= 1
 			dash_direction = InputHandler.input_direction * dash_speed
 			$dash_timer.start(dash_length)
@@ -111,7 +110,6 @@ func _create_dash_effect() -> void:
 
 func _on_dash_timer_timeout() -> void:
 	state = states.idle
-	print("to - ok")
 	if state != states.dash and dash_counter < dash_number:
 			$dash_reload.start(dash_reload_time)
 	pass
