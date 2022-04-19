@@ -14,7 +14,6 @@ var mouse := Vector2()# Глобальная позиция мыши
 var dash_counter = 0 # Кол-во доступных зарядов для рывков
 var dash_direction := Vector2() # Направление рывка
 var state # Текущее состояние
-var moved_platform = false
 
 enum states { # Возможные состояния
 	idle,
@@ -120,3 +119,4 @@ func _on_dash_reload_timeout() -> void:
 		dash_counter += 1
 		$dash_reload.start(dash_reload_time)
 #____________________________________________________________________________________________
+

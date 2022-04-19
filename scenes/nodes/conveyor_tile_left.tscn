@@ -7,7 +7,7 @@
 [ext_resource path="res://scripts/road.gd" type="Script" id=5]
 [ext_resource path="res://scripts/conveyor_tile_right.gd" type="Script" id=6]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
@@ -25,7 +25,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 uniform float scroll_speed;
 void fragment(){
@@ -35,26 +35,28 @@ void fragment(){
 	COLOR = color;
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
 shader_param/scroll_speed = null
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 32, 25 )
 
-[node name="conveyor_tile_right" type="AnimatedSprite"]
-frames = SubResource( 5 )
+[node name="conveyor_tile_left" type="AnimatedSprite"]
+frames = SubResource( 6 )
 animation = "midle"
 offset = Vector2( 32, 32 )
 script = ExtResource( 6 )
+direction_name = -1
 
 [node name="belt" type="TextureRect" parent="."]
 show_behind_parent = true
-material = SubResource( 2 )
+material = SubResource( 8 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
 stretch_mode = 2
+flip_h = true
 script = ExtResource( 5 )
 
 [node name="moving_area" type="Area2D" parent="." groups=["conveyor_right"]]
@@ -62,7 +64,7 @@ script = ExtResource( 5 )
 [node name="shape" type="CollisionShape2D" parent="moving_area"]
 position = Vector2( 16, 32 )
 scale = Vector2( 0.5, 1 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 0.24

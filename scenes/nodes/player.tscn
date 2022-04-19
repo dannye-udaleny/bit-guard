@@ -76,6 +76,7 @@ height = 16.0
 
 [sub_resource type="Environment" id=5]
 background_mode = 4
+tonemap_mode = 4
 tonemap_exposure = 0.75
 auto_exposure_scale = 0.01
 auto_exposure_min_luma = 0.0
@@ -128,9 +129,6 @@ energy = 0.12
 visible = false
 position = Vector2( 0, -10 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="body_sprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.74902, 0.74902, 0.74902, 1 )
@@ -156,10 +154,9 @@ position = Vector2( 0, 23 )
 texture = ExtResource( 16 )
 
 [node name="hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( 0, -15 )
+position = Vector2( 1, -16 )
 shape = SubResource( 2 )
 
 [node name="world_environment" type="WorldEnvironment" parent="."]
@@ -172,6 +169,7 @@ one_shot = true
 one_shot = true
 
 [node name="gun_mk_bit" parent="." instance=ExtResource( 29 )]
+visible = false
 position = Vector2( 2, -22 )
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

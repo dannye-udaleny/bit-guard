@@ -73,7 +73,7 @@ void fragment()
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/scan_line_count = 50.0
-shader_param/lines = false
+shader_param/lines = true
 
 [node name="hud" type="Control"]
 anchor_right = 1.0
@@ -147,7 +147,6 @@ texture_progress = ExtResource( 13 )
 layer = 2
 
 [node name="shader_effect" type="TextureRect" parent="effect_layer"]
-visible = false
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -158,7 +157,6 @@ __meta__ = {
 }
 
 [node name="monitor_effect" type="TextureRect" parent="effect_layer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
