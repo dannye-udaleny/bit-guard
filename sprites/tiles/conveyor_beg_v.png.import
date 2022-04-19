@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/road_beg_v.png-91e2481d0d1333760f47ffbf54178fe7.stex"
+path="res://.import/conveyor_beg_v.png-4c6eba63c04ad5230800dd08fd6c74d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tiles/road_beg_v.png"
-dest_files=[ "res://.import/road_beg_v.png-91e2481d0d1333760f47ffbf54178fe7.stex" ]
+source_file="res://sprites/tiles/conveyor_beg_v.png"
+dest_files=[ "res://.import/conveyor_beg_v.png-4c6eba63c04ad5230800dd08fd6c74d6.stex" ]
 
 [params]
 
