@@ -5,7 +5,7 @@ var input_direction := Vector2()
 
 
 signal mouse_pressed 
-signal dash
+signal dash(press)
 signal exit
 signal change_weapon(type)
 
@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
 		emit_signal("mouse_pressed")
 	if event.is_action_pressed("dash"):
-		emit_signal("dash")
+		emit_signal("dash", true)
 	if event.is_action_pressed("esc"):
 		emit_signal("exit")
 	if event.is_action_pressed("button_1"):

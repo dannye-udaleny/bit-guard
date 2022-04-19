@@ -107,8 +107,6 @@ script = ExtResource( 1 )
 move_speed = 100.0
 acceleration = 0.2
 dash_enable = true
-dash_speed = 500
-dash_length = 0.02
 dash_effect_scene = ExtResource( 28 )
 
 [node name="shadow_light" type="Light2D" parent="."]
@@ -172,13 +170,6 @@ one_shot = true
 
 [node name="dash_reload" type="Timer" parent="."]
 one_shot = true
-
-[node name="label" type="Label" parent="."]
-margin_left = -15.0
-margin_top = -57.0
-margin_right = 25.0
-margin_bottom = -43.0
-text = "state"
 
 [node name="gun_mk_bit" parent="." instance=ExtResource( 29 )]
 position = Vector2( 2, -22 )

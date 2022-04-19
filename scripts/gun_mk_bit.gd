@@ -60,10 +60,10 @@ func _play_animation() -> void:
 
 func _state_machine():
 	if state == states.idle:
-		get_parent().get_node("label").set_text("idle")
+#		get_parent().get_node("label").set_text("idle")
 		if Input.is_action_just_pressed("shoot"):
 			state = states.shoot
-			get_parent().get_node("label").set_text("shoot")
+#			get_parent().get_node("label").set_text("shoot")
 		elif Input.is_action_just_pressed("reload"):
 			state = states.reload
 
