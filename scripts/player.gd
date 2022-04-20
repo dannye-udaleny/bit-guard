@@ -32,10 +32,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	$body_sprite/body_flash_sprite.animation = $body_sprite.animation
+	$body_sprite/body_flash_sprite.flip_h = $body_sprite.flip_h
+	mouse = get_global_mouse_position()
 	_player_animation() # Заявляем функцию по изменению анимаций персонажа
 	_turn_to_mouse() # Разворачиваем спрайт игрока по направлению к мыши
-	_state_machine(false) # Система состояний игрока
-	_create_dash_effect() # Создание эффектов перемещения
+	_state_machine(false)
+	_create_dash_effect()
 
 func _physics_process(delta: float) -> void:
 	_move_player() # Перемещения игрока
@@ -43,7 +46,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _player_animation() -> void:
-	$body_sprite/body_flash_sprite.animation = $body_sprite.animation
 	if state == states.idle:
 		$body_sprite.animation = "idle"
 	else:
@@ -54,8 +56,6 @@ func _player_animation() -> void:
 
 
 func _turn_to_mouse() -> void:
-	mouse = get_global_mouse_position()
-	$body_sprite/body_flash_sprite.flip_h = $body_sprite.flip_h
 	if mouse.x > position.x: # Разворачиваем спрайт игрока по направлению к мыши
 		$body_sprite.flip_h = false
 	elif mouse.x < position.x:
@@ -81,7 +81,7 @@ func _state_machine(dash_pressed : bool) -> void:
 			state = states.run
 	elif state == states.run:
 		if _velocity.length() > 50  and dash_counter != 0:
-			if dash_pressed and dash_enable:
+			if dash_pressed and  dash_enable:
 				state = states.dash
 				_dash()
 		elif _velocity.length() < 50:

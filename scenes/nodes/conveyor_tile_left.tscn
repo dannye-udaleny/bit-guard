@@ -60,19 +60,11 @@ flip_h = true
 script = ExtResource( 5 )
 
 [node name="moving_area" type="Area2D" parent="." groups=["conveyor_right"]]
-visible = false
 
 [node name="shape" type="CollisionShape2D" parent="moving_area"]
 position = Vector2( 16, 32 )
 scale = Vector2( 0.5, 1 )
 shape = SubResource( 9 )
 
-[node name="visibility_enabler_2d" type="VisibilityEnabler2D" parent="."]
-visible = false
-position = Vector2( 32, 32 )
-scale = Vector2( 3.2, 3.2 )
-
 [connection signal="body_entered" from="moving_area" to="." method="_on_moving_area_body_entered"]
 [connection signal="body_exited" from="moving_area" to="." method="_on_moving_area_body_exited"]
-[connection signal="viewport_entered" from="visibility_enabler_2d" to="." method="_on_visibility_enabler_2d_viewport_entered"]
-[connection signal="viewport_exited" from="visibility_enabler_2d" to="." method="_on_visibility_enabler_2d_viewport_exited"]
