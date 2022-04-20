@@ -154,6 +154,7 @@ position = Vector2( 0, 23 )
 texture = ExtResource( 16 )
 
 [node name="hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( 1, -16 )
@@ -169,7 +170,7 @@ one_shot = true
 one_shot = true
 
 [node name="gun_mk_bit" parent="." instance=ExtResource( 29 )]
-position = Vector2( 2, -22 )
+position = Vector2( -1, -17 )
 
 [node name="label" type="Label" parent="."]
 margin_left = -18.0

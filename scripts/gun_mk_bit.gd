@@ -20,24 +20,28 @@ func _ready() -> void:
 func _process(delta:float) -> void:
 	$flash_sprite.flip_v = $sprite.flip_v
 	$flash_sprite.animation = $sprite.animation
-	$flash_sprite.offset = $sprite.offset
 	_rotation()
 	_state_machine()
 	_play_animation()
 
 
 func _rotation() -> void:
-	look_at(get_parent().mouse)
+	$sprite.look_at(get_parent().mouse)
+	$flash_sprite.look_at(get_parent().mouse)
 	if get_parent().get_node("body_sprite").flip_h == true:
 		$sprite.flip_v = true
+		$sprite.position = Vector2(4, 0)
 		$sprite.offset = Vector2(3, 5)
-		$sprite.position = Vector2(3, -17)
-		$flash_sprite.position = Vector2(1, 1)
+		$flash_sprite.position = $sprite.position
+		$flash_sprite.offset = $sprite.offset
+#		$flash_sprite.position = Vector2(1, 1)
 	else:
 		$sprite.flip_v = false
-		$flash_sprite.position = Vector2(-1, -1)
+		$sprite.position = Vector2(0, 0)
 		$sprite.offset = Vector2(3, -5)
-		$sprite.position = Vector2(-1, -17)
+		$flash_sprite.position = $sprite.position
+		$flash_sprite.offset = $sprite.offset
+#		$sprite.position = Vector2(-1, -17)
 
 
 func _shoot_bullet() -> void:
