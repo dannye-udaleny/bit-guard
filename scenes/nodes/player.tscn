@@ -76,6 +76,7 @@ height = 16.0
 
 [sub_resource type="Environment" id=5]
 background_mode = 4
+tonemap_mode = 4
 tonemap_exposure = 0.75
 auto_exposure_scale = 0.01
 auto_exposure_min_luma = 0.0
@@ -169,6 +170,15 @@ one_shot = true
 
 [node name="gun_mk_bit" parent="." instance=ExtResource( 29 )]
 position = Vector2( 2, -22 )
+
+[node name="label" type="Label" parent="."]
+margin_left = -18.0
+margin_top = -53.0
+margin_right = 22.0
+margin_bottom = -39.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash_reload" to="." method="_on_dash_reload_timeout"]

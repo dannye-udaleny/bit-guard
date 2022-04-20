@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/reload_signal.png-0243fffcc43a9835b09667e81f9489af.stex"
+path="res://.import/reload_signal.png-545757181bdf55469950f14b05658473.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/hud/reload_signal.png"
-dest_files=[ "res://.import/reload_signal.png-0243fffcc43a9835b09667e81f9489af.stex" ]
+source_file="res://sprites/HUD/reload_signal.png"
+dest_files=[ "res://.import/reload_signal.png-545757181bdf55469950f14b05658473.stex" ]
 
 [params]
 

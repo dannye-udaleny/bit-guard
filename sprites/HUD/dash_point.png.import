@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dash_point.png-168f3af5137f3b8c4900d4178a4c4f87.stex"
+path="res://.import/dash_point.png-a053e383a51a9137c33ed9a5298a9e17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/hud/dash_point.png"
-dest_files=[ "res://.import/dash_point.png-168f3af5137f3b8c4900d4178a4c4f87.stex" ]
+source_file="res://sprites/HUD/dash_point.png"
+dest_files=[ "res://.import/dash_point.png-a053e383a51a9137c33ed9a5298a9e17.stex" ]
 
 [params]
 

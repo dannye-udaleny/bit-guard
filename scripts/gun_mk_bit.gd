@@ -3,7 +3,7 @@ extends Node2D
 export(PackedScene) var bullet_scene
 
 var state
-var bullet_number:int = 30
+var bullet_number:int = 2
 
 enum states{
 	idle,
@@ -17,7 +17,7 @@ func _ready() -> void:
 	state = states.idle
 
 
-func _process(delta) -> void:
+func _process(delta:float) -> void:
 	$flash_sprite.flip_v = $sprite.flip_v
 	$flash_sprite.animation = $sprite.animation
 	$flash_sprite.offset = $sprite.offset
@@ -60,14 +60,19 @@ func _play_animation() -> void:
 
 func _state_machine():
 	if state == states.idle:
-#		get_parent().get_node("label").set_text("idle")
+		get_parent().get_node("label").set_text("idle")
+	else:
+		get_parent().get_node("label").set_text("shoot")
+	if state == states.idle:
 		if Input.is_action_just_pressed("shoot"):
 			state = states.shoot
-#			get_parent().get_node("label").set_text("shoot")
 		elif Input.is_action_just_pressed("reload"):
 			state = states.reload
+		
 
 
 func _on_sprite_animation_finished():
-	if $sprite.animation == "shoot":
-		state = states.idle
+	if state == states.shoot:
+		if not Input.is_action_pressed("shoot"):
+			state = states.idle
+
