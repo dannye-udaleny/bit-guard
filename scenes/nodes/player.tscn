@@ -28,7 +28,7 @@
 [ext_resource path="res://sprites/player/run/body_run_light6.png" type="Texture" id=26]
 [ext_resource path="res://sprites/player/run/body_run_light7.png" type="Texture" id=27]
 [ext_resource path="res://scenes/nodes/dash_effect.tscn" type="PackedScene" id=28]
-[ext_resource path="res://scenes/nodes/gun_mk_bit.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/nodes/gun_mk_COMMA.tscn" type="PackedScene" id=29]
 [ext_resource path="res://sprites/hud/ammo_signal.png" type="Texture" id=30]
 [ext_resource path="res://sprites/hud/reload_signal.png" type="Texture" id=31]
 [ext_resource path="res://sprites/effects_and_particles/conveyor_run_part.png" type="Texture" id=32]
@@ -65,14 +65,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "run_back",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "run_back",
 "speed": 15.0
 } ]
 
@@ -83,14 +83,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "run_back",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "run_back",
 "speed": 15.0
 } ]
 
@@ -132,6 +132,7 @@ move_speed = 100.0
 acceleration = 0.2
 dash_enable = true
 dash_effect_scene = ExtResource( 28 )
+current_gun = ExtResource( 29 )
 
 [node name="speed_effect" type="Particles2D" parent="."]
 modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
@@ -142,9 +143,6 @@ lifetime = 0.8
 local_coords = false
 process_material = SubResource( 9 )
 texture = ExtResource( 32 )
-
-[node name="gun_mk_bit" parent="." instance=ExtResource( 29 )]
-position = Vector2( -1, -17 )
 
 [node name="shadow_light" type="Light2D" parent="."]
 show_behind_parent = true

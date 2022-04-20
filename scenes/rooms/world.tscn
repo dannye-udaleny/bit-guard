@@ -140,7 +140,7 @@ dash_reload_time = 1.0
 
 [node name="camera" type="Camera2D" parent="y_sort/player"]
 current = true
-zoom = Vector2( 0.8, 0.8 )
+zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 script = ExtResource( 4 )
 

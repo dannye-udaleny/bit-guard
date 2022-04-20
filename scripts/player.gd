@@ -8,12 +8,16 @@ export var dash_length: float = 0.02 # Длинна рывка(влияет на
 export var dash_reload_time: float = 2 # Скорость перезарядки N рывков
 export var dash_number: int = 5 # Кол-во возможных зарядов для рывков
 export(PackedScene) var dash_effect_scene
+export(PackedScene) var current_gun
 
 var _velocity := Vector2() # Скорость персонажа на данный момент (px/s)
 var mouse := Vector2()# Глобальная позиция мыши
 var dash_counter = 0 # Кол-во доступных зарядов для рывков
 var dash_direction := Vector2() # Направление рывка
 var state # Текущее состояние
+
+var mk_bit := preload("res://scenes/nodes/gun_mk_bit.tscn")
+var mk_COMMA := preload("res://scenes/nodes/gun_mk_COMMA.tscn")
 
 enum states { # Возможные состояния
 	idle,
@@ -22,11 +26,12 @@ enum states { # Возможные состояния
 }
 
 func _ready() -> void:
+	_create_current_gun()
 	$body_sprite.playing = true
 	$body_sprite/body_flash_sprite.playing = true
-#	InputHandler.connect("dash", self, "_dash")
 	InputHandler.connect("dash", self, "_state_machine")
 	InputHandler.connect("change_effect", self, "_change_effect")
+	InputHandler.connect("change_weapon", self, "_change_weapon")
 	dash_counter = dash_number
 	state = states.idle
 
@@ -131,3 +136,21 @@ func _on_dash_reload_timeout() -> void:
 		$dash_reload.start(dash_reload_time)
 #____________________________________________________________________________________________
 
+func _change_weapon(number) -> void:
+#	if че-то:
+#		то
+#	else:
+#		pass
+	pass
+#if 1
+#if current_gun != mk_bit
+#get_node("child")queue_free()
+#curent_gun = mk_bit
+#_create()
+
+
+func _create_current_gun() -> void:
+	if current_gun != null:
+		var gun = current_gun.instance()
+		gun.position = Vector2(-1, -17)
+		add_child(gun)

@@ -66,7 +66,7 @@ func _play_animation() -> void:
 	if state == states.reload:
 		$sprite.play("reload")
 		reload_bar.visible = true
-		reload_bar.max_value = 12
+		reload_bar.max_value = 9
 		reload_bar.value = $sprite.frame + 1
 
 
