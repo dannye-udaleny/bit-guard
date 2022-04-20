@@ -8,7 +8,7 @@ radius = 4.97985
 height = 12.0403
 
 [node name="enviroment" type="StaticBody2D"]
-modulate = Color( 0.780392, 0.780392, 0.780392, 1 )
+modulate = Color( 0.74902, 0.74902, 0.74902, 1 )
 
 [node name="sprite" type="Sprite" parent="."]
 modulate = Color( 0.8, 0.8, 0.8, 1 )

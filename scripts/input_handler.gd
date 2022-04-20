@@ -9,6 +9,7 @@ signal dash(press)
 signal exit
 signal change_weapon(type)
 signal change_theme
+signal change_effect
 
 func _physics_process(delta: float) -> void:
 	input_direction = Vector2(
@@ -30,5 +31,7 @@ func _input(event: InputEvent) -> void:
 		emit_signal("change_wepon", 3)
 	if event.is_action_pressed("button_4"):
 		emit_signal("change_wepon", 4)
-	if event.is_action_pressed("change"):
+	if event.is_action_pressed("change_hud"):
 		emit_signal("change_theme")
+	if event.is_action_pressed("change_effect"):
+		emit_signal("change_effect")

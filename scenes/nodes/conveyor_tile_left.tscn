@@ -40,7 +40,7 @@ shader = SubResource( 7 )
 shader_param/scroll_speed = null
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 32, 25 )
+extents = Vector2( 32, 31 )
 
 [node name="conveyor_tile_left" type="AnimatedSprite"]
 frames = SubResource( 6 )
@@ -65,10 +65,6 @@ script = ExtResource( 5 )
 position = Vector2( 16, 32 )
 scale = Vector2( 0.5, 1 )
 shape = SubResource( 9 )
-
-[node name="timer" type="Timer" parent="."]
-wait_time = 0.24
-one_shot = true
 
 [connection signal="body_entered" from="moving_area" to="." method="_on_moving_area_body_entered"]
 [connection signal="body_exited" from="moving_area" to="." method="_on_moving_area_body_exited"]

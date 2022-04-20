@@ -26,6 +26,7 @@ func _ready() -> void:
 	$body_sprite/body_flash_sprite.playing = true
 #	InputHandler.connect("dash", self, "_dash")
 	InputHandler.connect("dash", self, "_state_machine")
+	InputHandler.connect("change_effect", self, "_change_effect")
 	dash_counter = dash_number
 	state = states.idle
 
@@ -85,6 +86,16 @@ func _state_machine(dash_pressed : bool) -> void:
 				_dash()
 		elif _velocity.length() < 50:
 			state = states.idle
+
+
+func _change_effect() -> void:
+	match $world_environment.environment.tonemap_mode:
+		Environment.TONE_MAPPER_LINEAR:
+			$world_environment.environment.tonemap_mode = Environment.TONE_MAPPER_ACES
+		Environment.TONE_MAPPER_ACES:
+			$world_environment.environment.tonemap_mode = Environment.TONE_MAPPER_ACES_FITTED
+		Environment.TONE_MAPPER_ACES_FITTED:
+			$world_environment.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
 
 #____________________________________________________________________________________________
 

@@ -3,7 +3,7 @@ extends Control
 onready var player = get_parent().get_node("y_sort/player")
 
 func _ready():
-	pass 
+	InputHandler.connect("change_theme", self, "_change_theme")
 
 
 func _process(delta):
@@ -24,3 +24,11 @@ func _ammo_interface_changing() -> void:
 
 func _health_interface_changing() -> void:
 	pass
+
+func _change_theme() -> void:
+	if $effect_layer/shader_effect.visible == false:
+		$effect_layer/shader_effect.visible = true
+		$effect_layer/monitor_effect.visible = true
+	else:
+		$effect_layer/shader_effect.visible = false
+		$effect_layer/monitor_effect.visible = false
