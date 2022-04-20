@@ -13,7 +13,7 @@ enum states{
 
 
 func _ready() -> void:
-	InputHandler.connect("left_button_clicked", self, "_shoot_bullet")
+#	InputHandler.connect("left_button_clicked", self, "_shoot_bullet")
 	state = states.idle
 
 
@@ -45,10 +45,9 @@ func _rotation() -> void:
 
 
 func _shoot_bullet() -> void:
-	if state == states.shoot:
-		var bullet = bullet_scene.instant()
-		bullet.rotation = rotation
-		bullet.direction = $end.position - $begin.position
+		var bullet = bullet_scene.instance()
+		bullet.rotation = $sprite.rotation
+		bullet.direction = bullet.direction.rotated(bullet.rotation)
 		bullet.global_position = $end.global_position
 		get_tree().get_root().add_child(bullet)
 
@@ -76,6 +75,8 @@ func _state_machine():
 
 
 func _on_sprite_animation_finished():
+	if $sprite.animation == "shoot":
+		_shoot_bullet()
 	if state == states.shoot:
 		if not Input.is_action_pressed("shoot"):
 			state = states.idle
