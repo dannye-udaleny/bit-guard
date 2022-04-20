@@ -1,11 +1,11 @@
 extends Area2D
 
 var direction = Vector2.RIGHT
-var speed = 800
+var speed = 400
 var bullet_explosion_scene := preload("res://scenes/nodes/explosion_effect_1.tscn")
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	translate(direction.normalized() * speed * delta)
 	
 func _explosion() -> void:

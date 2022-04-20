@@ -20,7 +20,8 @@ func _dash_interface_changing() -> void:
 
 
 func _ammo_interface_changing() -> void:
-	pass
+	$player_stats_interface/ammo_bar.max_value = player.get_node("gun_mk_bit").bullet_number
+	$player_stats_interface/ammo_bar.value = player.get_node("gun_mk_bit").bullet_counter
 
 func _health_interface_changing() -> void:
 	pass
