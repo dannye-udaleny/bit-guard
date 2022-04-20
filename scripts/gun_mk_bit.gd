@@ -56,6 +56,7 @@ func _rotation() -> void:
 func _shoot_bullet() -> void:
 	if $sprite.animation != "shoot" and bullet_counter != 0 and state != states.reload:
 		bullet_counter -= 1
+		print(bullet_counter)
 		var bullet = bullet_scene.instance()
 		bullet.rotation = $sprite.rotation
 		bullet.direction = bullet.direction.rotated(bullet.rotation)
