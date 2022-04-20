@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ammo_signal.png-351a85e0dd4403a52b445b7b08a1cb19.stex"
+path="res://.import/cursor_1.png-51810fb45bd3a736bb74ae9155ae567f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/HUD/ammo_signal.png"
-dest_files=[ "res://.import/ammo_signal.png-351a85e0dd4403a52b445b7b08a1cb19.stex" ]
+source_file="res://sprites/hud/cursor_1.png"
+dest_files=[ "res://.import/cursor_1.png-51810fb45bd3a736bb74ae9155ae567f.stex" ]
 
 [params]
 

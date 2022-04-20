@@ -29,8 +29,8 @@
 [ext_resource path="res://sprites/player/run/body_run_light7.png" type="Texture" id=27]
 [ext_resource path="res://scenes/nodes/dash_effect.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/nodes/gun_mk_bit.tscn" type="PackedScene" id=29]
-[ext_resource path="res://sprites/HUD/ammo_signal.png" type="Texture" id=30]
-[ext_resource path="res://sprites/HUD/reload_signal.png" type="Texture" id=31]
+[ext_resource path="res://sprites/hud/ammo_signal.png" type="Texture" id=30]
+[ext_resource path="res://sprites/hud/reload_signal.png" type="Texture" id=31]
 [ext_resource path="res://sprites/effects_and_particles/conveyor_run_part.png" type="Texture" id=32]
 
 [sub_resource type="Curve" id=7]
