@@ -73,7 +73,7 @@ void fragment()
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/scan_line_count = 50.0
-shader_param/lines = true
+shader_param/lines = false
 
 [node name="hud" type="Control"]
 anchor_right = 1.0
