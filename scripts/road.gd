@@ -1,6 +1,7 @@
 extends TextureRect
 
-onready var scroll_speed = -1.53
+onready var scroll_speed = -3
 
-func _ready():
-	self.material.set_shader_param("scroll_speed", scroll_speed)	
+func _ready() -> void:
+	self.material.set_shader_param("scroll_speed", scroll_speed)
+
