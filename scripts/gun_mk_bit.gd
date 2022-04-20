@@ -13,7 +13,7 @@ enum states{
 
 
 func _ready() -> void:
-#	InputHandler.connect("left_button_clicked", self, "_shoot_bullet")
+	InputHandler.connect("mouse_pressed", self, "_shoot_bullet")
 	state = states.idle
 
 
@@ -34,21 +34,21 @@ func _rotation() -> void:
 		$sprite.offset = Vector2(3, 5)
 		$flash_sprite.position = $sprite.position
 		$flash_sprite.offset = $sprite.offset
-#		$flash_sprite.position = Vector2(1, 1)
 	else:
 		$sprite.flip_v = false
 		$sprite.position = Vector2(0, 0)
 		$sprite.offset = Vector2(3, -5)
+		$sprite/end.position = Vector2(19,-0.5)
 		$flash_sprite.position = $sprite.position
 		$flash_sprite.offset = $sprite.offset
-#		$sprite.position = Vector2(-1, -17)
 
 
 func _shoot_bullet() -> void:
+	if $sprite.animation != "shoot":
 		var bullet = bullet_scene.instance()
 		bullet.rotation = $sprite.rotation
 		bullet.direction = bullet.direction.rotated(bullet.rotation)
-		bullet.global_position = $end.global_position
+		bullet.global_position = $sprite/end.global_position
 		get_tree().get_root().add_child(bullet)
 
 
@@ -75,9 +75,10 @@ func _state_machine():
 
 
 func _on_sprite_animation_finished():
-	if $sprite.animation == "shoot":
-		_shoot_bullet()
-	if state == states.shoot:
+	if state == states.shoot and $sprite.animation == "shoot":
+		$sprite.play("idle")
 		if not Input.is_action_pressed("shoot"):
 			state = states.idle
+		else:
+			_shoot_bullet()
 

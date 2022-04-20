@@ -49,7 +49,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 27 ), ExtResource( 6 ), ExtResource( 12 ) ],
-"loop": true,
+"loop": false,
 "name": "shoot",
 "speed": 30.0
 } ]
@@ -67,7 +67,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 4 ) ],
-"loop": true,
+"loop": false,
 "name": "shoot",
 "speed": 30.0
 } ]
@@ -88,13 +88,10 @@ position = Vector2( 17.5, 8.5 )
 
 [node name="flash_sprite" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 5, 1, 0.21 )
-position = Vector2( 6, 0 )
+position = Vector2( 0, 10 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true
 offset = Vector2( 3, -5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
