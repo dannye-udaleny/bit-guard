@@ -32,35 +32,6 @@ frame_4/delay_sec = 0.0
 frame_5/texture = ExtResource( 13 )
 frame_5/delay_sec = 0.0
 
-<<<<<<< Updated upstream
-=======
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "on",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "off",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "on",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "off",
-"speed": 5.0
-} ]
-
->>>>>>> Stashed changes
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
@@ -195,17 +166,3 @@ expand = true
 __meta__ = {
 "_edit_lock_": true
 }
-<<<<<<< Updated upstream
-=======
-
-[node name="diolog" type="CanvasLayer" parent="."]
-
-[node name="diolog_window" parent="diolog" instance=ExtResource( 20 )]
-margin_left = 18.0
-margin_top = 260.0
-margin_right = -542.0
-margin_bottom = -22.0
-rect_scale = Vector2( 1, 1 )
-
-[connection signal="timeout" from="player_stats_interface/guns/hide_gun_interface_timer" to="." method="_on_hide_gun_interface_timer_timeout"]
->>>>>>> Stashed changes
