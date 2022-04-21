@@ -9,9 +9,12 @@ height = 12.0403
 
 [node name="enviroment" type="StaticBody2D"]
 modulate = Color( 0.74902, 0.74902, 0.74902, 1 )
+light_mask = 16
+collision_mask = 9
 
 [node name="sprite" type="Sprite" parent="."]
 modulate = Color( 0.8, 0.8, 0.8, 1 )
+light_mask = 16
 position = Vector2( 0, 11 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, -11 )
@@ -26,3 +29,4 @@ shape = SubResource( 1 )
 light_mask = 0
 scale = Vector2( 1, 1.01188 )
 texture = ExtResource( 1 )
+range_item_cull_mask = 16

@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/tiles/conveyor_midl_v.png" type="Texture" id=3]
 [ext_resource path="res://sprites/tiles/conveyor_beg_v.png" type="Texture" id=4]
 [ext_resource path="res://scripts/road.gd" type="Script" id=5]
-[ext_resource path="res://scripts/conveyor_tile_right.gd" type="Script" id=6]
+[ext_resource path="res://scripts/conveyor_tile_horizontal.gd" type="Script" id=6]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -64,5 +64,5 @@ position = Vector2( 16, 32 )
 scale = Vector2( 0.5, 1 )
 shape = SubResource( 4 )
 
-[connection signal="body_entered" from="moving_area" to="." method="_on_moving_area_body_entered"]
-[connection signal="body_exited" from="moving_area" to="." method="_on_moving_area_body_exited"]
+[connection signal="area_entered" from="moving_area" to="." method="_on_moving_area_area_entered"]
+[connection signal="area_exited" from="moving_area" to="." method="_on_moving_area_area_exited"]

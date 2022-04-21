@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/hud/back_color.png" type="Texture" id=1]
+[ext_resource path="res://sprites/hud/high_board_center.png" type="Texture" id=2]
+[ext_resource path="res://sprites/hud/left_board_back.png" type="Texture" id=3]
+[ext_resource path="res://sprites/hud/low_board_center.png" type="Texture" id=4]
+[ext_resource path="res://sprites/hud/high_board_back.png" type="Texture" id=5]
+[ext_resource path="res://sprites/hud/side_board_center.png" type="Texture" id=6]
+[ext_resource path="res://sprites/hud/low_board_conor.png" type="Texture" id=7]
+[ext_resource path="res://sprites/hud/high_board_conor.png" type="Texture" id=8]
+
+[node name="diolog_window" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 38.0
+margin_top = 28.0
+margin_right = -543.0
+margin_bottom = -248.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="back" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="left_board" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_right = 32.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="right_board" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="high_board" type="TextureRect" parent="."]
+anchor_right = 1.0
+margin_bottom = 32.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="low_board" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+flip_v = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="low_center" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -36.0
+margin_right = 106.0
+margin_bottom = 8.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="high_center" type="TextureRect" parent="."]
+anchor_right = 1.0
+margin_top = -6.0
+margin_bottom = 35.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="high_conor_1" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -33.0
+margin_top = -6.0
+margin_right = 6.0
+margin_bottom = 35.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="low_conor_1" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -41.0
+margin_right = 35.0
+margin_bottom = 13.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="low_conor_2" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -36.0
+margin_right = 6.0
+margin_bottom = 8.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="high_conor_2" type="TextureRect" parent="."]
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 33.0
+margin_bottom = 35.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="side_center_1" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -33.0
+margin_right = 6.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="side_center_2" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_right = 33.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}

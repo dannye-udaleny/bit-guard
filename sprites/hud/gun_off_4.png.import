@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thunderbolt.png-fefa2b8e2f2cbe0d604d41a33f8953dd.stex"
+path="res://.import/gun_off_4.png-737646857caa7eb283ee3caafdcbf142.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/environment/thunderbolt.png"
-dest_files=[ "res://.import/thunderbolt.png-fefa2b8e2f2cbe0d604d41a33f8953dd.stex" ]
+source_file="res://sprites/hud/gun_off_4.png"
+dest_files=[ "res://.import/gun_off_4.png-737646857caa7eb283ee3caafdcbf142.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

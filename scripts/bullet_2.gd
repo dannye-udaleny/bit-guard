@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction = Vector2.RIGHT
-var speed = 550
+var speed = 650
 var bullet_explosion_scene := preload("res://scenes/nodes/explosion_effect_2.tscn")
 
 

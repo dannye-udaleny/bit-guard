@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/tiles/conveyor_midl_v.png" type="Texture" id=3]
 [ext_resource path="res://sprites/tiles/conveyor_beg_v.png" type="Texture" id=4]
 [ext_resource path="res://scripts/road.gd" type="Script" id=5]
-[ext_resource path="res://scripts/conveyor_tile_right.gd" type="Script" id=6]
+[ext_resource path="res://scripts/conveyor_tile_horizontal.gd" type="Script" id=6]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -60,19 +60,11 @@ flip_h = true
 script = ExtResource( 5 )
 
 [node name="moving_area" type="Area2D" parent="." groups=["conveyor_right"]]
-visible = false
 
 [node name="shape" type="CollisionShape2D" parent="moving_area"]
 position = Vector2( 16, 32 )
 scale = Vector2( 0.5, 1 )
 shape = SubResource( 9 )
 
-[node name="visibility_enabler_2d" type="VisibilityEnabler2D" parent="."]
-visible = false
-position = Vector2( 32, 32 )
-scale = Vector2( 3.2, 3.2 )
-
-[connection signal="body_entered" from="moving_area" to="." method="_on_moving_area_body_entered"]
-[connection signal="body_exited" from="moving_area" to="." method="_on_moving_area_body_exited"]
-[connection signal="viewport_entered" from="visibility_enabler_2d" to="." method="_on_visibility_enabler_2d_viewport_entered"]
-[connection signal="viewport_exited" from="visibility_enabler_2d" to="." method="_on_visibility_enabler_2d_viewport_exited"]
+[connection signal="area_entered" from="moving_area" to="." method="_on_moving_area_area_entered"]
+[connection signal="area_exited" from="moving_area" to="." method="_on_moving_area_area_exited"]

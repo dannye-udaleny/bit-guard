@@ -82,8 +82,7 @@ offset = Vector2( 3, 5 )
 position = Vector2( 17.5, 8.5 )
 
 [node name="flash_sprite" type="AnimatedSprite" parent="."]
-visible = false
-modulate = Color( 1, 5, 1, 0.21 )
+modulate = Color( 5, 2, 5, 0.21 )
 position = Vector2( 0, 10 )
 frames = SubResource( 2 )
 animation = "idle"

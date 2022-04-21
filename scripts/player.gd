@@ -18,6 +18,7 @@ var state # Текущее состояние
 
 var mk_bit := preload("res://scenes/nodes/gun_mk_bit.tscn")
 var mk_COMMA := preload("res://scenes/nodes/gun_mk_COMMA.tscn")
+var gun = null
 
 enum states { # Возможные состояния
 	idle,
@@ -107,7 +108,7 @@ func _change_effect() -> void:
 func _dash() -> void:
 	if dash_enable:
 		if state == states.dash and dash_counter != 0:
-			dash_counter -= 1 
+			dash_counter -= 1
 			dash_direction = InputHandler.input_direction * dash_speed
 			$dash_timer.start(dash_length)
 	pass
@@ -136,21 +137,25 @@ func _on_dash_reload_timeout() -> void:
 		$dash_reload.start(dash_reload_time)
 #____________________________________________________________________________________________
 
-func _change_weapon(number) -> void:
-#	if че-то:
-#		то
-#	else:
-#		pass
-	pass
-#if 1
-#if current_gun != mk_bit
-#get_node("child")queue_free()
-#curent_gun = mk_bit
-#_create()
+func _change_weapon(number : int) -> void:
+	match number:
+		1:
+			if current_gun != mk_bit:
+				$reload_bar.visible = false
+				remove_child(get_node("gun"))
+				current_gun = mk_bit
+				_create_current_gun()
+		2:	
+			if current_gun != mk_COMMA:
+				$reload_bar.visible = false
+				remove_child(get_node("gun"))
+				current_gun = mk_COMMA
+				_create_current_gun()
+
 
 
 func _create_current_gun() -> void:
 	if current_gun != null:
-		var gun = current_gun.instance()
+		gun = current_gun.instance()
 		gun.position = Vector2(-1, -17)
 		add_child(gun)

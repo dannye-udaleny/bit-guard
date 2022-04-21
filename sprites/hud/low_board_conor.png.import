@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thunderbolt.png-334c25d8ce6c99db0806131597fa3c1e.stex"
+path="res://.import/low_board_conor.png-e86d541753a7e943a490ebf7c3cc1890.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/thunderbolt.png"
-dest_files=[ "res://.import/thunderbolt.png-334c25d8ce6c99db0806131597fa3c1e.stex" ]
+source_file="res://sprites/hud/low_board_conor.png"
+dest_files=[ "res://.import/low_board_conor.png-e86d541753a7e943a490ebf7c3cc1890.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thunderbolt_end.png-01166a2381416da35f30e0fb1258dc12.stex"
+path="res://.import/part_5.png-ba56446de1908a68d80c9ec8be760b8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/thunderbolt_end.png"
-dest_files=[ "res://.import/thunderbolt_end.png-01166a2381416da35f30e0fb1258dc12.stex" ]
+source_file="res://sprites/effects_and_particles/part_5.png"
+dest_files=[ "res://.import/part_5.png-ba56446de1908a68d80c9ec8be760b8c.stex" ]
 
 [params]
 

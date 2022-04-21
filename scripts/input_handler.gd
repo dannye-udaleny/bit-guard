@@ -24,13 +24,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc"):
 		emit_signal("exit")
 	if event.is_action_pressed("button_1"):
-		emit_signal("change_wepon", 1)
+		emit_signal("change_weapon", 1)
 	if event.is_action_pressed("button_2"):
-		emit_signal("change_wepon", 2)
+		emit_signal("change_weapon", 2)
 	if event.is_action_pressed("button_3"):
-		emit_signal("change_wepon", 3)
+		emit_signal("change_weapon", 3)
 	if event.is_action_pressed("button_4"):
-		emit_signal("change_wepon", 4)
+		emit_signal("change_weapon", 4)
 	if event.is_action_pressed("change_hud"):
 		emit_signal("change_theme")
 	if event.is_action_pressed("change_effect"):
