@@ -12,10 +12,8 @@
 [node name="diolog_window" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 38.0
-margin_top = 28.0
-margin_right = -543.0
-margin_bottom = -248.0
+margin_right = -320.0
+margin_bottom = -181.0
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_group_": true

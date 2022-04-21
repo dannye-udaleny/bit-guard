@@ -36,6 +36,7 @@ window/stretch/aspect="keep_height"
 
 color=false
 boot_splash=false
+layer=false
 
 [importer_defaults]
 
@@ -144,6 +145,21 @@ change_effect={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":123,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_render/layer_1="walls"
+2d_render/layer_2="player"
+2d_render/layer_3="bullets"
+2d_render/layer_4="enemys"
+2d_render/layer_5="traps"
+2d_physics/layer_1="walls"
+2d_physics/layer_2="player"
+2d_physics/layer_3="bullets"
+2d_physics/layer_4="enemys"
+2d_physics/layer_5="traps"
+2d_physics/layer_6="mooving_env"
+2d_physics/layer_7="holes"
 
 [node]
 

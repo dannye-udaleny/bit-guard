@@ -28,6 +28,8 @@ b = Vector2( 67, 61 )
 [node name="moving_platform_v_" type="Node2D"]
 
 [node name="platform" type="KinematicBody2D" parent="."]
+collision_layer = 32
+collision_mask = 2
 
 [node name="sprite" type="Sprite" parent="platform"]
 position = Vector2( 32, 40 )

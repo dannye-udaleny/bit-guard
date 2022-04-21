@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://sprites/effects_and_particles/shader_effect_texture.png" type="Texture" id=1]
 [ext_resource path="res://sprites/effects_and_particles/screen_png.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://sprites/hud/gun_off_2.png" type="Texture" id=18]
 [ext_resource path="res://sprites/hud/gun_off_1.png" type="Texture" id=19]
 [ext_resource path="res://scenes/nodes/diolog_window.tscn" type="PackedScene" id=20]
+[ext_resource path="res://sprites/system/back.png" type="Texture" id=21]
 
 [sub_resource type="AnimatedTexture" id=3]
 frames = 6
@@ -175,7 +176,6 @@ texture_under = ExtResource( 11 )
 texture_progress = ExtResource( 13 )
 
 [node name="guns" type="Control" parent="player_stats_interface"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -201,7 +201,6 @@ animation = "off"
 one_shot = true
 
 [node name="effect_layer" type="CanvasLayer" parent="."]
-layer = 2
 
 [node name="shader_effect" type="TextureRect" parent="effect_layer"]
 visible = false
@@ -233,5 +232,23 @@ margin_left = 116.0
 margin_top = 226.0
 margin_right = -322.0
 margin_bottom = -74.0
+
+[node name="menu" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="texture_rect" type="TextureRect" parent="menu"]
+visible = false
+modulate = Color( 0, 0, 0, 0.537255 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 21 )
+expand = true
+
+[node name="diolog_window" parent="menu" instance=ExtResource( 20 )]
+visible = false
+margin_left = 215.0
+margin_top = 114.0
+margin_right = -339.0
+margin_bottom = -134.0
 
 [connection signal="timeout" from="player_stats_interface/guns/hide_gun_interface_timer" to="." method="_on_hide_gun_interface_timer_timeout"]

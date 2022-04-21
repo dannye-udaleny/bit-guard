@@ -62,6 +62,8 @@ flip_h = true
 script = ExtResource( 5 )
 
 [node name="moving_area" type="Area2D" parent="." groups=["conveyor_right"]]
+collision_layer = 32
+collision_mask = 2
 
 [node name="shape" type="CollisionShape2D" parent="moving_area"]
 position = Vector2( 16, 32 )
