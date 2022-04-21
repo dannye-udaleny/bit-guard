@@ -190,7 +190,7 @@ __meta__ = {
 position = Vector2( -360, 378 )
 collision_layer = 8
 collision_mask = 8
-distance = 200
+distance = 400
 
 [node name="cursor" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1.50196, 1.50196, 0.8 )
