@@ -107,7 +107,7 @@ func _change_effect() -> void:
 func _dash() -> void:
 	if dash_enable:
 		if state == states.dash and dash_counter != 0:
-			dash_counter -= 1
+			dash_counter -= 1 
 			dash_direction = InputHandler.input_direction * dash_speed
 			$dash_timer.start(dash_length)
 	pass

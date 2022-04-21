@@ -65,14 +65,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "run_back",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
 "speed": 15.0
 } ]
 
@@ -83,14 +83,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "run_back",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "run",
 "speed": 15.0
 } ]
 
@@ -127,6 +127,7 @@ glow_high_quality = true
 
 [node name="player" type="KinematicBody2D"]
 modulate = Color( 1, 1.2, 1.3, 1 )
+collision_layer = 9
 script = ExtResource( 1 )
 move_speed = 100.0
 acceleration = 0.2
