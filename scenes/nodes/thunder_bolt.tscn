@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/effects_and_particles/bolt_end.png" type="Texture" id=1]
 [ext_resource path="res://sprites/effects_and_particles/bolt_end_light.png" type="Texture" id=2]
+[ext_resource path="res://sprites/effects_and_particles/bolt.png" type="Texture" id=3]
+[ext_resource path="res://scripts/thunder_bolt.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,23 +14,33 @@ animations = [ {
 } ]
 
 [node name="bolt" type="RayCast2D"]
-cast_to = Vector2( 0, 100 )
+enabled = true
+cast_to = Vector2( 0, 0 )
+collision_mask = 9
+script = ExtResource( 4 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -24, 100 )
+position = Vector2( 0, 104 )
 scale = Vector2( 1, 1.16667 )
 frames = SubResource( 1 )
 animation = "idle"
 centered = false
-__meta__ = {
-"_edit_group_": true
-}
+offset = Vector2( -24, -3.42856 )
 
 [node name="light_2d" type="Light2D" parent="sprite"]
-position = Vector2( -8, -8.57142 )
+position = Vector2( -31, -12.8571 )
 texture = ExtResource( 2 )
 offset = Vector2( 32, 12.8571 )
 energy = 0.5
 
 [node name="line" type="Line2D" parent="."]
-points = PoolVector2Array( 0, 0, 0, 100 )
+modulate = Color( 1, 1.5, 1.5, 1 )
+rotation = 1.5708
+points = PoolVector2Array( 0, 0, 100, 0 )
+width = 48.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 3 )
+texture_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
