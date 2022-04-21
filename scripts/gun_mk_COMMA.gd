@@ -47,6 +47,7 @@ func _rotation() -> void:
 
 
 func _shoot_bullet() -> void:
+<<<<<<< Updated upstream
 	if $sprite.animation != "shoot" and bullet_counter != 0 and state != states.reload:
 		bullet_counter -= 1
 		var bullet = bullet_scene.instance()
@@ -56,6 +57,19 @@ func _shoot_bullet() -> void:
 		get_tree().get_root().add_child(bullet)
 	elif bullet_counter == 0 and state != states.reload:
 		state = states.reload
+=======
+	if is_inside_tree():
+		if $sprite.animation != "shoot" and bullet_counter != 0 and state != states.reload:
+			bullet_counter -= 1
+			var bullet = bullet_scene.instance()
+			bullet.rotation = $sprite.rotation
+			bullet.direction = (bullet.direction.rotated(bullet.rotation)) - (Vector2((randf())*0.1, (randf())*0.1)) * (randi() % 2 -1)
+			bullet.global_position = $sprite/end.global_position
+			if get_tree() != null:
+				get_tree().get_root().add_child(bullet)
+		elif bullet_counter == 0 and state != states.reload:
+			state = states.reload
+>>>>>>> Stashed changes
 
 
 func _play_animation() -> void:
