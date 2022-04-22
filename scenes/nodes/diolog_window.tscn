@@ -10,10 +10,14 @@
 [ext_resource path="res://sprites/hud/high_board_conor.png" type="Texture" id=8]
 
 [node name="diolog_window" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -320.0
-margin_bottom = -181.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -89.0
+margin_right = -34.0
+margin_bottom = 20.0
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_group_": true

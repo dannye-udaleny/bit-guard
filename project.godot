@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="bit-guard"
-run/main_scene="res://scenes/rooms/world.tscn"
+run/main_scene="res://scenes/rooms/guild_lvl.tscn"
 boot_splash/image="res://sprites/system/LOGO.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
@@ -26,7 +26,6 @@ InputHandler="*res://scripts/input_handler.gd"
 
 window/size/width=640
 window/size/height=360
-window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
 window/stretch/mode="2d"
@@ -143,6 +142,11 @@ change_effect={
 -={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":123,"unicode":0,"echo":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":80,"unicode":0,"echo":false,"script":null)
  ]
 }
 

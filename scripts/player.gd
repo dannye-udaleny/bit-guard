@@ -7,13 +7,15 @@ export var dash_speed: int = 500 # Скорость рывка
 export var dash_length: float = 0.02 # Длинна рывка(влияет на таймер рывка и его длину)
 export var dash_reload_time: float = 2 # Скорость перезарядки N рывков
 export var dash_number: int = 5 # Кол-во возможных зарядов для рывков
+export var max_health: int = 100
 export(PackedScene) var dash_effect_scene
 export(PackedScene) var current_gun
 
 var _velocity := Vector2() # Скорость персонажа на данный момент (px/s)
 var mouse := Vector2()# Глобальная позиция мыши
-var dash_counter = 0 # Кол-во доступных зарядов для рывков
+var dash_counter := 0 # Кол-во доступных зарядов для рывков
 var dash_direction := Vector2() # Направление рывка
+var current_health
 var state # Текущее состояние
 
 var mk_bit := preload("res://scenes/nodes/gun_mk_bit.tscn")
@@ -34,6 +36,7 @@ func _ready() -> void:
 	InputHandler.connect("change_effect", self, "_change_effect")
 	InputHandler.connect("change_weapon", self, "_change_weapon")
 	dash_counter = dash_number
+	current_health = max_health
 	state = states.idle
 
 

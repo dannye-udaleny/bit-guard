@@ -24,8 +24,12 @@ func _ready():
 			$moving_area/shape.position = Vector2(32, 32)
 			$moving_area/shape.scale = Vector2(0.91, 1)
 		"end":
-			$moving_area/shape.position = Vector2(32, 32)
-			$moving_area/shape.scale = Vector2(0.9, 1)
+			if direction_name == 1:
+				$moving_area/shape.position = Vector2(41, 32)
+				$moving_area/shape.scale = Vector2(1.21, 1)
+			else:
+				$moving_area/shape.position = Vector2(23, 32)
+				$moving_area/shape.scale = Vector2(1.21, 1)
 
 func _physics_process(delta):
 	_move_body()

@@ -10,7 +10,7 @@ height = 12.0403
 [node name="enviroment" type="StaticBody2D"]
 modulate = Color( 0.8, 0.8, 0.8, 1 )
 light_mask = 16
-collision_mask = 9
+collision_mask = 11
 
 [node name="sprite" type="Sprite" parent="."]
 modulate = Color( 0.74902, 0.74902, 0.74902, 1 )
@@ -20,15 +20,14 @@ position = Vector2( 0, 11 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -11 )
 
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
+rotation = 1.5708
+scale = Vector2( 1.00404, 1 )
+shape = SubResource( 1 )
+
 [node name="light" type="Light2D" parent="."]
 light_mask = 16
 scale = Vector2( 1, 1.01188 )
 texture = ExtResource( 2 )
 range_item_cull_mask = 16
-
-[node name="collision_shape" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 0, 4 )
-rotation = 1.5708
-scale = Vector2( 1.00404, 1 )
-shape = SubResource( 1 )

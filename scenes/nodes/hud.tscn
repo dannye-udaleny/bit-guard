@@ -176,6 +176,7 @@ texture_under = ExtResource( 11 )
 texture_progress = ExtResource( 13 )
 
 [node name="guns" type="Control" parent="player_stats_interface"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -226,17 +227,28 @@ __meta__ = {
 
 [node name="diolog" type="CanvasLayer" parent="."]
 
-[node name="diolog_window" parent="diolog" instance=ExtResource( 20 )]
+[node name="control" type="Control" parent="diolog"]
 visible = false
-margin_left = 116.0
-margin_top = 226.0
-margin_right = -322.0
-margin_bottom = -74.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="diolog_window" parent="diolog/control" instance=ExtResource( 20 )]
+visible = false
+margin_left = -165.0
+margin_top = -122.0
+margin_right = 155.0
+margin_bottom = 107.0
+rect_scale = Vector2( 1, 1 )
 
 [node name="menu" type="CanvasLayer" parent="."]
 layer = 4
 
-[node name="texture_rect" type="TextureRect" parent="menu"]
+[node name="control" type="Control" parent="menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="texture_rect" type="TextureRect" parent="menu/control"]
 visible = false
 modulate = Color( 0, 0, 0, 0.537255 )
 anchor_right = 1.0
@@ -244,11 +256,11 @@ anchor_bottom = 1.0
 texture = ExtResource( 21 )
 expand = true
 
-[node name="diolog_window" parent="menu" instance=ExtResource( 20 )]
+[node name="diolog_window" parent="menu/control" instance=ExtResource( 20 )]
 visible = false
-margin_left = 215.0
-margin_top = 114.0
-margin_right = -339.0
-margin_bottom = -134.0
+margin_left = -122.0
+margin_top = -110.0
+margin_right = -11.0
+margin_bottom = 16.0
 
 [connection signal="timeout" from="player_stats_interface/guns/hide_gun_interface_timer" to="." method="_on_hide_gun_interface_timer_timeout"]

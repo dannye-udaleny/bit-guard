@@ -9,14 +9,14 @@
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "end",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "begin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "end",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -59,7 +59,6 @@ stretch_mode = 2
 script = ExtResource( 5 )
 
 [node name="moving_area" type="Area2D" parent="." groups=["conveyor_right"]]
-visible = false
 collision_layer = 32
 collision_mask = 35
 
