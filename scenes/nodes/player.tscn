@@ -246,7 +246,7 @@ position = Vector2( 1, -16 )
 shape = SubResource( 2 )
 
 [node name="mooving_body" type="Area2D" parent="." groups=["mooving_body"]]
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="mooving_body"]

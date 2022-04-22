@@ -110,6 +110,7 @@ func _dash() -> void:
 		if state == states.dash and dash_counter != 0:
 			dash_counter -= 1
 			dash_direction = InputHandler.input_direction * dash_speed
+			$hitbox/hitbox_shape.disabled = true
 			$dash_timer.start(dash_length)
 	pass
 
@@ -125,6 +126,7 @@ func _create_dash_effect() -> void:
 
 
 func _on_dash_timer_timeout() -> void:
+	$hitbox/hitbox_shape.disabled = false
 	state = states.idle
 	if state != states.dash and dash_counter < dash_number:
 			$dash_reload.start(dash_reload_time)

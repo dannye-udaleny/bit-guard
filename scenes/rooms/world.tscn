@@ -132,7 +132,7 @@ animation = "end"
 [node name="y_sort" type="YSort" parent="."]
 
 [node name="player" parent="y_sort" instance=ExtResource( 1 )]
-position = Vector2( 160, 160 )
+position = Vector2( -421, 512 )
 scale = Vector2( 1.00298, 1.01695 )
 move_speed = 150.0
 dash_speed = 700
@@ -163,21 +163,18 @@ position = Vector2( 287, 360 )
 
 [node name="thunder_coil" parent="y_sort" instance=ExtResource( 18 )]
 position = Vector2( -352, 424 )
-collision_layer = 32
 collision_mask = 27
-distance = 400
+distance = 195
 
 [node name="thunder_coil2" parent="y_sort" instance=ExtResource( 18 )]
 position = Vector2( -224, 424 )
-collision_layer = 32
 collision_mask = 27
-distance = 400
+distance = 195
 
 [node name="thunder_coil3" parent="y_sort" instance=ExtResource( 18 )]
 position = Vector2( -96, 424 )
-collision_layer = 32
 collision_mask = 27
-distance = 400
+distance = 195
 
 [node name="hud" parent="." instance=ExtResource( 5 )]
 
