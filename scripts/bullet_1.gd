@@ -21,3 +21,9 @@ func _on_visible_area_screen_exited():
 func _on_bullet_1_body_entered(body):
 	_explosion()
 	queue_free()
+
+
+func _on_bullet_1_area_entered(area):
+	if area.is_in_group("enemy"):
+		_explosion()
+		queue_free()

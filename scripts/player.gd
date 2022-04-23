@@ -22,6 +22,8 @@ var mk_bit := preload("res://scenes/nodes/gun_mk_bit.tscn")
 var mk_COMMA := preload("res://scenes/nodes/gun_mk_COMMA.tscn")
 var gun = null
 
+signal dead
+
 enum states { # Возможные состояния
 	idle,
 	run,
@@ -44,7 +46,9 @@ func _process(delta: float) -> void:
 	_player_animation() # Заявляем функцию по изменению анимаций персонажа
 	_turn_to_mouse() # Разворачиваем спрайт игрока по направлению к мыши
 	_state_machine(false) # Система состояний игрока
-	_create_dash_effect() # Создание эффектов перемещения
+	_create_dash_effect() # Создание эффектов перемещенияsssssssssss
+	if current_health <= 0:
+		emit_signal("dead")
 
 func _physics_process(delta: float) -> void:
 	_move_player() # Перемещения игрока

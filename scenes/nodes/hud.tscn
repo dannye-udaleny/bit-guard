@@ -40,27 +40,27 @@ frame_5/delay_sec = 0.0
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "off",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "off",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "off",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "off",
 "speed": 5.0
 } ]
 
@@ -176,7 +176,6 @@ texture_under = ExtResource( 11 )
 texture_progress = ExtResource( 13 )
 
 [node name="guns" type="Control" parent="player_stats_interface"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -185,6 +184,7 @@ margin_left = -118.0
 margin_top = -142.0
 
 [node name="gun_1" type="AnimatedSprite" parent="player_stats_interface/guns"]
+visible = false
 modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
 position = Vector2( 76, 118 )
 scale = Vector2( 2, 2 )
@@ -192,6 +192,7 @@ frames = SubResource( 4 )
 animation = "on"
 
 [node name="gun_2" type="AnimatedSprite" parent="player_stats_interface/guns"]
+visible = false
 modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
 position = Vector2( 76, 83 )
 scale = Vector2( 1.7, 1.7 )
@@ -233,7 +234,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="diolog_window" parent="diolog/control" instance=ExtResource( 20 )]
-visible = false
 margin_left = -165.0
 margin_top = -122.0
 margin_right = 155.0
@@ -249,7 +249,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="texture_rect" type="TextureRect" parent="menu/control"]
-visible = false
 modulate = Color( 0, 0, 0, 0.537255 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -257,7 +256,6 @@ texture = ExtResource( 21 )
 expand = true
 
 [node name="diolog_window" parent="menu/control" instance=ExtResource( 20 )]
-visible = false
 margin_left = -122.0
 margin_top = -110.0
 margin_right = -11.0

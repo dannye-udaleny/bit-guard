@@ -69,7 +69,7 @@ frame_0/texture = ExtResource( 6 )
 frame_1/texture = ExtResource( 5 )
 frame_1/delay_sec = 0.0
 
-[node name="bullet_1" type="Area2D"]
+[node name="bullet_1" type="Area2D" groups=["bullet"]]
 collision_layer = 4
 collision_mask = 25
 script = ExtResource( 4 )
@@ -108,5 +108,6 @@ local_coords = false
 process_material = SubResource( 7 )
 texture = SubResource( 10 )
 
+[connection signal="area_entered" from="." to="." method="_on_bullet_1_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_bullet_1_body_entered"]
 [connection signal="screen_exited" from="visible_area" to="." method="_on_visible_area_screen_exited"]

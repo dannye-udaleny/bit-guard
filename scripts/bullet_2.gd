@@ -18,6 +18,12 @@ func _on_visible_area_screen_exited():
 	queue_free()
 
 
-func _on_bullet_1_body_entered(body):
+func _on_bullet_2_body_entered(body):
 	_explosion()
 	queue_free()
+
+
+func _on_bullet_2_area_entered(area):
+	if area.is_in_group("enemy"):
+		_explosion()
+		queue_free()

@@ -72,7 +72,7 @@ frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 5 )
 frame_2/delay_sec = 0.0
 
-[node name="bullet_1" type="Area2D"]
+[node name="bullet_1" type="Area2D" groups=["bullet"]]
 collision_layer = 8
 collision_mask = 8
 __meta__ = {

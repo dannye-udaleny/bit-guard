@@ -28,7 +28,7 @@ func _physics_process(delta):
 func _on_area_area_entered(area):
 	if area.is_in_group("hitbox"):
 		colision_body = area.get_parent()
-		colision_body.current_health -= 50
+		colision_body.current_health -= 101
 		$timer.start()
 	elif area.is_in_group("stand_coil"):
 		$sprite.visible = false

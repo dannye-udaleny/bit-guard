@@ -15,8 +15,6 @@ func _process(delta):
 
 func _dash_interface_changing() -> void:
 	if player.dash_counter >= 0:
-		$player_stats_interface/dash_reload.visible = false
-		$player_stats_interface/dash_bar.visible = true
 		$player_stats_interface/dash_bar.texture.set_current_frame(player.dash_counter)
 
 
