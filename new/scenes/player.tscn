@@ -1,0 +1,112 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://new/sprites/player/idle/body/body_idle3.png" type="Texture" id=1]
+[ext_resource path="res://new/sprites/player/idle/body/body_idle1.png" type="Texture" id=2]
+[ext_resource path="res://new/sprites/player/idle/body/body_idle2.png" type="Texture" id=3]
+[ext_resource path="res://new/scripts/player/player.gd" type="Script" id=4]
+[ext_resource path="res://new/scripts/player/input_handler.gd" type="Script" id=5]
+[ext_resource path="res://new/sprites/player/run/body/body_run9.png" type="Texture" id=6]
+[ext_resource path="res://new/sprites/player/run/body/body_run4.png" type="Texture" id=7]
+[ext_resource path="res://new/sprites/player/run/body/body_run8.png" type="Texture" id=8]
+[ext_resource path="res://new/sprites/player/run/body/body_run6.png" type="Texture" id=9]
+[ext_resource path="res://new/sprites/player/run/body/body_run5.png" type="Texture" id=10]
+[ext_resource path="res://new/sprites/player/run/body/body_run7.png" type="Texture" id=11]
+[ext_resource path="res://new/sprites/player/run/body/body_run1.png" type="Texture" id=12]
+[ext_resource path="res://new/sprites/player/run/body/body_run3.png" type="Texture" id=13]
+[ext_resource path="res://new/sprites/player/run/body/body_run2.png" type="Texture" id=14]
+[ext_resource path="res://new/sprites/player/idle/light/body_idle_light3.png" type="Texture" id=15]
+[ext_resource path="res://new/scripts/player/weapon_slot.gd" type="Script" id=16]
+[ext_resource path="res://new/scenes/weapons/mk_bit.tscn" type="PackedScene" id=17]
+[ext_resource path="res://new/sprites/player/idle/light/body_idle_light2.png" type="Texture" id=18]
+[ext_resource path="res://new/sprites/player/idle/light/body_idle_light1.png" type="Texture" id=19]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light6.png" type="Texture" id=20]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light4.png" type="Texture" id=21]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light3.png" type="Texture" id=22]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light1.png" type="Texture" id=23]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light7.png" type="Texture" id=24]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light8.png" type="Texture" id=25]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light5.png" type="Texture" id=26]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light9.png" type="Texture" id=27]
+[ext_resource path="res://new/sprites/player/run/light/body_run_light2.png" type="Texture" id=28]
+[ext_resource path="res://sprites/player/shadow.png" type="Texture" id=29]
+
+[sub_resource type="CapsuleShape2D" id=4]
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+} ]
+
+[node name="player" type="KinematicBody2D"]
+collision_mask = 26
+script = ExtResource( 4 )
+walk_speed = 150.0
+acceleration = 0.3
+max_health = 100
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 11 )
+shape = SubResource( 4 )
+
+[node name="legs" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="legs"]
+position = Vector2( 0, 20 )
+rotation = -1.5708
+shape = SubResource( 2 )
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 0, 24 )
+texture = ExtResource( 29 )
+
+[node name="body_sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="body_light" type="AnimatedSprite" parent="."]
+modulate = Color( 3, 5, 5, 1 )
+light_mask = 0
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="input_handler" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="weapon_slot" type="Node2D" parent="."]
+position = Vector2( -4, 4 )
+script = ExtResource( 16 )
+weapons = [ ExtResource( 17 ) ]
+
+[connection signal="mouse_came_left" from="input_handler" to="." method="set_flipped" binds= [ true ]]
+[connection signal="mouse_came_left" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ true ]]
+[connection signal="mouse_came_right" from="input_handler" to="." method="set_flipped" binds= [ false ]]
+[connection signal="mouse_came_right" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ false ]]
+[connection signal="mouse_pressed" from="input_handler" to="weapon_slot" method="mouse_pressed"]
+[connection signal="mouse_released" from="input_handler" to="weapon_slot" method="mouse_released"]
+[connection signal="weapon_changed" from="input_handler" to="weapon_slot" method="set_weapon"]

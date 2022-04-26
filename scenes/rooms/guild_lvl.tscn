@@ -60,6 +60,7 @@ texture = ExtResource( 2 )
 stretch_mode = 2
 
 [node name="tile_holes_map" parent="." instance=ExtResource( 3 )]
+visible = false
 collision_layer = 64
 collision_mask = 2
 tile_data = PoolIntArray( 14, 536870947, 0, 16, 536870943, 0, 17, 536870942, 0, 18, 536870941, 0, 65549, 536870943, 0, 65550, 536870946, 0, 65552, 32, 0, 65553, 536870945, 0, 65554, 536870946, 0, 131085, 32, 0, 131086, 536870946, 0, 131090, 536870951, 0, 131095, 37, 0, 131096, 42, 0, 131097, 42, 0, 131098, 42, 0, 131099, 42, 0, 131100, 42, 0, 131101, 36, 0, 131103, 536870929, 0, 196622, 536870950, 0, 196624, 536870947, 0, 196626, 536870950, 0, 262160, 536870951, 0, 262167, 37, 0, 262168, 42, 0, 262169, 42, 0, 262170, 42, 0, 262171, 42, 0, 262172, 42, 0, 262173, 36, 0, 327693, 37, 0, 327694, 30, 0, 327695, 30, 0, 327696, 536870946, 0, 327698, 536870943, 0, 327699, 536870941, 0, 393230, 32, 0, 393231, 33, 0, 393232, 536870944, 0, 393234, 32, 0, 393235, 536870944, 0 )
@@ -68,11 +69,13 @@ tile_data = PoolIntArray( 14, 536870947, 0, 16, 536870943, 0, 17, 536870942, 0, 
 position = Vector2( -992, -334 )
 
 [node name="tile_holes_map_2" parent="." instance=ExtResource( 3 )]
+visible = false
 collision_layer = 64
 collision_mask = 2
 tile_data = PoolIntArray( 20, 62, 0, 65550, 59, 0, 65554, 60, 0, 131086, 60, 0, 131104, 37, 0, 131105, 42, 0, 131106, 42, 0, 131107, 42, 0, 131108, 42, 0, 131109, 42, 0, 131110, 42, 0, 131111, 42, 0, 131112, 36, 0, 131118, 536870947, 0, 196654, 536870951, 0, 262176, 37, 0, 262177, 42, 0, 262178, 42, 0, 262179, 42, 0, 262180, 42, 0, 262181, 42, 0, 262182, 42, 0, 262183, 42, 0, 262184, 36, 0, 262190, 536870951, 0, 327694, 61, 0, 327696, 59, 0, 327726, 536870950, 0, 393250, 37, 0, 393251, 42, 0, 393252, 42, 0, 393253, 42, 0, 393254, 42, 0, 393255, 42, 0, 393256, 42, 0, 393257, 42, 0, 393258, 36, 0, 524320, 37, 0, 524321, 42, 0, 524322, 42, 0, 524323, 42, 0, 524324, 42, 0, 524325, 42, 0, 524326, 42, 0, 524327, 42, 0, 524328, 36, 0 )
 
 [node name="tile_wall_map" parent="." instance=ExtResource( 3 )]
+visible = false
 collision_mask = 2
 tile_data = PoolIntArray( -65530, 0, 0, -65529, 5, 0, -65528, 5, 0, -65527, 5, 0, -65526, 536870912, 0, -65524, 0, 0, -65523, 5, 0, -65522, 4, 0, -65521, 5, 0, -65520, 5, 0, -65519, 5, 0, -65518, 5, 0, -65517, 5, 0, -65516, 536870917, 0, -65515, 536870917, 0, -65514, 536870912, 0, 0, 0, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 536870912, 0, 6, 1, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 536870913, 0, 12, 1, 0, 13, 536870918, 0, 15, 536870918, 0, 19, 536870918, 0, 21, 536870920, 0, 22, 536870913, 0, 23, 0, 0, 24, 536870917, 0, 25, 536870967, 0, 26, 536870917, 0, 27, 536870967, 0, 28, 536870917, 0, 29, 536870912, 0, 34, 0, 0, 35, 536870917, 0, 36, 536870967, 0, 37, 536870917, 0, 38, 536870967, 0, 39, 536870917, 0, 40, 536870912, 0, 65536, 1, 0, 65537, 7, 0, 65538, 7, 0, 65539, 6, 0, 65540, 17, 0, 65541, 5, 0, 65542, 536870966, 0, 65543, 6, 0, 65544, 20, 0, 65545, 6, 0, 65546, 536870913, 0, 65548, 1, 0, 65556, 25, 0, 65557, 536870936, 0, 65558, 536870967, 0, 65559, 536870929, 0, 65560, 536870920, 0, 65561, 536870926, 0, 65562, 536870920, 0, 65563, 536870926, 0, 65564, 536870920, 0, 65565, 536870928, 0, 65566, 536870912, 0, 65567, 0, 0, 65568, 5, 0, 65569, 5, 0, 65570, 536870929, 0, 65571, 536870918, 0, 65572, 536870926, 0, 65573, 536870918, 0, 65574, 536870926, 0, 65575, 536870918, 0, 65576, 536870928, 0, 65577, 536870917, 0, 65578, 536870917, 0, 65579, 55, 0, 65580, 5, 0, 65581, 5, 0, 65582, 5, 0, 65583, 5, 0, 65584, 5, 0, 65585, 536870912, 0, 131072, 1, 0, 131073, 7, 0, 131074, 536870962, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 536870934, 0, 131079, 6, 0, 131080, 536870934, 0, 131081, 6, 0, 131082, 536870928, 0, 131083, 536870917, 0, 131084, 16, 0, 131088, 536870918, 0, 131092, 536870918, 0, 131093, 536870918, 0, 131094, 536870926, 0, 131102, 17, 0, 131103, 536870929, 0, 131113, 536870918, 0, 131114, 536870918, 0, 131115, 22, 0, 131116, 6, 0, 131117, 6, 0, 131119, 6, 0, 131120, 6, 0, 131121, 536870913, 0, 196608, 1, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 20, 0, 196613, 6, 0, 196614, 14, 0, 196615, 6, 0, 196616, 536870934, 0, 196617, 536870918, 0, 196618, 536870918, 0, 196619, 536870918, 0, 196620, 536870918, 0, 196621, 536870918, 0, 196628, 20, 0, 196629, 536870918, 0, 196630, 536870918, 0, 196631, 536870918, 0, 196632, 536870918, 0, 196633, 536870918, 0, 196634, 536870918, 0, 196635, 536870918, 0, 196636, 536870918, 0, 196637, 536870918, 0, 196638, 536870918, 0, 196639, 6, 0, 196640, 6, 0, 196641, 6, 0, 196649, 6, 0, 196650, 6, 0, 196651, 22, 0, 196652, 6, 0, 196653, 6, 0, 196655, 6, 0, 196656, 6, 0, 196657, 536870913, 0, 262144, 2, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 51, 0, 262149, 6, 0, 262150, 6, 0, 262151, 6, 0, 262152, 536870963, 0, 262153, 3, 0, 262154, 536870915, 0, 262155, 536870915, 0, 262156, 18, 0, 262157, 536870918, 0, 262158, 536870918, 0, 262162, 536870918, 0, 262164, 536870963, 0, 262165, 536870915, 0, 262166, 18, 0, 262174, 536870930, 0, 262175, 18, 0, 262185, 6, 0, 262186, 6, 0, 262187, 22, 0, 262188, 6, 0, 262189, 6, 0, 262191, 6, 0, 262192, 6, 0, 262193, 536870913, 0, 327684, 2, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 536870914, 0, 327692, 1, 0, 327700, 17, 0, 327701, 536870912, 0, 327702, 2, 0, 327703, 18, 0, 327704, 536870920, 0, 327705, 536870932, 0, 327706, 536870920, 0, 327707, 536870932, 0, 327708, 536870920, 0, 327709, 536870930, 0, 327710, 536870914, 0, 327711, 1, 0, 327712, 6, 0, 327713, 6, 0, 327721, 6, 0, 327722, 6, 0, 327723, 22, 0, 327724, 6, 0, 327725, 6, 0, 327727, 6, 0, 327728, 6, 0, 327729, 536870913, 0, 393228, 1, 0, 393229, 536870918, 0, 393233, 536870918, 0, 393236, 6, 0, 393237, 536870913, 0, 393239, 2, 0, 393240, 536870915, 0, 393241, 536870964, 0, 393242, 536870915, 0, 393243, 536870964, 0, 393244, 536870915, 0, 393245, 536870914, 0, 393247, 1, 0, 393248, 6, 0, 393249, 6, 0, 393259, 22, 0, 393260, 6, 0, 393261, 536870930, 0, 393262, 536870915, 0, 393263, 536870915, 0, 393264, 536870915, 0, 458764, 2, 0, 458765, 536870915, 0, 458766, 536870915, 0, 458767, 536870915, 0, 458768, 536870915, 0, 458769, 536870915, 0, 458770, 536870915, 0, 458771, 536870915, 0, 458772, 3, 0, 458773, 536870914, 0, 458783, 1, 0, 458784, 6, 0, 458785, 6, 0, 458793, 6, 0, 458794, 6, 0, 458795, 15, 0, 458796, 6, 0, 458797, 536870913, 0, 524319, 1, 0, 524329, 6, 0, 524330, 6, 0, 524331, 6, 0, 524332, 6, 0, 524333, 536870913, 0, 589855, 2, 0, 589856, 3, 0, 589857, 3, 0, 589858, 18, 0, 589859, 536870920, 0, 589860, 536870932, 0, 589861, 536870920, 0, 589862, 536870932, 0, 589863, 536870920, 0, 589864, 536870930, 0, 589865, 536870915, 0, 589866, 536870915, 0, 589867, 3, 0, 589868, 3, 0, 589869, 536870914, 0, 655394, 2, 0, 655395, 536870915, 0, 655396, 52, 0, 655397, 536870915, 0, 655398, 52, 0, 655399, 536870915, 0, 655400, 536870914, 0 )
 
@@ -292,60 +295,75 @@ __meta__ = {
 }
 
 [node name="enviroment" parent="y_sort" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( -659, -449 )
 
 [node name="enviroment6" parent="y_sort" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 512, 0 )
 
 [node name="enviroment7" parent="y_sort" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 544, 0 )
 
 [node name="enviroment8" parent="y_sort" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 576, 0 )
 
 [node name="enviroment10" parent="y_sort" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 2848, 120 )
 
 [node name="enviroment11" parent="y_sort" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 2912, 120 )
 
 [node name="enviroment2" parent="y_sort" instance=ExtResource( 16 )]
+visible = false
 position = Vector2( -752, -448 )
 
 [node name="enviroment4" parent="y_sort" instance=ExtResource( 16 )]
+visible = false
 position = Vector2( 237, 64 )
 
 [node name="enviroment3" parent="y_sort" instance=ExtResource( 17 )]
+visible = false
 position = Vector2( -704, -448 )
 
 [node name="enviroment5" parent="y_sort" instance=ExtResource( 17 )]
+visible = false
 position = Vector2( 320, 105 )
 
 [node name="thunder_coil" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( -800, -448 )
 collision_mask = 27
 distance = 50
 turn_time_off = 0.0
 
 [node name="thunder_coil2" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 1568, 88 )
 collision_mask = 27
 distance = 300
 turn_time_off = 0.0
 
 [node name="thunder_coil3" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 1696, 88 )
 collision_mask = 27
 distance = 300
 turn_time_off = 0.0
 
 [node name="thunder_coil4" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 1824, 88 )
 collision_mask = 27
 distance = 300
 turn_time_off = 0.0
 
 [node name="thunder_coil5" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 2272, 96 )
 collision_mask = 27
 distance = 475
@@ -353,47 +371,59 @@ turn_time_on = 3.0
 turn_time_off = 2.0
 
 [node name="thunder_coil6" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 2400, 96 )
 collision_mask = 27
 distance = 475
 turn_time_off = 3.0
 
 [node name="thunder_coil7" parent="y_sort" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 2528, 96 )
 collision_mask = 27
 distance = 475
 turn_time_on = 2.0
 
 [node name="stand_coil" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 1568, 342 )
 
 [node name="stand_coil7" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 1376, 27 )
 
 [node name="stand_coil2" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 1696, 342 )
 
 [node name="stand_coil3" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 1824, 342 )
 
 [node name="stand_coil4" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 2272, 598 )
 
 [node name="stand_coil5" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 2400, 598 )
 
 [node name="stand_coil6" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 2528, 598 )
 
 [node name="thunder_coil_h" parent="y_sort" instance=ExtResource( 22 )]
+visible = false
 position = Vector2( 867, 13 )
 distance = 1000
 turn_time_off = 0.0
 
 [node name="stand_coil8" parent="y_sort" instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 1312, 424 )
 
 [node name="thunder_coil_h2" parent="y_sort" instance=ExtResource( 22 )]
+visible = false
 position = Vector2( 867, 408 )
 distance = 1000
 turn_time_off = 0.0
@@ -401,6 +431,7 @@ turn_time_off = 0.0
 [node name="hud" parent="." instance=ExtResource( 5 )]
 
 [node name="canvas_modulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.941176, 0.839216, 0.972549, 1 )
 __meta__ = {
 "_edit_lock_": true

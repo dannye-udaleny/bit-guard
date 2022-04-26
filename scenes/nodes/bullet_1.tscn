@@ -11,13 +11,13 @@
 offsets = PoolRealArray( 0.210256, 0.702564 )
 colors = PoolColorArray( 1, 1, 1, 0.54902, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=2]
+[sub_resource type="GradientTexture" id=12]
 gradient = SubResource( 1 )
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 1 ), 0.0, -0.743182, 0, 0, Vector2( 0.357798, 0 ), 15.9446, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=13]
 curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=5]
@@ -28,8 +28,8 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = -200.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 12 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4, 2.5 )
@@ -38,13 +38,13 @@ extents = Vector2( 4, 2.5 )
 offsets = PoolRealArray( 0, 0.828452 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=12]
+[sub_resource type="GradientTexture" id=14]
 gradient = SubResource( 11 )
 
 [sub_resource type="Curve" id=8]
 _data = [ Vector2( 0, 0.728409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
+[sub_resource type="CurveTexture" id=15]
 curve = SubResource( 8 )
 
 [sub_resource type="ParticlesMaterial" id=7]
@@ -59,8 +59,8 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.5
 scale_random = 1.0
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 12 )
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 14 )
 
 [sub_resource type="AnimatedTexture" id=10]
 frames = 2
@@ -88,7 +88,6 @@ texture = ExtResource( 3 )
 texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -0.5 )
 shape = SubResource( 6 )
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/player/guns/gun_1/gun_1_idle.png" type="Texture" id=1]
+[ext_resource path="res://new/scripts/weapons/mk_bit.gd" type="Script" id=2]
+[ext_resource path="res://new/scenes/projectiles/mk_bit_bullet.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="mk_bit" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "idle"
+offset = Vector2( 3, -5 )
+script = ExtResource( 2 )
+projectile_scene = ExtResource( 3 )
+bullet_speed = 400.0
+
+[node name="tip" type="Position2D" parent="."]
+position = Vector2( 18, -2 )
+__meta__ = {
+"_gizmo_extents_": 1.0
+}
+
+[node name="shoot_cooldown" type="Timer" parent="."]
+wait_time = 0.12
+
+[connection signal="timeout" from="shoot_cooldown" to="." method="shoot"]
