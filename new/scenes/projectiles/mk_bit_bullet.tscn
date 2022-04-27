@@ -42,7 +42,7 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 gradient = SubResource( 16 )
 
 [sub_resource type="Curve" id=17]
-_data = [ Vector2( 0, 0.728409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.963636 ), 0.0, 0.0, 0, 0, Vector2( 0.408284, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=9]
 curve = SubResource( 17 )
@@ -57,7 +57,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 60.42
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.5
+scale = 1.5
 scale_random = 1.0
 scale_curve = SubResource( 9 )
 color_ramp = SubResource( 12 )
@@ -98,5 +98,3 @@ speed_scale = 0.3
 local_coords = false
 process_material = SubResource( 18 )
 texture = SubResource( 19 )
-
-[connection signal="screen_exited" from="culling" to="." method="screen_exited"]

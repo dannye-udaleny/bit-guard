@@ -108,7 +108,7 @@ __meta__ = {
 }
 
 [node name="body_light" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 3, 3.5, 1 )
+modulate = Color( 2, 4, 4.5, 1 )
 light_mask = 0
 frames = SubResource( 3 )
 animation = "idle"

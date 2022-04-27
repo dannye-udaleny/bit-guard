@@ -9,18 +9,26 @@ func mouse_pressed() -> void:
 
 func mouse_released() -> void:
 	$shoot_cooldown.stop()
+	play("idle")
 
 
 func set_flipped(flipped: bool) -> void:
 	flip_v = flipped
-	offset.y = 5 if flipped else -5
-	$tip.position.y = 2 if flipped else -2
+	offset.y = 3 if flipped else -3
+	$tip.position.y = 1.5 if flipped else -1.5
 
 
 func shoot() -> void:
+	play("shoot")
 	var bullet: Projectile = projectile_scene.instance()
 	$"/root".add_child(bullet)
 	bullet.global_position = $tip.global_position
 	bullet.rotation = get_parent().rotation
 	bullet.direction = bullet.direction.rotated(bullet.rotation)
 	bullet.launch(global_position.direction_to(get_global_mouse_position()), bullet_speed)
+
+
+
+#func _on_mk_bit_animation_finished():
+#	if animation == "shoot":
+#		play("idle")

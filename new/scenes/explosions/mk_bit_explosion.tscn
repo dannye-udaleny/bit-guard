@@ -18,6 +18,8 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.99836, 0.0, 0, 0 
 curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 10, 1 )
 flag_disable_z = true
 direction = Vector3( -1, 0, 0 )
 spread = 65.0
@@ -30,7 +32,7 @@ linear_accel = 60.0
 linear_accel_random = 1.0
 angle = 248.0
 angle_random = 1.0
-scale = 1.5
+scale = 2.5
 scale_random = 1.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
@@ -45,7 +47,7 @@ frame_1/delay_sec = 0.0
 [node name="mk_bit_explosion" type="Particles2D"]
 modulate = Color( 0.298039, 0.917647, 0.466667, 1 )
 emitting = false
-amount = 10
+amount = 5
 lifetime = 0.4
 one_shot = true
 explosiveness = 1.0
