@@ -19,6 +19,9 @@ func _ready() -> void:
 	$body_sprite.play("idle")
 	$body_light.play("idle")
 
+#func _process(_delta : float) -> void:
+#	set_current_animation()
+#	pass
 
 func _physics_process(_delta: float) -> void:
 	var target := input_handler.get_move_direction() * walk_speed
@@ -45,3 +48,15 @@ func set_walking(walking: bool) -> void:
 	else:
 		$body_sprite.play("idle")
 		$body_light.play("idle")
+
+
+#func set_current_animation() -> void:
+#	var animation_vector = input_handler.get_move_direction()
+#	if _is_walking:
+#		var flip = $body_sprite.flip_h == (velocity.x > 0)
+#		$body_sprite.play("run", flip)
+#		$body_light.play("run", flip)
+#	else:
+#		$body_sprite.play("idle")
+#		$body_light.play("idle")
+#
