@@ -32,7 +32,7 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "shoot",
-"speed": 5.0
+"speed": 60.0
 } ]
 
 [node name="mk_comma" type="AnimatedSprite"]
@@ -50,5 +50,6 @@ randomness = 0.1
 position = Vector2( 14, -1.5 )
 
 [node name="shoot_cooldown" type="Timer" parent="."]
+wait_time = 0.06
 
 [connection signal="timeout" from="shoot_cooldown" to="." method="shoot"]

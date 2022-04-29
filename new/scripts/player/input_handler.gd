@@ -36,6 +36,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		emit_signal("weapon_changed", -1)
 	if event.is_action_pressed("-"):
 		emit_signal("weapon_changed", -2)
+	for i in range(1, 10):
+		if (event.is_action_pressed("button_" + str(i))):
+			emit_signal("weapon_changed", i - 1)
 
 
 func get_move_direction() -> Vector2:
