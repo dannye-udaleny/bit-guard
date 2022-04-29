@@ -55,6 +55,7 @@ __meta__ = {
 
 [node name="shoot_cooldown" type="Timer" parent="."]
 wait_time = 0.24
+one_shot = true
 
 [connection signal="animation_finished" from="." to="." method="_on_mk_bit_animation_finished"]
 [connection signal="timeout" from="shoot_cooldown" to="." method="shoot"]
