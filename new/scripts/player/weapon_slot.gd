@@ -3,6 +3,7 @@ extends Node2D
 # На всех оружиях в корне должен быть скрипт,
 # который расширяет класс Weapon!!!
 export (Array, PackedScene) var weapons: Array
+#var ammo := [-1] * weapons.size()
 
 var current_index := 0
 
@@ -12,6 +13,7 @@ onready var weapon: Weapon = weapons[0].instance() \
 
 func _ready() -> void:
 	add_child(weapon)
+	
 
 
 func _process(_delta: float) -> void:

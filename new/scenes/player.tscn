@@ -125,6 +125,8 @@ position = Vector2( -4, 4 )
 script = ExtResource( 16 )
 weapons = [ ExtResource( 30 ), ExtResource( 17 ) ]
 
+[connection signal="area_entered" from="legs" to="." method="_on_legs_area_entered"]
+[connection signal="area_exited" from="legs" to="." method="_on_legs_area_exited"]
 [connection signal="mouse_came_left" from="input_handler" to="." method="set_flipped" binds= [ true ]]
 [connection signal="mouse_came_left" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ true ]]
 [connection signal="mouse_came_right" from="input_handler" to="." method="set_flipped" binds= [ false ]]
