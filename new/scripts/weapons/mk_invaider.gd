@@ -1,6 +1,8 @@
 extends Weapon
 
 export var bullet_speed: float
+export var randomness: float
+
 
 func mouse_pressed() -> void:
 	if $shoot_cooldown.is_stopped():
@@ -22,12 +24,13 @@ func shoot() -> void:
 	if not Input.is_action_pressed("shoot"):
 		return
 	play("shoot")
-	var bullet: Projectile = projectile_scene.instance()
-	$"/root".add_child(bullet)
-	bullet.global_position = $tip.global_position
-#	bullet.rotation = get_parent().rotation
-	bullet.direction = bullet.direction.rotated(bullet.rotation)
-	bullet.launch(global_position.direction_to(get_global_mouse_position()), bullet_speed)
+	for i in range(-2,3):
+		var angle = i * PI / 24
+		var bullet_1: Projectile = projectile_scene.instance()
+		$"/root".add_child(bullet_1)
+		bullet_1.global_position = $tip.global_position
+#		bullet_1.rotation = get_parent().rotation
+		bullet_1.launch((global_position.direction_to(get_global_mouse_position())).rotated(angle), bullet_speed)
 	$shoot_cooldown.start()
 	emit_signal("shot")
 	

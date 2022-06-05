@@ -42,7 +42,7 @@ playing = true
 offset = Vector2( 2, -5 )
 script = ExtResource( 9 )
 projectile_scene = ExtResource( 1 )
-max_bullets_number = 30
+max_bullets = 60
 bullet_speed = 400.0
 randomness = 0.1
 

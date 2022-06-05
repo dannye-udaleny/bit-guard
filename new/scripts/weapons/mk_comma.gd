@@ -26,8 +26,9 @@ func shoot() -> void:
 	var bullet: Projectile = projectile_scene.instance()
 	$"/root".add_child(bullet)
 	bullet.global_position = $tip.global_position
-	bullet.rotation = get_parent().rotation
+#	bullet.rotation = get_parent().rotation
 	bullet.launch(global_position.direction_to(get_global_mouse_position()).rotated((randf() - 0.5) * randomness), bullet_speed)
 	$shoot_cooldown.start()
+	emit_signal("shot")
 	
 	

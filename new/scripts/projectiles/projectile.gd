@@ -8,8 +8,8 @@ var direction := Vector2()
 
 
 func launch(dir: Vector2, speed: float) -> void:
-	look_at(global_position + direction)
 	direction = dir
+	look_at(global_position + direction)
 	move_speed = speed
 
 

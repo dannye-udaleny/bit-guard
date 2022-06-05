@@ -6,9 +6,9 @@ class_name Weapon
 
 export var rotation_offset: float                  # Отступ вращения (deg)
 export var projectile_scene: PackedScene           # Снаряд оружия
-export var max_bullets_number: int                 # Максимальное кол-во патронов в обойме
+export var max_bullets: int                        # Максимальное кол-во патронов в обойме
 
-var bullets_clip: int
+signal shot
 
 
 func mouse_pressed() -> void:
