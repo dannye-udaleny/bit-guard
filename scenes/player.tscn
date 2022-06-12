@@ -1,0 +1,137 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://scripts/player/weapon_slot.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player/input_handler.gd" type="Script" id=2]
+[ext_resource path="res://scripts/player/player.gd" type="Script" id=3]
+[ext_resource path="res://sprites/player/idle/body/body_idle3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/player/idle/body/body_idle1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/player/idle/body/body_idle2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/player/run/body/body_run9.png" type="Texture" id=7]
+[ext_resource path="res://sprites/player/run/body/body_run4.png" type="Texture" id=8]
+[ext_resource path="res://sprites/player/run/body/body_run8.png" type="Texture" id=9]
+[ext_resource path="res://sprites/player/run/body/body_run6.png" type="Texture" id=10]
+[ext_resource path="res://sprites/player/run/body/body_run5.png" type="Texture" id=11]
+[ext_resource path="res://sprites/player/run/body/body_run7.png" type="Texture" id=12]
+[ext_resource path="res://sprites/player/run/body/body_run1.png" type="Texture" id=13]
+[ext_resource path="res://sprites/player/run/body/body_run3.png" type="Texture" id=14]
+[ext_resource path="res://sprites/player/run/body/body_run2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/player/idle/light/body_idle_light3.png" type="Texture" id=16]
+[ext_resource path="res://sprites/player/run/light/body_run_light6.png" type="Texture" id=17]
+[ext_resource path="res://scenes/weapons/mk_bit.tscn" type="PackedScene" id=18]
+[ext_resource path="res://sprites/player/idle/light/body_idle_light1.png" type="Texture" id=19]
+[ext_resource path="res://sprites/player/idle/light/body_idle_light2.png" type="Texture" id=20]
+[ext_resource path="res://sprites/player/run/light/body_run_light4.png" type="Texture" id=21]
+[ext_resource path="res://sprites/player/run/light/body_run_light3.png" type="Texture" id=22]
+[ext_resource path="res://sprites/player/run/light/body_run_light1.png" type="Texture" id=23]
+[ext_resource path="res://sprites/player/run/light/body_run_light8.png" type="Texture" id=24]
+[ext_resource path="res://sprites/player/run/light/body_run_light7.png" type="Texture" id=25]
+[ext_resource path="res://sprites/player/run/light/body_run_light5.png" type="Texture" id=26]
+[ext_resource path="res://sprites/player/run/light/body_run_light9.png" type="Texture" id=27]
+[ext_resource path="res://sprites/player/run/light/body_run_light2.png" type="Texture" id=28]
+[ext_resource path="res://scenes/weapons/mk_comma.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/weapons/mk_invader.tscn" type="PackedScene" id=30]
+[ext_resource path="res://sprites/player/shadow.png" type="Texture" id=31]
+
+[sub_resource type="CapsuleShape2D" id=4]
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id=5]
+height = 16.0
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+} ]
+
+[node name="player" type="KinematicBody2D"]
+collision_mask = 26
+script = ExtResource( 3 )
+walk_speed = 150.0
+acceleration = 0.3
+max_health = 100
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 11 )
+shape = SubResource( 4 )
+
+[node name="legs" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="shape" type="CollisionShape2D" parent="legs"]
+position = Vector2( 0, 21 )
+rotation = -1.5708
+shape = SubResource( 10 )
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="shape" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 0, 7 )
+shape = SubResource( 5 )
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( -0.5, 24 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body_sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body_light" type="AnimatedSprite" parent="."]
+modulate = Color( 2, 4, 4.5, 1 )
+light_mask = 0
+frames = SubResource( 3 )
+animation = "idle"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="input_handler" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="weapon_slot" type="Node2D" parent="."]
+position = Vector2( -4, 4 )
+script = ExtResource( 1 )
+weapons = [ ExtResource( 18 ), ExtResource( 29 ), ExtResource( 30 ) ]
+
+[connection signal="area_entered" from="legs" to="." method="_on_legs_area_entered"]
+[connection signal="area_exited" from="legs" to="." method="_on_legs_area_exited"]
+[connection signal="mouse_came_left" from="input_handler" to="." method="set_flipped" binds= [ true ]]
+[connection signal="mouse_came_left" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ true ]]
+[connection signal="mouse_came_right" from="input_handler" to="." method="set_flipped" binds= [ false ]]
+[connection signal="mouse_came_right" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ false ]]
+[connection signal="mouse_pressed" from="input_handler" to="weapon_slot" method="mouse_pressed"]
+[connection signal="mouse_released" from="input_handler" to="weapon_slot" method="mouse_released"]
+[connection signal="weapon_changed" from="input_handler" to="weapon_slot" method="set_weapon"]

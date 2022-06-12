@@ -12,32 +12,32 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Conveyor",
 "language": "GDScript",
-"path": "res://new/scripts/gimmicks/conveyor.gd"
+"path": "res://scripts/gimmicks/conveyor.gd"
 }, {
 "base": "Particles2D",
 "class": "Explosion",
 "language": "GDScript",
-"path": "res://new/scripts/explosions/explosion.gd"
+"path": "res://scripts/explosions/explosion.gd"
 }, {
 "base": "Node2D",
 "class": "InputHandler",
 "language": "GDScript",
-"path": "res://new/scripts/player/input_handler.gd"
+"path": "res://scripts/player/input_handler.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://new/scripts/player/player.gd"
+"path": "res://scripts/player/player.gd"
 }, {
 "base": "Area2D",
 "class": "Projectile",
 "language": "GDScript",
-"path": "res://new/scripts/projectiles/projectile.gd"
+"path": "res://scripts/projectiles/projectile.gd"
 }, {
 "base": "AnimatedSprite",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://new/scripts/weapons/weapon.gd"
+"path": "res://scripts/weapons/weapon.gd"
 } ]
 _global_script_class_icons={
 "Conveyor": "",
@@ -51,8 +51,8 @@ _global_script_class_icons={
 [application]
 
 config/name="bit-guard"
-run/main_scene="res://new/scenes/levels/tutorial.tscn"
-boot_splash/image="res://sprites/system/LOGO.png"
+run/main_scene="res://scenes/levels/tutorial.tscn"
+boot_splash/image="res://sprites/LOGO.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://sprites/system/icon.png"
