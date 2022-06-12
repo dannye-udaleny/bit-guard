@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://sprites/tiles/conveyor_belt_midl_v.png" type="Texture" id=1]
-[ext_resource path="res://sprites/tiles/conveyor_midl_v.png" type="Texture" id=2]
+[ext_resource path="res://new/sprites/tiles/conveyor_belt_midl_v.png" type="Texture" id=1]
+[ext_resource path="res://new/sprites/tiles/conveyor_mid_v.png" type="Texture" id=2]
 [ext_resource path="res://new/scripts/gimmicks/conveyor.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -33,9 +33,6 @@ material = SubResource( 3 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="belt_sprite" type="TextureRect" parent="."]
 margin_right = 64.0

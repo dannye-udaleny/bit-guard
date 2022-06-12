@@ -1,5 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
+[ext_resource path="res://new/sprites/effects/part_3.png" type="Texture" id=1]
+[ext_resource path="res://new/sprites/effects/part_4.png" type="Texture" id=2]
 [ext_resource path="res://new/scenes/projectiles/projectile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://new/scenes/explosions/mk_comma_explosion.tscn" type="PackedScene" id=6]
 
@@ -64,17 +66,11 @@ scale_random = 1.0
 scale_curve = SubResource( 9 )
 color_ramp = SubResource( 12 )
 
-[sub_resource type="StreamTexture" id=23]
-load_path = "res://.import/part_3.png-dab1e81951b3491782347589bf7a2267.stex"
-
-[sub_resource type="StreamTexture" id=24]
-load_path = "res://.import/part_4.png-1fae364f1a008817e5a7fd6e6f5b2957.stex"
-
 [sub_resource type="AnimatedTexture" id=25]
 frames = 2
 fps = 6.0
-frame_0/texture = SubResource( 23 )
-frame_1/texture = SubResource( 24 )
+frame_0/texture = ExtResource( 1 )
+frame_1/texture = ExtResource( 2 )
 frame_1/delay_sec = 0.0
 
 [node name="projectile" instance=ExtResource( 5 )]
