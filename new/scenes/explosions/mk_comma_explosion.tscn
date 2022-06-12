@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sprites/effects_and_particles/part_2.png" type="Texture" id=1]
+[ext_resource path="res://new/sprites/effects/part_3.png" type="Texture" id=2]
+[ext_resource path="res://new/scripts/explosions/explosion.gd" type="Script" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.548718, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.99836, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 10, 1 )
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+spread = 65.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 0.6
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 60.0
+linear_accel_random = 1.0
+angle = 248.0
+angle_random = 1.0
+scale = 2.5
+scale_random = 1.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="AnimatedTexture" id=6]
+frames = 2
+fps = 6.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 1 )
+frame_1/delay_sec = 0.0
+
+[node name="mk_bit_explosion" type="Particles2D"]
+modulate = Color( 0.94902, 0.282353, 1, 1 )
+scale = Vector2( 1.01918, 1.04219 )
+emitting = false
+amount = 5
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 5 )
+texture = SubResource( 6 )
+script = ExtResource( 3 )

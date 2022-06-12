@@ -8,28 +8,63 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Conveyor",
+"language": "GDScript",
+"path": "res://new/scripts/gimmicks/conveyor.gd"
+}, {
+"base": "Particles2D",
+"class": "Explosion",
+"language": "GDScript",
+"path": "res://new/scripts/explosions/explosion.gd"
+}, {
+"base": "Node2D",
+"class": "InputHandler",
+"language": "GDScript",
+"path": "res://new/scripts/player/input_handler.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://new/scripts/player/player.gd"
+}, {
+"base": "Area2D",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://new/scripts/projectiles/projectile.gd"
+}, {
+"base": "AnimatedSprite",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://new/scripts/weapons/weapon.gd"
+} ]
+_global_script_class_icons={
+"Conveyor": "",
+"Explosion": "",
+"InputHandler": "",
+"Player": "",
+"Projectile": "",
+"Weapon": ""
+}
+
 [application]
 
 config/name="bit-guard"
-run/main_scene="res://scenes/rooms/guild_lvl.tscn"
+run/main_scene="res://new/scenes/levels/tutorial.tscn"
 boot_splash/image="res://sprites/system/LOGO.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://sprites/system/icon.png"
 config/windows_native_icon="res://sprites/system/icon.ico"
 
-[autoload]
-
-InputHandler="*res://scripts/input_handler.gd"
-
 [display]
 
 window/size/width=640
 window/size/height=360
-window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
-window/stretch/mode="2d"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
 [global]
@@ -83,7 +118,7 @@ up={
  ]
 }
 down={
-"deadzone": 0.51,
+"deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
  ]
@@ -150,16 +185,43 @@ change_effect={
 +={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":125,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 -={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":123,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 pause={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
+button_5={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":53,"unicode":0,"echo":false,"script":null)
+ ]
+}
+button_6={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":54,"unicode":0,"echo":false,"script":null)
+ ]
+}
+button_7={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":55,"unicode":0,"echo":false,"script":null)
+ ]
+}
+button_8={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":56,"unicode":0,"echo":false,"script":null)
+ ]
+}
+button_9={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":57,"unicode":0,"echo":false,"script":null)
  ]
 }
 
@@ -170,13 +232,12 @@ pause={
 2d_render/layer_3="bullets"
 2d_render/layer_4="enemys"
 2d_render/layer_5="traps"
-2d_physics/layer_1="walls"
-2d_physics/layer_2="player"
-2d_physics/layer_3="bullets"
-2d_physics/layer_4="enemys"
+2d_render/layer_6="platforms"
+2d_physics/layer_1="player"
+2d_physics/layer_2="walls"
+2d_physics/layer_3="projectiles"
+2d_physics/layer_4="enemies"
 2d_physics/layer_5="traps"
-2d_physics/layer_6="mooving_env"
-2d_physics/layer_7="holes"
 
 [node]
 
