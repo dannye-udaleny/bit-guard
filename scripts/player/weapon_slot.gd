@@ -12,8 +12,6 @@ onready var weapon: Weapon = null
 
 
 func _ready() -> void:
-	add_child(weapon)
-	
 	bullet_count.resize(weapons.size())
 	for i in range(weapons.size()):
 		bullet_count[i] = -1

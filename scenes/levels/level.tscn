@@ -1644,7 +1644,7 @@ current = true
 smoothing_enabled = false
 target_path = NodePath("../y_sort/player")
 offset_power = 0.3
-weight = 0.15
+weight = 0.25
 
 [node name="world_environment" type="WorldEnvironment" parent="."]
 environment = SubResource( 96 )

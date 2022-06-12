@@ -7,19 +7,21 @@ export var dash_speed: float                       # Скорость движе
 export var dash_duration: float                    # Длительность рывка (s)
 export var dash_cooldown: float                    # Длительность перезарядки рывка (s)
 export var max_health: int                         # Максимальное здоровье игрока (hp)
-
-# Потому что вызовы к get_node дороговаты
-onready var input_handler: InputHandler = $input_handler
+export var knockback: float                        # На сколько игрок отталкивается при уроне (px)
 
 var _is_walking := false
 var velocity := Vector2()
-
 var conveyors := []
+
+onready var health := max_health
+# Потому что вызовы к get_node дороговаты
+onready var input_handler: InputHandler = $input_handler
 
 
 func _ready() -> void:
 	$body_sprite.play("idle")
 	$body_light.play("idle")
+
 
 func _physics_process(_delta: float) -> void:
 	var target := input_handler.get_move_direction() * walk_speed
@@ -50,13 +52,15 @@ func set_walking(walking: bool) -> void:
 		$body_light.play("idle")
 
 
-
-func _on_legs_area_entered(area):
+func _on_legs_area_entered(area: Area2D):
 	if area is Conveyor:
 		conveyors.append(area)
+	elif area.collision_layer & 16 != 0:
+		# надо получить урон, но хз как здесь вытащить нормаль
+		pass
 
 
-func _on_legs_area_exited(area):
+func _on_legs_area_exited(area: Area2D):
 	if area is Conveyor:
 		conveyors.erase(area)
 
@@ -66,3 +70,8 @@ func get_conveyor_speed():
 	for conveyor in conveyors:
 		sum += (Vector2.RIGHT * conveyor.speed).rotated(conveyor.rotation)
 	return sum / conveyors.size()
+
+
+func take_damage(amount: int, normal: Vector2):
+	health -= amount
+	velocity = normal * -knockback

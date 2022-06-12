@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/gimmicks/conveyor.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/enemies/enemy.gd"
+}, {
 "base": "Particles2D",
 "class": "Explosion",
 "language": "GDScript",
@@ -41,6 +46,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Conveyor": "",
+"Enemy": "",
 "Explosion": "",
 "InputHandler": "",
 "Player": "",
@@ -246,6 +252,7 @@ name_casing=2
 [physics]
 
 common/enable_pause_aware_picking=true
+common/enable_object_picking=false
 
 [rendering]
 
