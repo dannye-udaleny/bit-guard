@@ -53,11 +53,11 @@ func set_walking(walking: bool) -> void:
 
 
 func _on_legs_area_entered(area: Area2D):
+	print(area.collision_layer)
 	if area is Conveyor:
 		conveyors.append(area)
 	elif area.collision_layer & 16 != 0:
-		# надо получить урон, но хз как здесь вытащить нормаль
-		pass
+		take_damage(1, velocity.normalized())
 
 
 func _on_legs_area_exited(area: Area2D):
