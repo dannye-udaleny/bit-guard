@@ -73,6 +73,7 @@ collision_mask = 26
 script = ExtResource( 3 )
 walk_speed = 150.0
 acceleration = 0.3
+dash_speed = 1000.0
 max_health = 100
 
 [node name="body" type="CollisionShape2D" parent="."]
@@ -127,6 +128,7 @@ weapons = [ ExtResource( 18 ), ExtResource( 29 ), ExtResource( 30 ) ]
 
 [connection signal="area_entered" from="legs" to="." method="_on_legs_area_entered"]
 [connection signal="area_exited" from="legs" to="." method="_on_legs_area_exited"]
+[connection signal="dashed" from="input_handler" to="." method="dash"]
 [connection signal="mouse_came_left" from="input_handler" to="." method="set_flipped" binds= [ true ]]
 [connection signal="mouse_came_left" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ true ]]
 [connection signal="mouse_came_right" from="input_handler" to="." method="set_flipped" binds= [ false ]]
