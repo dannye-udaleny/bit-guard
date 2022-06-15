@@ -75,3 +75,8 @@ func get_conveyor_speed():
 func take_damage(amount: int, normal: Vector2):
 	health -= amount
 	velocity = normal * -knockback
+
+
+func dash():
+	velocity = velocity.normalized() * dash_speed
+	pass
