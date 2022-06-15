@@ -51,6 +51,7 @@ offset = Vector2( 2, -5 )
 script = ExtResource( 1 )
 projectile_scene = ExtResource( 9 )
 max_bullets = 5
+reload_cooldown = 3.0
 bullet_speed = 400.0
 randomness = 0.3
 

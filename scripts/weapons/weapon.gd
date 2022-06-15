@@ -7,6 +7,7 @@ class_name Weapon
 export var rotation_offset: float                  # Отступ вращения (deg)
 export var projectile_scene: PackedScene           # Снаряд оружия
 export var max_bullets: int                        # Максимальное кол-во патронов в обойме
+export var reload_cooldown: float                  # Время перезарядки (s)
 
 signal shot
 

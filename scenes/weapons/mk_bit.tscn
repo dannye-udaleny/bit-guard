@@ -45,6 +45,7 @@ offset = Vector2( 3, -3 )
 script = ExtResource( 2 )
 projectile_scene = ExtResource( 3 )
 max_bullets = 30
+reload_cooldown = 3.0
 bullet_speed = 400.0
 
 [node name="tip" type="Position2D" parent="."]

@@ -17,6 +17,9 @@ onready var health := max_health
 # Потому что вызовы к get_node дороговаты
 onready var input_handler: InputHandler = $input_handler
 
+signal health_changed(amount)
+signal ammo_changed(amount)
+
 
 func _ready() -> void:
 	$body_sprite.play("idle")
@@ -74,9 +77,14 @@ func get_conveyor_speed():
 
 func take_damage(amount: int, normal: Vector2):
 	health -= amount
+	emit_signal("health_changed", health)
 	velocity = normal * -knockback
 
 
 func dash():
 	velocity = velocity.normalized() * dash_speed
 	pass
+
+
+func _on_weapon_slot_ammo_changed(amount: float):
+	emit_signal("ammo_changed", amount)

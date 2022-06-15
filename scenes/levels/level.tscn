@@ -1,10 +1,11 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/focused_camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/tiles/tile_set.png" type="Texture" id=4]
 [ext_resource path="res://sprites/misc/back.png" type="Texture" id=5]
+[ext_resource path="res://scenes/menu/hud.tscn" type="PackedScene" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=48]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -1652,3 +1653,10 @@ environment = SubResource( 96 )
 [node name="y_sort" type="YSort" parent="."]
 
 [node name="player" parent="y_sort" instance=ExtResource( 3 )]
+
+[node name="canvas_layer" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="canvas_layer" instance=ExtResource( 6 )]
+
+[connection signal="ammo_changed" from="y_sort/player" to="canvas_layer/hud" method="set_ammo"]
+[connection signal="health_changed" from="y_sort/player" to="canvas_layer/hud" method="set_health"]
