@@ -73,6 +73,7 @@ frame_1/delay_sec = 0.0
 
 [node name="projectile" instance=ExtResource( 2 )]
 explosion_scene = ExtResource( 1 )
+contact_damage = 2
 
 [node name="shape" parent="." index="0"]
 position = Vector2( 0, -0.5 )
@@ -101,3 +102,5 @@ speed_scale = 0.3
 local_coords = false
 process_material = SubResource( 18 )
 texture = SubResource( 19 )
+
+[connection signal="screen_exited" from="culling" to="." method="screen_exited"]

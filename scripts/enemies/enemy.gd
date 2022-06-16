@@ -25,14 +25,14 @@ func stop_moving(target: Node2D):
 	pass
 
 
-func start_attacking():
+func start_attacking(target: Node2D):
 	if $attack_delay.time_left > 0:
 		return
 	$attack_delay.start()
 	attack()
 
 
-func stop_attacking():
+func stop_attacking(target: Node2D):
 	$attack_delay.stop()
 
 
@@ -43,3 +43,23 @@ func attack():
 func take_damage(amount: int, normal: Vector2):
 	health -= amount
 	velocity = normal * -knockback
+	if health <= 0:
+		die()
+
+
+func die():
+	stop_moving(target_body)
+	$hitbox.queue_free()
+	$sight_radius.queue_free()
+	$attack_radius.queue_free()
+	$attack_delay.queue_free()
+	$body_sprite.play("death")
+	yield($body_sprite, "animation_finished")
+	queue_free()
+
+
+func _on_hitbox_area_entered(area: Area2D):
+	print("hello")
+	if area is Projectile:
+		print("Hello????")
+		take_damage(area.contact_damage, position.direction_to(area.position))

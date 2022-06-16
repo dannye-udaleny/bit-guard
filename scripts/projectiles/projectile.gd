@@ -2,6 +2,7 @@ extends Area2D
 class_name Projectile
 
 export var explosion_scene: PackedScene
+export var contact_damage: int
 
 var move_speed := 0.0
 var direction := Vector2()

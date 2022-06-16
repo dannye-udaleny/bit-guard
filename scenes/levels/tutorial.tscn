@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/levels/level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gimmicks/conveyor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemies/morris.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -41,3 +42,6 @@ collision_layer = 16
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="trap" index="0"]
 shape = SubResource( 1 )
+
+[node name="enemy" parent="." index="10" instance=ExtResource( 3 )]
+position = Vector2( -24, 104 )
