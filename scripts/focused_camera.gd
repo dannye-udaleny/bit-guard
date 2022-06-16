@@ -8,6 +8,8 @@ onready var target := get_node(target_path) as Node2D
 
 
 func _process(_delta: float) -> void:
+	if target == null or not is_instance_valid(target):
+		return
 	var target_pos := target.global_position
 	if offset_power != 0:
 		target_pos += (get_global_mouse_position() - global_position) * offset_power

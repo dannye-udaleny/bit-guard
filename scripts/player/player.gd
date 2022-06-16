@@ -11,6 +11,7 @@ export var knockback: float                        # На сколько игр�
 
 var _is_walking := false
 var velocity := Vector2()
+var last_checkpoint := Vector2(-9999, -9999)
 var conveyors := []
 
 onready var health := max_health
@@ -19,9 +20,12 @@ onready var input_handler: InputHandler = $input_handler
 
 signal health_changed(amount)
 signal ammo_changed(amount)
+signal died
 
 
 func _ready() -> void:
+	if last_checkpoint == Vector2(-9999, -9999):
+		last_checkpoint = position
 	$body_sprite.play("idle")
 	$body_light.play("idle")
 
@@ -59,8 +63,10 @@ func _on_legs_area_entered(area: Area2D):
 	print(area.collision_layer)
 	if area is Conveyor:
 		conveyors.append(area)
-	elif area.collision_layer & 16 != 0:
+	elif area.collision_layer & 16 != 0: # ловушки
 		take_damage(1, velocity.normalized())
+	elif area.collision_layer & 32 != 0: # чекпоинты
+		last_checkpoint = area.position
 
 
 func _on_legs_area_exited(area: Area2D):
@@ -79,6 +85,17 @@ func take_damage(amount: int, normal: Vector2):
 	health -= amount
 	emit_signal("health_changed", health)
 	velocity = normal * -knockback
+	if health <= 0:
+		die()
+
+
+func die():
+	# сыграть анимацию смерти на месте игрока
+	var animation: DeathAnimation = load("res://scenes/player/death_animation.tscn").instance()
+	animation.last_checkpoint = last_checkpoint
+	get_parent().add_child(animation)
+	emit_signal("died")
+	queue_free()
 
 
 func dash():

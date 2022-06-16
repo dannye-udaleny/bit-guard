@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/focused_camera.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/tiles/tile_set.png" type="Texture" id=4]
 [ext_resource path="res://sprites/misc/back.png" type="Texture" id=5]
 [ext_resource path="res://scenes/menu/hud.tscn" type="PackedScene" id=6]
