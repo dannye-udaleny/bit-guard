@@ -62,4 +62,6 @@ __meta__ = {
 wait_time = 0.24
 one_shot = true
 
+[node name="audio_stream_player_2d" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="timeout" from="shoot_cooldown" to="." method="shoot"]
