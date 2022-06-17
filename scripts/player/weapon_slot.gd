@@ -67,6 +67,8 @@ func mouse_released() -> void:
 func _on_weapon_shot() -> void:
 	bullet_count[current_index] -= 1
 	update_hud()
+	$audio.stream = weapon.shoot_sound
+	$audio.play()
 	if bullet_count[current_index] <= 0:
 		reload()
 		
@@ -76,6 +78,8 @@ func update_hud():
 	
 func reload() -> void:
 	weapon.start_reload()
+	$audio.stream = weapon.reload_sound
+	$audio.play()
 	weapon.get_node("shoot_cooldown").stop()
 	#weapon.mouse_released()
 	can_shoot = false

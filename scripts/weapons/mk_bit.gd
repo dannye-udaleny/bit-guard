@@ -30,9 +30,9 @@ func shoot() -> void:
 	bullet.launch(global_position.direction_to(get_global_mouse_position()), bullet_speed)
 	$shoot_cooldown.start()
 	emit_signal("shot")
-	
+
 func start_reload() -> void:
 	play("reload")
-	
+
 func end_reload() -> void:
 	play("idle")

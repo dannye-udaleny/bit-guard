@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/weapons/mk_invaider.gd" type="Script" id=1]
 [ext_resource path="res://sprites/weapons/mk_invader/reload/rload_16.png" type="Texture" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://sprites/weapons/mk_invader/reload/rload_13.png" type="Texture" id=21]
 [ext_resource path="res://sprites/weapons/mk_invader/reload/rload_14.png" type="Texture" id=22]
 [ext_resource path="res://sprites/weapons/mk_invader/reload/rload_15.png" type="Texture" id=23]
+[ext_resource path="res://sounds/Дробаш.wav" type="AudioStream" id=24]
+[ext_resource path="res://sounds/Перезарядка.wav" type="AudioStream" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -49,6 +51,8 @@ animation = "idle"
 playing = true
 offset = Vector2( 2, -5 )
 script = ExtResource( 1 )
+shoot_sound = ExtResource( 24 )
+reload_sound = ExtResource( 25 )
 projectile_scene = ExtResource( 9 )
 max_bullets = 5
 reload_cooldown = 3.0

@@ -4,6 +4,8 @@
 extends AnimatedSprite
 class_name Weapon
 
+export var shoot_sound: AudioStream
+export var reload_sound: AudioStream
 export var rotation_offset: float                  # Отступ вращения (deg)
 export var projectile_scene: PackedScene           # Снаряд оружия
 export var max_bullets: int                        # Максимальное кол-во патронов в обойме
