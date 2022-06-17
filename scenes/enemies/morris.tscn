@@ -65,6 +65,9 @@ position = Vector2( 0, 4 )
 rotation = -1.5708
 shape = SubResource( 5 )
 
+[node name="hitbox" parent="." index="1"]
+visible = false
+
 [node name="shape" parent="hitbox" index="0"]
 position = Vector2( 0, 1 )
 shape = SubResource( 4 )
@@ -73,6 +76,12 @@ shape = SubResource( 4 )
 position = Vector2( 0, -10 )
 frames = SubResource( 3 )
 animation = "idle"
+
+[node name="sight_radius" parent="." index="3"]
+visible = false
+
+[node name="attack_radius" parent="." index="4"]
+visible = false
 
 [node name="shape" parent="attack_radius" index="0"]
 shape = SubResource( 2 )
