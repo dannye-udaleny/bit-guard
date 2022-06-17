@@ -6,6 +6,8 @@ export (float, 0, 1) var acceleration: float       # Вес линейной и�
 export var dash_speed: float                       # Скорость движения при рывке (px/s)
 export var dash_duration: float                    # Длительность рывка (s)
 export var dash_cooldown: float                    # Длительность перезарядки рывка (s)
+export var dash_count_max: float                   # Количество дэшей
+export var dash_reload_time: int                   # Перезарядка дэша
 export var max_health: int                         # Максимальное здоровье игрока (hp)
 export var knockback: float                        # На сколько игрок отталкивается при уроне (px)
 
@@ -15,6 +17,7 @@ var last_checkpoint := Vector2(-9999, -9999)
 var conveyors := []
 
 onready var health := max_health
+onready var dash_count := dash_count_max
 # Потому что вызовы к get_node дороговаты
 onready var input_handler: InputHandler = $input_handler
 
@@ -100,9 +103,17 @@ func die():
 
 
 func dash():
-	velocity = velocity.normalized() * dash_speed
-	pass
+	if dash_count > 0 and input_handler.get_move_direction() != Vector2.ZERO:
+		velocity = velocity.normalized() * dash_speed
+		dash_count -= 1
+		$dash_reload.start(dash_reload_time)
 
 
 func _on_weapon_slot_ammo_changed(amount: float):
 	emit_signal("ammo_changed", amount)
+
+
+func reload_dash():
+	dash_count += 1
+	if dash_count < dash_count_max:
+		$dash_reload.start(dash_reload_time)
