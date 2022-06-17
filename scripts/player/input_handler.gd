@@ -12,7 +12,7 @@ signal weapon_changed(index)
 signal reload
 
 onready var viewport := get_viewport()
-onready var is_mouse_on_left := get_mouse_position().x < get_viewport_rect().size.x / 2.0
+onready var is_mouse_on_left := false
 
 
 func _process(_delta: float) -> void:
