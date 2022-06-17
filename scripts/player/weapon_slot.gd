@@ -6,7 +6,6 @@ export (Array, PackedScene) var weapons: Array
 
 var current_index := 0
 var bullet_count := []
-var can_shoot := true
 
 onready var weapon: Weapon = null
 
@@ -55,33 +54,38 @@ func set_weapon(index: int) -> void:
 
 
 func mouse_pressed() -> void:
-	if can_shoot and weapon != null and bullet_count[current_index] > 0:
+	if weapon.can_shoot and weapon != null and bullet_count[current_index] > 0:
 		weapon.mouse_pressed()
 
 
 func mouse_released() -> void:
-	if can_shoot and weapon != null and bullet_count[current_index] > 0:
+	if weapon != null:
 		weapon.mouse_released()
 
 
 func _on_weapon_shot() -> void:
 	bullet_count[current_index] -= 1
 	update_hud()
+	$audio.stream = weapon.shoot_sound
+	$audio.play()
 	if bullet_count[current_index] <= 0:
-		reload()
-		
+		mouse_released()
+		weapon.can_shoot = false
+
 
 func update_hud():
 	emit_signal("ammo_changed", bullet_count[current_index] * 1.0 / weapon.max_bullets)
-	
+
+
 func reload() -> void:
 	weapon.start_reload()
+	$audio.stream = weapon.reload_sound
+	$audio.play()
 	weapon.get_node("shoot_cooldown").stop()
-	#weapon.mouse_released()
-	can_shoot = false
+	weapon.can_shoot = false
 	yield(get_tree().create_timer(weapon.reload_cooldown), "timeout")
 	bullet_count[current_index] = weapon.max_bullets
 	update_hud()
-	can_shoot = true
+	weapon.can_shoot = true
 	weapon.end_reload()
 	

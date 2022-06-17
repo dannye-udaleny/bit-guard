@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/player/input_handler.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player/idle/light/body_idle_light3.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://sprites/player/idle/body/body_idle3.png" type="Texture" id=29]
 [ext_resource path="res://sprites/player/idle/body/body_idle1.png" type="Texture" id=30]
 [ext_resource path="res://sprites/player/run/light/body_run_light7.png" type="Texture" id=31]
+[ext_resource path="res://scenes/player/dash_effect.tscn" type="PackedScene" id=32]
 
 [sub_resource type="CapsuleShape2D" id=4]
 height = 6.0
@@ -73,9 +74,12 @@ collision_mask = 26
 script = ExtResource( 5 )
 walk_speed = 150.0
 acceleration = 0.3
-dash_speed = 1000.0
+dash_speed = 2000.0
+dash_duration = 1.0
 dash_count_max = 5.0
 dash_reload_time = 1
+dash_effect = ExtResource( 32 )
+max_dash_depth = 10
 max_health = 12
 
 [node name="body" type="CollisionShape2D" parent="."]
@@ -128,6 +132,8 @@ position = Vector2( -4, 4 )
 script = ExtResource( 6 )
 weapons = [ ExtResource( 12 ), ExtResource( 17 ), ExtResource( 27 ) ]
 
+[node name="audio" type="AudioStreamPlayer2D" parent="weapon_slot"]
+
 [node name="dash_reload" type="Timer" parent="."]
 
 [connection signal="area_entered" from="legs" to="." method="_on_legs_area_entered"]
@@ -139,6 +145,7 @@ weapons = [ ExtResource( 12 ), ExtResource( 17 ), ExtResource( 27 ) ]
 [connection signal="mouse_came_right" from="input_handler" to="weapon_slot" method="set_flipped" binds= [ false ]]
 [connection signal="mouse_pressed" from="input_handler" to="weapon_slot" method="mouse_pressed"]
 [connection signal="mouse_released" from="input_handler" to="weapon_slot" method="mouse_released"]
+[connection signal="reload" from="input_handler" to="weapon_slot" method="reload"]
 [connection signal="weapon_changed" from="input_handler" to="weapon_slot" method="set_weapon"]
 [connection signal="ammo_changed" from="weapon_slot" to="." method="_on_weapon_slot_ammo_changed"]
 [connection signal="timeout" from="dash_reload" to="." method="reload_dash"]

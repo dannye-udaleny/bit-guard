@@ -1,10 +1,9 @@
 extends Camera2D
 
-export var target_path: NodePath
 export (float, 0, 1) var offset_power: float
 export (float, 0, 1) var weight: float
 
-onready var target := get_node(target_path) as Node2D
+var target: Node2D = null
 
 
 func _process(_delta: float) -> void:
