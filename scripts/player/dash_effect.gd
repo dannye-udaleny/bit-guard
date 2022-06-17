@@ -1,17 +1,19 @@
 extends Sprite
 
-export var speed: int
 export var delay: float
 export var lifetime: float  
 
 var dash_effect = load("res://scenes/player/dash_effect.tscn")
 var current_depth: int
 var player: Player
+var shader_progress = 0.0
 
 func _ready() -> void:
 	$timer.start(delay)
 	$lifetimer.start(lifetime)
-	#print(current_depth)
+
+func _process(delta):
+	material.set_shader_param("progress", shader_progress)
 	
 func set_depth(depth: int) -> void:
 	current_depth = depth
@@ -27,8 +29,6 @@ func create_next_effect() -> void:
 	dash_effect_node.player = player
 	dash_effect_node.current_depth = current_depth - 1
 	get_parent().add_child(dash_effect_node)
-	
-
 
 func destroy():
 	#print(current_depth)

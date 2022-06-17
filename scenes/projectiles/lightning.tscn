@@ -67,7 +67,7 @@ texture_mode = 1
 [node name="sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 100 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 centered = false
 offset = Vector2( -24, -3.42 )

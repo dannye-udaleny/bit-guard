@@ -133,8 +133,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [  ],
-"loop": true,
-"name": "run",
+"loop": false,
+"name": "death",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -143,8 +143,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [  ],
-"loop": false,
-"name": "death",
+"loop": true,
+"name": "run",
 "speed": 5.0
 } ]
 

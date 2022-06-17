@@ -31,7 +31,7 @@ texture = ExtResource( 3 )
 
 [node name="light" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="visibility_enabler_2d" type="VisibilityEnabler2D" parent="."]

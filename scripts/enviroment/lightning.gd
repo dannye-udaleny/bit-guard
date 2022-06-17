@@ -1,10 +1,11 @@
 extends RayCast2D
 
-
 onready var line = $line_2d
 onready var end = $sprite
 
 export var max_distance = 1000;
+
+signal health_changed(amount)
 
 func _ready():
 	cast_to = Vector2(0,max_distance)
@@ -17,8 +18,9 @@ func _physics_process(delta):
 		if get_collider().get_parent().has_method("die"):
 			var entity = get_collider().get_parent()
 			entity.die()
-			
-			
+			if entity is Player:
+				emit_signal("health_changed", 0)
+
 	else:
 		line.points[1].y = max_distance
 		end.position.y = max_distance

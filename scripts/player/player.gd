@@ -138,3 +138,4 @@ func create_dash_effect() -> void:
 	dash_effect_node.player = self
 	dash_effect_node.current_depth = max_dash_depth
 	get_parent().add_child(dash_effect_node)
+	
