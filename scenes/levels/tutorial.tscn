@@ -3,8 +3,7 @@
 [ext_resource path="res://scenes/levels/level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gimmicks/conveyor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/enemies/morris.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
+[ext_resource path="res://scenes/enviroment/tesla_engine.tscn" type="PackedScene" id=4]
 
 [node name="level" instance=ExtResource( 1 )]
 position = Vector2( -2, 16 )
@@ -33,15 +32,15 @@ collision_layer = 32
 speed = 125.0
 
 [node name="player" parent="y_sort" index="0"]
-position = Vector2( 32, 16 )
+position = Vector2( 350, 10 )
 collision_mask = 58
 knockback = 500.0
 
+[node name="tesla_engine" parent="y_sort" index="1" instance=ExtResource( 4 )]
+position = Vector2( 487, -136 )
+
 [node name="trap" type="Area2D" parent="." index="8"]
 collision_layer = 16
-
-[node name="collision_shape_2d" type="CollisionShape2D" parent="trap" index="0"]
-shape = SubResource( 1 )
 
 [node name="enemy" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( -24, 104 )
