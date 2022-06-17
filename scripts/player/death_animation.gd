@@ -14,8 +14,7 @@ func _ready():
 	$tween.start()
 	yield($tween, "tween_completed")
 	emit_signal("animation_ended")
-#	queue_free()	
-	# как-то поставить нового игрока на сцену
+	queue_free()
 
 func _process(delta):
 	material.set_shader_param("progress", shader_progress)

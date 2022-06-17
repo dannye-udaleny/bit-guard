@@ -8,7 +8,6 @@ export var knockback: float          # На сколько враг отталк
 
 var velocity := Vector2()
 var target_body: Node2D = null
-var shader_progress = 0.0
 var is_walking := false
 
 
@@ -18,9 +17,6 @@ var is_walking := false
 # - attack: атаковать цель (игрока)
 # в start_moving надо будет задать target_body, в stop_moving сделать его null
 # также надо задать спрайты и формы тела и хитбокса
-
-func _process(delta):
-	$body_sprite.material.set_shader_param("progress", shader_progress)
 
 
 func start_moving(target: Node2D):
@@ -66,9 +62,7 @@ func die():
 	$attack_radius.queue_free()
 	$attack_delay.queue_free()
 	$body_sprite.play("death")
-#	$tween.interpolate_property($body_sprite, "shader_param/progress", 0.0, 1.0, 1.0)#, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#	$tween.start()
-	$tween.interpolate_property(self, "shader_progress", 0.0, 1.0, 1.0)
+	$tween.interpolate_property($body_sprite.material, "shader_param/progress", 0.0, 1.0, 1.0)
 	$tween.start()
 	yield($tween, "tween_completed")
 	queue_free()

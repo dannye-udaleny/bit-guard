@@ -21,7 +21,7 @@ func _unhandled_input(event):
 func _on_player_died():
 	last_checkpoint = player.last_checkpoint
 	yield(get_tree().create_timer(player_death_duration), "timeout")
-	create_player()
+	player = create_player()
 
 
 func create_player() -> Player:

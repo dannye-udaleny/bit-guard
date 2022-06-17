@@ -34,9 +34,15 @@ signal died
 func _ready() -> void:
 	if last_checkpoint == Vector2(-9999, -9999):
 		last_checkpoint = position
-	emit_signal("dash_number_changed", dash_count_max)
+	print("spawned")
+	call_deferred("_after_ready")
 	$body_sprite.play("idle")
 	$body_light.play("idle")
+
+func _after_ready() -> void:
+	emit_signal("dash_number_changed", dash_count_max)
+	emit_signal("health_changed", health)
+	emit_signal("ammo_changed", 1)
 
 
 func _physics_process(_delta: float) -> void:
