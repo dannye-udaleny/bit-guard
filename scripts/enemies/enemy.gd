@@ -9,6 +9,7 @@ export var knockback: float          # На сколько враг отталк
 var velocity := Vector2()
 var target_body: Node2D = null
 var shader_progress = 0.0
+var is_walking := false
 
 
 # Функции для переопределения:
@@ -21,6 +22,7 @@ var shader_progress = 0.0
 func _process(delta):
 	$body_sprite.material.set_shader_param("progress", shader_progress)
 
+
 func start_moving(target: Node2D):
 	pass
 
@@ -30,13 +32,19 @@ func stop_moving(target: Node2D):
 
 
 func start_attacking(target: Node2D):
-	if $attack_delay.time_left > 0:
+	if not target is Player or $attack_delay.time_left > 0:
 		return
+	if is_walking:
+		stop_moving(target)
 	$attack_delay.start()
 	attack()
 
 
 func stop_attacking(target: Node2D):
+	if not target is Player:
+		return
+	if not is_walking:
+		start_moving(target)
 	$attack_delay.stop()
 
 
@@ -69,7 +77,7 @@ func die():
 func _on_hitbox_area_entered(area: Area2D):
 	#print(area)
 	if area is Projectile:
-		take_damage(area.contact_damage, position.direction_to(area.position))
+		take_damage(area.contact_damage, global_position.direction_to(area.global_position))
 	if area.get_parent() is Player:
 		var player = area.get_parent()
-		player.take_damage(contact_damage, position - player.position)
+		player.take_damage(contact_damage, global_position.direction_to(player.global_position))

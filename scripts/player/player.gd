@@ -132,6 +132,7 @@ func reload_dash():
 	if dash_count < dash_count_max:
 		$dash_reload.start(dash_reload_time)
 
+
 func create_dash_effect() -> void:
 	var dash_effect_node = dash_effect.instance()
 	dash_effect_node.texture = $body_sprite.frames.get_frame($body_sprite.animation, $body_sprite.frame)

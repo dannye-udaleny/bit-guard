@@ -1624,6 +1624,8 @@ glow_high_quality = true
 [node name="level" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
+player_scene = ExtResource( 3 )
+player_death_duration = 2.0
 
 [node name="background" type="Sprite" parent="."]
 pause_mode = 1
@@ -1649,7 +1651,6 @@ format = 1
 pause_mode = 1
 current = true
 smoothing_enabled = false
-target_path = NodePath("../y_sort/player")
 offset_power = 0.3
 weight = 0.25
 
@@ -1660,8 +1661,6 @@ environment = SubResource( 96 )
 [node name="y_sort" type="YSort" parent="."]
 pause_mode = 1
 
-[node name="player" parent="y_sort" instance=ExtResource( 3 )]
-
 [node name="canvas_layer" type="CanvasLayer" parent="."]
 pause_mode = 2
 
@@ -1669,6 +1668,3 @@ pause_mode = 2
 
 [node name="codex" parent="canvas_layer" instance=ExtResource( 7 )]
 visible = false
-
-[connection signal="ammo_changed" from="y_sort/player" to="canvas_layer/hud" method="set_ammo"]
-[connection signal="health_changed" from="y_sort/player" to="canvas_layer/hud" method="set_health"]

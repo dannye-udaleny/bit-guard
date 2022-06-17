@@ -35,11 +35,6 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "attack",
@@ -49,17 +44,23 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
 resource_local_to_scene = true
+radius = 20.0
 
 [node name="enemy" instance=ExtResource( 1 )]
 script = ExtResource( 19 )
 health = 5
 contact_damage = 1
-walk_speed = 30
-knockback = 60.0
+walk_speed = 50
+knockback = 500.0
 
 [node name="body" parent="." index="0"]
 position = Vector2( 0, 4 )
@@ -78,12 +79,6 @@ material = ExtResource( 20 )
 position = Vector2( 0, -10 )
 frames = SubResource( 3 )
 animation = "idle"
-
-[node name="sight_radius" parent="." index="3"]
-visible = false
-
-[node name="attack_radius" parent="." index="4"]
-visible = false
 
 [node name="shape" parent="attack_radius" index="0"]
 shape = SubResource( 2 )

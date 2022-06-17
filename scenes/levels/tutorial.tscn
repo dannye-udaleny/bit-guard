@@ -113,20 +113,38 @@ rotation = 1.5708
 collision_layer = 32
 speed = 125.0
 
-[node name="player" parent="y_sort" index="0"]
-position = Vector2( 970, 104 )
-collision_mask = 58
-dash_speed = 2000.0
-dash_duration = 1.0
-knockback = 500.0
-
-[node name="tesla_engine" parent="y_sort" index="1" instance=ExtResource( 4 )]
+[node name="tesla_engine" parent="y_sort" index="0" instance=ExtResource( 4 )]
 position = Vector2( 482, 144 )
 
-[node name="tesla_engine2" parent="y_sort" index="2" instance=ExtResource( 4 )]
+[node name="tesla_engine2" parent="y_sort" index="1" instance=ExtResource( 4 )]
 position = Vector2( 930, 8 )
 
-[node name="enemy" parent="y_sort" index="3" instance=ExtResource( 3 )]
-position = Vector2( 430, -240 )
+[node name="enemy" parent="y_sort" index="2" instance=ExtResource( 3 )]
+position = Vector2( 132, 136 )
 
-[connection signal="dash_number_changed" from="y_sort/player" to="canvas_layer/hud" method="set_dash"]
+[node name="enemy2" parent="y_sort" index="3" instance=ExtResource( 3 )]
+position = Vector2( 100, 75 )
+
+[node name="enemy3" parent="y_sort" index="4" instance=ExtResource( 3 )]
+position = Vector2( 206, 138 )
+
+[node name="enemy4" parent="y_sort" index="5" instance=ExtResource( 3 )]
+position = Vector2( 218, 67 )
+
+[node name="enemy5" parent="y_sort" index="6" instance=ExtResource( 3 )]
+position = Vector2( 227, -29 )
+
+[node name="enemy6" parent="y_sort" index="7" instance=ExtResource( 3 )]
+position = Vector2( 246, -112 )
+
+[node name="enemy7" parent="y_sort" index="8" instance=ExtResource( 3 )]
+position = Vector2( 321, -119 )
+
+[node name="enemy8" parent="y_sort" index="9" instance=ExtResource( 3 )]
+position = Vector2( 359, -48 )
+
+[node name="enemy9" parent="y_sort" index="10" instance=ExtResource( 3 )]
+position = Vector2( 382, 17 )
+
+[node name="enemy10" parent="y_sort" index="11" instance=ExtResource( 3 )]
+position = Vector2( 478, 14 )
