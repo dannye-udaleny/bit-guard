@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/levels/level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gimmicks/conveyor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/enemies/morris.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/enviroment/tesla_engine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/enviroment/tesla_engine_down.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/enviroment/tesla_engine_right.tscn" type="PackedScene" id=5]
 
 [node name="level" instance=ExtResource( 1 )]
 position = Vector2( -2, 16 )
@@ -122,6 +123,11 @@ position = Vector2( 930, 8 )
 [node name="enemy" parent="y_sort" index="2" instance=ExtResource( 3 )]
 position = Vector2( 132, 136 )
 
+[node name="enemy" parent="." index="10" instance=ExtResource( 3 )]
+position = Vector2( -24, 104 )
+
+[node name="base_enviroment" parent="." index="11" instance=ExtResource( 5 )]
+position = Vector2( 222, 146 )
 [node name="enemy2" parent="y_sort" index="3" instance=ExtResource( 3 )]
 position = Vector2( 100, 75 )
 
