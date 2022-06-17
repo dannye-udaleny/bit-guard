@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_reactor/vertical/coil_light3.png" type="Texture" id=1]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_reactor/vertical/coil_light1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_reactor/vertical/coil.png" type="Texture" id=3]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_reactor/vertical/coil_light2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_reactor/vertical/coil_light4.png" type="Texture" id=5]
+[ext_resource path="res://scenes/projectiles/lightning.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 15.0
+height = 18.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="tesla_engine" type="StaticBody2D"]
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="light" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
+[node name="visibility_enabler_2d" type="VisibilityEnabler2D" parent="."]
+scale = Vector2( 4, 4 )
+
+[node name="lighting" parent="." instance=ExtResource( 6 )]
+show_behind_parent = true
+position = Vector2( 0, 18 )
