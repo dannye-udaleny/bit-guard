@@ -75,7 +75,7 @@ walk_speed = 150.0
 acceleration = 0.3
 dash_speed = 1000.0
 dash_count_max = 5.0
-dash_reload_time = 3
+dash_reload_time = 1
 max_health = 12
 
 [node name="body" type="CollisionShape2D" parent="."]

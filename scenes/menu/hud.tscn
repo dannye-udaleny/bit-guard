@@ -80,7 +80,7 @@ value = 1.0
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
 
-[node name="texture_rect" type="TextureRect" parent="."]
+[node name="dash_bar" type="TextureRect" parent="."]
 self_modulate = Color( 0.298039, 0.917647, 0.858824, 1 )
 margin_left = 16.0
 margin_top = 46.0

@@ -23,12 +23,14 @@ onready var input_handler: InputHandler = $input_handler
 
 signal health_changed(amount)
 signal ammo_changed(amount)
+signal dash_number_changed(amount)
 signal died
 
 
 func _ready() -> void:
 	if last_checkpoint == Vector2(-9999, -9999):
 		last_checkpoint = position
+	emit_signal("dash_number_changed", dash_count_max)
 	$body_sprite.play("idle")
 	$body_light.play("idle")
 
@@ -106,6 +108,7 @@ func dash():
 	if dash_count > 0 and input_handler.get_move_direction() != Vector2.ZERO:
 		velocity = velocity.normalized() * dash_speed
 		dash_count -= 1
+		emit_signal("dash_number_changed", dash_count)
 		$dash_reload.start(dash_reload_time)
 
 
@@ -115,5 +118,6 @@ func _on_weapon_slot_ammo_changed(amount: float):
 
 func reload_dash():
 	dash_count += 1
+	emit_signal("dash_number_changed", dash_count)
 	if dash_count < dash_count_max:
 		$dash_reload.start(dash_reload_time)
