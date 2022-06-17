@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "CodexEntry",
+"language": "GDScript",
+"path": "res://scripts/codex/codex_entry.gd"
+}, {
 "base": "Area2D",
 "class": "Conveyor",
 "language": "GDScript",
@@ -55,6 +60,7 @@ _global_script_classes=[ {
 "path": "res://scripts/weapons/weapon.gd"
 } ]
 _global_script_class_icons={
+"CodexEntry": "",
 "Conveyor": "",
 "DeathAnimation": "",
 "Enemy": "",
@@ -240,6 +246,11 @@ button_8={
 button_9={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":57,"unicode":0,"echo":false,"script":null)
+ ]
+}
+open_codex={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

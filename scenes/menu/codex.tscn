@@ -1,0 +1,132 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scripts/menu/codex.gd" type="Script" id=1]
+[ext_resource path="res://scripts/codex/codex_entry.gd" type="Script" id=2]
+[ext_resource path="res://sprites/enemies/morris/idle/frame_7.png" type="Texture" id=3]
+[ext_resource path="res://sprites/enemies/morris/idle/frame_11.png" type="Texture" id=4]
+[ext_resource path="res://sprites/enemies/morris/idle/frame_10.png" type="Texture" id=5]
+[ext_resource path="res://sprites/enemies/morris/idle/frame_9.png" type="Texture" id=6]
+[ext_resource path="res://sprites/enemies/morris/idle/frame_8.png" type="Texture" id=7]
+[ext_resource path="res://scenes/menu/codex_entry.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://sprites/hud/1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/hud/2.png" type="Texture" id=11]
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 5
+fps = 15.0
+frame_0/texture = ExtResource( 3 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 6 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 4 )
+frame_4/delay_sec = 0.0
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+name = "Morris"
+icon = SubResource( 2 )
+health = 5
+contact_damage = 1
+description = "a very cool creature"
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+name = "Not morris"
+icon = SubResource( 2 )
+health = 5
+contact_damage = 1
+description = "not a cool creature"
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 64, 64 )
+margin_left = 32.0
+margin_right = 32.0
+margin_top = 32.0
+margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 64, 64 )
+margin_left = 31.0
+margin_right = 31.0
+margin_top = 31.0
+margin_bottom = 31.0
+
+[node name="codex" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+entry_scene = ExtResource( 8 )
+entries = [ SubResource( 1 ), SubResource( 3 ) ]
+
+[node name="color_rect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.247059 )
+
+[node name="item_list" type="ItemList" parent="."]
+margin_left = 421.0
+margin_top = 19.0
+margin_right = 609.0
+margin_bottom = 321.0
+custom_fonts/font = ExtResource( 9 )
+custom_styles/selected_focus = SubResource( 5 )
+custom_styles/bg = SubResource( 4 )
+
+[node name="nine_patch_rect" type="NinePatchRect" parent="."]
+margin_left = 27.0
+margin_top = 19.0
+margin_right = 380.0
+margin_bottom = 319.0
+texture = ExtResource( 10 )
+patch_margin_left = 31
+patch_margin_top = 31
+patch_margin_right = 31
+patch_margin_bottom = 31
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="icon" type="TextureRect" parent="."]
+margin_left = 40.0
+margin_top = 35.0
+margin_right = 80.0
+margin_bottom = 75.0
+
+[node name="name" type="Label" parent="."]
+margin_left = 101.0
+margin_top = 24.0
+margin_right = 233.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 9 )
+text = "Select someone"
+
+[node name="description" type="Label" parent="."]
+margin_left = 102.0
+margin_top = 70.0
+margin_right = 142.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 9 )
+text = "description"
+
+[node name="health" type="Label" parent="."]
+margin_left = 101.0
+margin_top = 50.0
+margin_right = 141.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 9 )
+text = "h: 0"
+
+[node name="contact_damage" type="Label" parent="."]
+margin_left = 155.0
+margin_top = 49.0
+margin_right = 195.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 9 )
+text = "cd: 0"
+
+[connection signal="item_selected" from="item_list" to="." method="_on_item_list_item_selected"]

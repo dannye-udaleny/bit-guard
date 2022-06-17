@@ -16,6 +16,7 @@ export var knockback: float                        # На сколько игр�
 
 var _is_walking := false
 var velocity := Vector2()
+
 var last_checkpoint := Vector2(-9999, -9999)
 var conveyors := []
 
@@ -114,6 +115,9 @@ func dash():
 		emit_signal("dash_number_changed", dash_count)
 		$dash_reload.start(dash_reload_time)
 		create_dash_effect()
+		$hitbox/shape.disabled = true
+		yield (get_tree().create_timer(dash_duration),"timeout")
+		$hitbox/shape.disabled = false
 
 
 func _on_weapon_slot_ammo_changed(amount: float):
