@@ -14,34 +14,119 @@ position = Vector2( 248, 49 )
 scale = Vector2( 17, 11.375 )
 
 [node name="tile_map" parent="." index="1"]
+position = Vector2( -126, -16 )
 show_collision = false
-tile_data = PoolIntArray( -196604, 0, 0, -196603, 536870917, 0, -196602, 536870917, 0, -196601, 536870917, 0, -196600, 536870912, 0, -65538, 0, 0, -65537, 5, 0, -131072, 5, 0, -131071, 5, 0, -131070, 536870912, 0, -131068, 1, 0, -131067, 536870918, 0, -131066, 536870918, 0, -131065, 536870918, 0, -131064, 536870913, 0, -2, 1, 0, -1, 6, 0, -65536, 6, 0, -65535, 10, 0, -65534, 17, 0, -65533, 536870917, 0, -65532, 16, 0, -65531, 536870918, 0, -65529, 536870918, 0, -65528, 17, 0, 65534, 1, 0, 65535, 10, 0, 0, 8, 0, 1, 6, 0, 2, 536870918, 0, 3, 536870918, 0, 5, 536870918, 0, 7, 536870918, 0, 8, 536870918, 0, 9, 7, 0, 131070, 1, 0, 131071, 10, 0, 65536, 7, 0, 65537, 6, 0, 65538, 20, 0, 65539, 536870918, 0, 65541, 536870918, 0, 65542, 536870930, 0, 65543, 536870915, 0, 65544, 3, 0, 196606, 2, 0, 196607, 536870915, 0, 131072, 536870915, 0, 131073, 536870915, 0, 131074, 51, 0, 131075, 536870918, 0, 131076, 536870918, 0, 131077, 536870918, 0, 131078, 536870913, 0, 196610, 2, 0, 196611, 536870915, 0, 196612, 536870915, 0, 196613, 536870915, 0, 196614, 536870914, 0 )
+tile_data = PoolIntArray( -196604, 0, 0, -196603, 536870917, 0, -196602, 536870917, 0, -196601, 536870917, 0, -196600, 536870912, 0, -65538, 0, 0, -65537, 5, 0, -131072, 5, 0, -131071, 5, 0, -131070, 536870912, 0, -131068, 1, 0, -131067, 536870918, 0, -131066, 536870918, 0, -131065, 536870918, 0, -131064, 536870913, 0, -2, 1, 0, -1, 6, 0, -65536, 6, 0, -65535, 10, 0, -65534, 17, 0, -65533, 536870917, 0, -65532, 16, 0, -65531, 536870918, 0, -65529, 536870918, 0, -65528, 17, 0, 65534, 1, 0, 65535, 10, 0, 0, 8, 0, 1, 6, 0, 2, 536870918, 0, 3, 536870918, 0, 5, 536870918, 0, 7, 536870918, 0, 8, 536870918, 0, 9, 7, 0, 10, 6, 0, 11, 6, 0, 16, 7, 0, 131070, 1, 0, 131071, 10, 0, 65536, 7, 0, 65537, 6, 0, 65538, 20, 0, 65539, 536870918, 0, 65541, 536870918, 0, 65542, 536870930, 0, 65543, 536870915, 0, 65544, 3, 0, 65547, 6, 0, 65552, 7, 0, 196606, 2, 0, 196607, 536870915, 0, 131072, 536870915, 0, 131073, 536870915, 0, 131074, 51, 0, 131075, 536870918, 0, 131076, 536870918, 0, 131077, 536870918, 0, 131078, 536870913, 0, 131081, 7, 0, 131088, 7, 0, 196610, 2, 0, 196611, 536870915, 0, 196612, 536870915, 0, 196613, 536870915, 0, 196614, 536870914, 0, 196617, 7, 0, 196622, 6, 0, 196624, 7, 0, 262153, 7, 0, 262160, 7, 0, 327689, 7, 0, 327691, 6, 0, 327696, 7, 0, 393225, 7, 0, 393232, 7, 0, 458761, 7, 0, 458766, 6, 0, 458768, 7, 0 )
 
 [node name="holes_map" parent="." index="2"]
+position = Vector2( -126, -16 )
 tile_data = PoolIntArray( -65535, 7, 0, -65530, 536870947, 0, 4, 536870947, 0, 6, 536870950, 0, 65540, 536870950, 0 )
 
 [node name="conveyor" parent="." index="5" instance=ExtResource( 2 )]
-position = Vector2( 65, 0 )
+position = Vector2( 642, 112 )
 collision_layer = 32
 speed = 125.0
 
-[node name="conveyor2" parent="." index="6" instance=ExtResource( 2 )]
-position = Vector2( 193, 0 )
+[node name="conveyor4" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 706, 112 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor5" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 770, 112 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor6" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 834, 112 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor17" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 898, 112 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor3" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 578, 112 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor7" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 642, 368 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor8" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 706, 368 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor9" parent="." index="13" instance=ExtResource( 2 )]
+position = Vector2( 770, 368 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor10" parent="." index="14" instance=ExtResource( 2 )]
+position = Vector2( 834, 368 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor11" parent="." index="15" instance=ExtResource( 2 )]
+position = Vector2( 578, 368 )
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor12" parent="." index="16" instance=ExtResource( 2 )]
+position = Vector2( 642, 305 )
+rotation = 3.14159
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor13" parent="." index="17" instance=ExtResource( 2 )]
+position = Vector2( 706, 305 )
+rotation = 3.14159
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor14" parent="." index="18" instance=ExtResource( 2 )]
+position = Vector2( 770, 305 )
+rotation = 3.14159
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor15" parent="." index="19" instance=ExtResource( 2 )]
+position = Vector2( 834, 305 )
+rotation = 3.14159
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor16" parent="." index="20" instance=ExtResource( 2 )]
+position = Vector2( 578, 305 )
+rotation = 3.14159
+collision_layer = 32
+speed = 125.0
+
+[node name="conveyor2" parent="." index="21" instance=ExtResource( 2 )]
+position = Vector2( -254, -284 )
 rotation = 1.5708
 collision_layer = 32
 speed = 125.0
 
 [node name="player" parent="y_sort" index="0"]
-position = Vector2( 350, 10 )
+position = Vector2( 970, 104 )
 collision_mask = 58
 dash_speed = 2000.0
 dash_duration = 1.0
 knockback = 500.0
 
 [node name="tesla_engine" parent="y_sort" index="1" instance=ExtResource( 4 )]
-position = Vector2( 487, -136 )
+position = Vector2( 482, 144 )
 
-[node name="enemy" parent="y_sort" index="2" instance=ExtResource( 3 )]
-position = Vector2( -24, 104 )
+[node name="tesla_engine2" parent="y_sort" index="2" instance=ExtResource( 4 )]
+position = Vector2( 930, 8 )
+
+[node name="enemy" parent="y_sort" index="3" instance=ExtResource( 3 )]
+position = Vector2( 430, -240 )
 
 [connection signal="dash_number_changed" from="y_sort/player" to="canvas_layer/hud" method="set_dash"]
