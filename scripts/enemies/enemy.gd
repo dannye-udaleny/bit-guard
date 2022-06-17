@@ -59,9 +59,8 @@ func die():
 
 
 func _on_hitbox_area_entered(area: Area2D):
-	print(area)
+	#print(area)
 	if area is Projectile:
-		print("Hello????")
 		take_damage(area.contact_damage, position.direction_to(area.position))
 	if area.get_parent() is Player:
 		var player = area.get_parent()

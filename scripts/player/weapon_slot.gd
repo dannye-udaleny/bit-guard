@@ -68,14 +68,20 @@ func _on_weapon_shot() -> void:
 	bullet_count[current_index] -= 1
 	update_hud()
 	if bullet_count[current_index] <= 0:
-		weapon.get_node("shoot_cooldown").stop()
-		weapon.mouse_released()
-		can_shoot = false
-		yield(get_tree().create_timer(weapon.reload_cooldown), "timeout")
-		bullet_count[current_index] = weapon.max_bullets
-		update_hud()
-		can_shoot = true
+		reload()
 		
 
 func update_hud():
 	emit_signal("ammo_changed", bullet_count[current_index] * 1.0 / weapon.max_bullets)
+	
+func reload() -> void:
+	weapon.start_reload()
+	weapon.get_node("shoot_cooldown").stop()
+	#weapon.mouse_released()
+	can_shoot = false
+	yield(get_tree().create_timer(weapon.reload_cooldown), "timeout")
+	bullet_count[current_index] = weapon.max_bullets
+	update_hud()
+	can_shoot = true
+	weapon.end_reload()
+	

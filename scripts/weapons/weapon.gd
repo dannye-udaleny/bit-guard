@@ -22,3 +22,9 @@ func mouse_released() -> void:
 
 func set_flipped(_flipped: bool) -> void:
 	pass
+	
+func start_reload() -> void:
+	pass
+	
+func end_reload() -> void:
+	pass

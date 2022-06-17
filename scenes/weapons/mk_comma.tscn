@@ -20,7 +20,7 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 3 ) ],
-"loop": true,
+"loop": false,
 "name": "reload",
 "speed": 5.0
 }, {

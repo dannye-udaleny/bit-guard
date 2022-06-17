@@ -34,4 +34,8 @@ func shoot() -> void:
 	$shoot_cooldown.start()
 	emit_signal("shot")
 	
+func start_reload() -> void:
+	play("reload")
 	
+func end_reload() -> void:
+	play("idle")
