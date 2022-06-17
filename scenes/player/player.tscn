@@ -74,6 +74,8 @@ script = ExtResource( 5 )
 walk_speed = 150.0
 acceleration = 0.3
 dash_speed = 1000.0
+dash_count_max = 5.0
+dash_reload_time = 3
 max_health = 12
 
 [node name="body" type="CollisionShape2D" parent="."]
@@ -126,6 +128,8 @@ position = Vector2( -4, 4 )
 script = ExtResource( 6 )
 weapons = [ ExtResource( 12 ), ExtResource( 17 ), ExtResource( 27 ) ]
 
+[node name="dash_reload" type="Timer" parent="."]
+
 [connection signal="area_entered" from="legs" to="." method="_on_legs_area_entered"]
 [connection signal="area_exited" from="legs" to="." method="_on_legs_area_exited"]
 [connection signal="dashed" from="input_handler" to="." method="dash"]
@@ -137,3 +141,4 @@ weapons = [ ExtResource( 12 ), ExtResource( 17 ), ExtResource( 27 ) ]
 [connection signal="mouse_released" from="input_handler" to="weapon_slot" method="mouse_released"]
 [connection signal="weapon_changed" from="input_handler" to="weapon_slot" method="set_weapon"]
 [connection signal="ammo_changed" from="weapon_slot" to="." method="_on_weapon_slot_ammo_changed"]
+[connection signal="timeout" from="dash_reload" to="." method="reload_dash"]

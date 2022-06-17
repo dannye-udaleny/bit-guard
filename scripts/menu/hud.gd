@@ -7,3 +7,4 @@ func set_health(amount: int):
 
 func set_ammo(amount: float):
 	$ammo_bar.value = amount
+
