@@ -19,8 +19,6 @@ func set_depth(depth: int) -> void:
 	current_depth = depth
 	
 func create_next_effect() -> void:
-	if player == null:
-		return
 	$timer.stop()
 	if not is_instance_valid(player) or current_depth <= 0:
 		return

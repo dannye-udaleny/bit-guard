@@ -34,20 +34,12 @@ texture = ExtResource( 2 )
 
 [node name="light" type="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="lighting" parent="." index="3" instance=ExtResource( 7 )]
 show_behind_parent = true
 position = Vector2( 28, 6 )
 rotation = -1.5708
-<<<<<<< Updated upstream
 collision_mask = 9
 
 [node name="timer" type="Timer" parent="." index="4"]
-=======
-
-[node name="timer" type="Timer" parent="." index="4"]
-
-[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
->>>>>>> Stashed changes

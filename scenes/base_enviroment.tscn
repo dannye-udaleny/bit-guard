@@ -4,11 +4,8 @@
 extents = Vector2( 64, 64 )
 
 [node name="base_enviroment" type="StaticBody2D"]
-<<<<<<< Updated upstream
 collision_layer = 16
 collision_mask = 9
-=======
->>>>>>> Stashed changes
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
