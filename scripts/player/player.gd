@@ -103,6 +103,8 @@ func die():
 	# сыграть анимацию смерти на месте игрока
 	var animation: DeathAnimation = load("res://scenes/player/death_animation.tscn").instance()
 	animation.last_checkpoint = last_checkpoint
+	animation.global_position = $body_sprite.global_position
+	animation.flip_h = $body_sprite.flip_h
 	get_parent().add_child(animation)
 	emit_signal("died")
 	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/menu/codex.gd" type="Script" id=1]
 [ext_resource path="res://scripts/codex/codex_entry.gd" type="Script" id=2]
@@ -11,10 +11,11 @@
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://sprites/hud/1.png" type="Texture" id=10]
 [ext_resource path="res://sprites/hud/2.png" type="Texture" id=11]
+[ext_resource path="res://fonts/Hardpixel-nn51.otf" type="DynamicFontData" id=12]
 
 [sub_resource type="AnimatedTexture" id=2]
 frames = 5
-fps = 15.0
+fps = 5.0
 frame_0/texture = ExtResource( 3 )
 frame_1/texture = ExtResource( 7 )
 frame_1/delay_sec = 0.0
@@ -31,7 +32,8 @@ name = "Morris"
 icon = SubResource( 2 )
 health = 5
 contact_damage = 1
-description = "a very cool creature"
+description = "Морис - один из первых сетевых червей, распространявшихся через Интернет. Написан аспирантом Корнельского университета Робертом Таппаном Моррисом и запущен 2 ноября 1988 года в Массачусетском технологическом институте.
+Это был первый вирус, получивший значительное внимание в средствах массовой информации. Морис поразил более 6000 компьютеров, но его действие было практически безвредным"
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 2 )
@@ -57,6 +59,11 @@ margin_right = 31.0
 margin_top = 31.0
 margin_bottom = 31.0
 
+[sub_resource type="DynamicFont" id=6]
+resource_local_to_scene = true
+size = 11
+font_data = ExtResource( 12 )
+
 [node name="codex" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -81,7 +88,7 @@ custom_styles/bg = SubResource( 4 )
 [node name="nine_patch_rect" type="NinePatchRect" parent="."]
 margin_left = 27.0
 margin_top = 19.0
-margin_right = 384.0
+margin_right = 400.0
 margin_bottom = 320.0
 texture = ExtResource( 10 )
 patch_margin_left = 31
@@ -92,41 +99,43 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="icon" type="TextureRect" parent="."]
-margin_left = 50.0
-margin_top = 46.0
-margin_right = 90.0
-margin_bottom = 86.0
+margin_left = 64.0
+margin_top = 41.0
+margin_right = 96.0
+margin_bottom = 73.0
 rect_scale = Vector2( 3, 3 )
 
 [node name="name" type="Label" parent="."]
-margin_left = 192.0
-margin_top = 44.0
-margin_right = 324.0
-margin_bottom = 64.0
+margin_left = 208.0
+margin_top = 64.0
+margin_right = 340.0
+margin_bottom = 84.0
 custom_fonts/font = ExtResource( 9 )
 text = "Select someone"
 
 [node name="description" type="Label" parent="."]
-margin_left = 192.0
-margin_top = 95.0
-margin_right = 283.0
-margin_bottom = 115.0
-custom_fonts/font = ExtResource( 9 )
-text = "description"
+margin_left = 48.0
+margin_top = 144.0
+margin_right = 384.0
+margin_bottom = 339.0
+custom_fonts/font = SubResource( 6 )
+text = "Морис - один из первых сетевых червей, распространявшихся через Интернет. Написан аспирантом Корнельского университета Робертом Таппаном Моррисом и запущен в 1988 году в Массачусетском технологическом институте.
+Это был первый вирус, получивший значительное внимание в средствах массовой информации. Морис поразил более 6000 компьютеров, но его действие было практически безвредным"
+autowrap = true
 
 [node name="health" type="Label" parent="."]
-margin_left = 192.0
-margin_top = 75.0
-margin_right = 232.0
-margin_bottom = 95.0
+margin_left = 208.0
+margin_top = 95.0
+margin_right = 248.0
+margin_bottom = 115.0
 custom_fonts/font = ExtResource( 9 )
 text = "h: 0"
 
 [node name="contact_damage" type="Label" parent="."]
-margin_left = 247.0
-margin_top = 75.0
-margin_right = 290.0
-margin_bottom = 95.0
+margin_left = 263.0
+margin_top = 95.0
+margin_right = 306.0
+margin_bottom = 115.0
 custom_fonts/font = ExtResource( 9 )
 text = "cd: 0"
 
