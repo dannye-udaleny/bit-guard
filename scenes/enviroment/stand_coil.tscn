@@ -2,6 +2,7 @@
 
 [ext_resource path="res://scenes/base_enviroment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_1.png" type="Texture" id=2]
+<<<<<<< Updated upstream
 [ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_2.png" type="Texture" id=4]
 [ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_4.png" type="Texture" id=5]
@@ -15,12 +16,28 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
+=======
+[ext_resource path="res://scripts/enviroment/stand_coil.gd" type="Script" id=3]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/environments/thunder_coils/thunder_coil_stand/coil_stand_flash_3.png" type="Texture" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "ON",
+>>>>>>> Stashed changes
 "speed": 15.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="stand_coil" instance=ExtResource( 1 )]
+<<<<<<< Updated upstream
 collision_layer = 25
 collision_mask = 25
 script = ExtResource( 7 )
@@ -28,11 +45,19 @@ script = ExtResource( 7 )
 [node name="collision_shape_2d" parent="." index="0"]
 position = Vector2( 0, 8 )
 rotation = 1.5708
+=======
+script = ExtResource( 3 )
+
+[node name="collision_shape_2d" parent="." index="0"]
+visible = false
+position = Vector2( 0, 10 )
+>>>>>>> Stashed changes
 shape = SubResource( 1 )
 
 [node name="sprite" parent="." index="1"]
 texture = ExtResource( 2 )
 
+<<<<<<< Updated upstream
 [node name="animated_sprite" type="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 3 )
 frame = 3
@@ -48,3 +73,21 @@ shape = SubResource( 2 )
 
 [connection signal="area_entered" from="area_2d" to="." method="_bolt_enter"]
 [connection signal="area_exited" from="area_2d" to="." method="_bolt_exited"]
+=======
+[node name="light" type="AnimatedSprite" parent="." index="2"]
+visible = false
+frames = SubResource( 3 )
+animation = "ON"
+playing = true
+
+[node name="area_2d" type="Area2D" parent="." index="3" groups=["stand_coil"]]
+collision_layer = 16
+collision_mask = 16
+
+[node name="shape" type="CollisionShape2D" parent="area_2d" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="area_2d" to="." method="_bolt_enter"]
+[connection signal="area_exited" from="area_2d" to="." method="_bolt_exit"]
+>>>>>>> Stashed changes

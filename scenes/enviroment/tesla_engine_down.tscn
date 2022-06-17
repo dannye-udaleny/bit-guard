@@ -21,8 +21,11 @@ animations = [ {
 } ]
 
 [node name="tesla_engine" type="StaticBody2D"]
+<<<<<<< Updated upstream
 collision_layer = 16
 collision_mask = 0
+=======
+>>>>>>> Stashed changes
 script = ExtResource( 7 )
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]

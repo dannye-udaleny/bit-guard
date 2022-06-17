@@ -1,6 +1,5 @@
 extends Control
 
-export var entry_scene: PackedScene
 export (Array, Resource) var entries: Array  # вставлять ресурсы типа CodexEntry
 
 

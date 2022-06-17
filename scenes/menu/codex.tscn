@@ -7,7 +7,6 @@
 [ext_resource path="res://sprites/enemies/morris/idle/frame_10.png" type="Texture" id=5]
 [ext_resource path="res://sprites/enemies/morris/idle/frame_9.png" type="Texture" id=6]
 [ext_resource path="res://sprites/enemies/morris/idle/frame_8.png" type="Texture" id=7]
-[ext_resource path="res://scenes/menu/codex_entry.tscn" type="PackedScene" id=8]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://sprites/hud/1.png" type="Texture" id=10]
 [ext_resource path="res://sprites/hud/2.png" type="Texture" id=11]
@@ -32,14 +31,18 @@ frame_4/delay_sec = 0.0
 script = ExtResource( 2 )
 name = "Морис"
 icon = SubResource( 2 )
-health = 5
-contact_damage = 1
+health = 0
+contact_damage = 0
 description = "Морис - один из первых сетевых червей, распространявшихся через Интернет. Написан аспирантом Корнельского университета Робертом Таппаном Моррисом и запущен 2 ноября 1988 года в Массачусетском технологическом институте.
 Это был первый вирус, получивший значительное внимание в средствах массовой информации. Морис поразил более 6000 компьютеров, но его действие было практически безвредным"
 
-[sub_resource type="Resource" id=3]
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/noinfo_3.png-60903cd09bde3fe657fd44e3c7b2543c.stex"
+
+[sub_resource type="Resource" id=7]
 script = ExtResource( 2 )
 name = "???"
+<<<<<<< Updated upstream
 icon = ExtResource( 14 )
 health = 5
 contact_damage = 1
@@ -52,6 +55,28 @@ icon = ExtResource( 13 )
 health = 0
 contact_damage = 0
 description = "[ДАННЫЕ ОТСУТСТВУЮТ]"
+=======
+icon = SubResource( 8 )
+health = 0
+contact_damage = 0
+description = "[ДАННЫЕ ОТСУТСТВУЮТ]"
+
+[sub_resource type="StreamTexture" id=9]
+load_path = "res://.import/noinfo_2.png-f5154c02ed678d6e54c359ffabf93806.stex"
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 2 )
+name = "???"
+icon = SubResource( 9 )
+health = 0
+contact_damage = 0
+description = "[ДАННЫЕ ОТСУТСТВУЮТ]"
+
+[sub_resource type="DynamicFont" id=11]
+resource_local_to_scene = true
+size = 11
+font_data = ExtResource( 12 )
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 11 )
@@ -78,8 +103,12 @@ font_data = ExtResource( 12 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+<<<<<<< Updated upstream
 entry_scene = ExtResource( 8 )
 entries = [ SubResource( 1 ), SubResource( 3 ), SubResource( 7 ) ]
+=======
+entries = [ SubResource( 1 ), SubResource( 7 ), SubResource( 10 ) ]
+>>>>>>> Stashed changes
 
 [node name="color_rect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -91,7 +120,7 @@ margin_left = 416.0
 margin_top = 19.0
 margin_right = 609.0
 margin_bottom = 320.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = SubResource( 11 )
 custom_styles/selected_focus = SubResource( 5 )
 custom_styles/bg = SubResource( 4 )
 fixed_icon_size = Vector2( 48, 48 )
@@ -120,9 +149,15 @@ stretch_mode = 5
 
 [node name="name" type="Label" parent="."]
 margin_left = 192.0
+<<<<<<< Updated upstream
 margin_top = 48.0
 margin_right = 372.0
 margin_bottom = 68.0
+=======
+margin_top = 64.0
+margin_right = 372.0
+margin_bottom = 84.0
+>>>>>>> Stashed changes
 custom_fonts/font = ExtResource( 9 )
 text = "Выберите экземпляр"
 
@@ -132,21 +167,38 @@ margin_top = 144.0
 margin_right = 384.0
 margin_bottom = 304.0
 custom_fonts/font = SubResource( 6 )
+<<<<<<< Updated upstream
+=======
+text = "
+"
+>>>>>>> Stashed changes
 autowrap = true
 
 [node name="health" type="Label" parent="."]
 margin_left = 192.0
+<<<<<<< Updated upstream
 margin_top = 79.0
 margin_right = 232.0
 margin_bottom = 99.0
+=======
+margin_top = 96.0
+margin_right = 232.0
+margin_bottom = 116.0
+>>>>>>> Stashed changes
 custom_fonts/font = ExtResource( 9 )
 text = "-"
 
 [node name="contact_damage" type="Label" parent="."]
 margin_left = 247.0
+<<<<<<< Updated upstream
 margin_top = 79.0
 margin_right = 290.0
 margin_bottom = 99.0
+=======
+margin_top = 96.0
+margin_right = 290.0
+margin_bottom = 116.0
+>>>>>>> Stashed changes
 custom_fonts/font = ExtResource( 9 )
 text = "-"
 
