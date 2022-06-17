@@ -8,8 +8,11 @@ export var dash_duration: float                    # Длительность р
 export var dash_cooldown: float                    # Длительность перезарядки рывка (s)
 export var dash_count_max: float                   # Количество дэшей
 export var dash_reload_time: int                   # Перезарядка дэша
+export var dash_effect: PackedScene
+export var max_dash_depth: int
 export var max_health: int                         # Максимальное здоровье игрока (hp)
 export var knockback: float                        # На сколько игрок отталкивается при уроне (px)
+
 
 var _is_walking := false
 var velocity := Vector2()
@@ -110,6 +113,7 @@ func dash():
 		dash_count -= 1
 		emit_signal("dash_number_changed", dash_count)
 		$dash_reload.start(dash_reload_time)
+		create_dash_effect()
 
 
 func _on_weapon_slot_ammo_changed(amount: float):
@@ -121,3 +125,12 @@ func reload_dash():
 	emit_signal("dash_number_changed", dash_count)
 	if dash_count < dash_count_max:
 		$dash_reload.start(dash_reload_time)
+
+func create_dash_effect() -> void:
+	var dash_effect_node = dash_effect.instance()
+	dash_effect_node.texture = $body_sprite.frames.get_frame($body_sprite.animation, $body_sprite.frame)
+	dash_effect_node.position = position
+	dash_effect_node.flip_h = $body_sprite.flip_h
+	dash_effect_node.player = self
+	dash_effect_node.current_depth = max_dash_depth
+	get_parent().add_child(dash_effect_node)

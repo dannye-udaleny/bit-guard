@@ -45,4 +45,3 @@ collision_layer = 16
 
 [node name="enemy" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( -24, 104 )
-
