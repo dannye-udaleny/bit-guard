@@ -9,7 +9,6 @@
 extents = Vector2( 4, 2.5 )
 
 [sub_resource type="StreamTexture" id=21]
-load_path = "res://.import/bullet_1.png-b86fda147c9a3137f4efe59e00be7eb9.stex"
 
 [sub_resource type="Gradient" id=13]
 offsets = PoolRealArray( 0.210256, 0.702564 )
@@ -36,7 +35,6 @@ scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [sub_resource type="StreamTexture" id=22]
-load_path = "res://.import/bullet_2.png-9f46b1ab74d4b8712fcd4f733a43ec32.stex"
 
 [sub_resource type="Gradient" id=16]
 offsets = PoolRealArray( 0, 0.828452 )
@@ -107,5 +105,3 @@ speed_scale = 0.3
 local_coords = false
 process_material = SubResource( 18 )
 texture = SubResource( 25 )
-
-[connection signal="screen_exited" from="culling" to="." method="screen_exited"]

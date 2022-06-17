@@ -106,5 +106,3 @@ speed_scale = 0.3
 local_coords = false
 process_material = SubResource( 18 )
 texture = SubResource( 21 )
-
-[connection signal="screen_exited" from="culling" to="." method="screen_exited"]

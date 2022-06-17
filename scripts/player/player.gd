@@ -84,6 +84,7 @@ func get_conveyor_speed():
 func take_damage(amount: int, normal: Vector2):
 	health -= amount
 	emit_signal("health_changed", health)
+	normal = normal.normalized()
 	velocity = normal * -knockback
 	if health <= 0:
 		die()

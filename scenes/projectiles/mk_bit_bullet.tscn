@@ -34,7 +34,6 @@ scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [sub_resource type="StreamTexture" id=21]
-load_path = "res://.import/bullet_2.png-6a775240d5dab691b0e71c414ffc82c0.stex"
 
 [sub_resource type="Gradient" id=16]
 offsets = PoolRealArray( 0, 0.828452 )
@@ -102,5 +101,3 @@ speed_scale = 0.3
 local_coords = false
 process_material = SubResource( 18 )
 texture = SubResource( 19 )
-
-[connection signal="screen_exited" from="culling" to="." method="screen_exited"]
