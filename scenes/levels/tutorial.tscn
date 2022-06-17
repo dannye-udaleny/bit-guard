@@ -34,6 +34,7 @@ speed = 125.0
 [node name="player" parent="y_sort" index="0"]
 position = Vector2( 350, 10 )
 collision_mask = 58
+dash_speed = 2000.0
 knockback = 500.0
 
 [node name="tesla_engine" parent="y_sort" index="1" instance=ExtResource( 4 )]
@@ -44,3 +45,4 @@ collision_layer = 16
 
 [node name="enemy" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( -24, 104 )
+
