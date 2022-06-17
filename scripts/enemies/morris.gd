@@ -21,7 +21,6 @@ func start_moving(target: Node2D):
 	target_body = target
 	$body_sprite.play("run")
 	is_walking = true
-	print(velocity)
 
 
 func stop_moving(target: Node2D):

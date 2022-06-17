@@ -20,7 +20,7 @@ func set_depth(depth: int) -> void:
 	
 func create_next_effect() -> void:
 	$timer.stop()
-	if current_depth <= 0 :
+	if not is_instance_valid(player) or current_depth <= 0:
 		return
 	var dash_effect_node = dash_effect.instance()
 	dash_effect_node.texture = texture

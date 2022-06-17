@@ -17,10 +17,11 @@ func _physics_process(delta):
 		end.position.y = coll_point.y
 		if get_collider().get_parent().has_method("die"):
 			var entity = get_collider().get_parent()
-			entity.die()
 			if entity is Player:
+				if entity._is_dashing:
+					return
 				emit_signal("health_changed", 0)
-
+			entity.die()
 	else:
 		line.points[1].y = max_distance
 		end.position.y = max_distance

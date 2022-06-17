@@ -9,4 +9,5 @@ func set_ammo(amount: float):
 
 
 func set_dash(amount: int):
-	$dash_bar.texture.set_current_frame(amount)
+	if amount >= 0 and amount < $dash_bar.texture.frames:
+		$dash_bar.texture.set_current_frame(amount)

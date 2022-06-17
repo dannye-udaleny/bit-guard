@@ -32,9 +32,11 @@ texture = ExtResource( 2 )
 
 [node name="animated_sprite" type="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="lighting" parent="." index="3" instance=ExtResource( 7 )]
 show_behind_parent = true
 position = Vector2( 28, 6 )
 rotation = -1.5708
+collision_mask = 9

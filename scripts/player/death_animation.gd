@@ -16,5 +16,6 @@ func _ready():
 	emit_signal("animation_ended")
 	queue_free()
 
+
 func _process(delta):
 	material.set_shader_param("progress", shader_progress)

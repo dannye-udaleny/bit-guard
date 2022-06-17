@@ -34,13 +34,15 @@
 [ext_resource path="res://scenes/player/dash_effect.tscn" type="PackedScene" id=32]
 
 [sub_resource type="CapsuleShape2D" id=4]
-height = 6.0
+radius = 9.0
+height = 8.0
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 3.0
 height = 12.0
 
 [sub_resource type="CapsuleShape2D" id=5]
+radius = 11.0
 height = 16.0
 
 [sub_resource type="SpriteFrames" id=1]
@@ -70,24 +72,25 @@ animations = [ {
 } ]
 
 [node name="player" type="KinematicBody2D"]
-collision_mask = 26
+collision_mask = 2
 script = ExtResource( 5 )
 walk_speed = 150.0
 acceleration = 0.3
 dash_speed = 2000.0
-dash_duration = 1.0
+dash_duration = 0.5
 dash_count_max = 5.0
 dash_reload_time = 1
 dash_effect = ExtResource( 32 )
 max_dash_depth = 10
 max_health = 12
+knockback = 500.0
 
 [node name="body" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 11 )
 shape = SubResource( 4 )
 
 [node name="legs" type="Area2D" parent="."]
-collision_mask = 26
+collision_mask = 16
 
 [node name="shape" type="CollisionShape2D" parent="legs"]
 position = Vector2( 0, 21 )
@@ -95,10 +98,10 @@ rotation = -1.5708
 shape = SubResource( 10 )
 
 [node name="hitbox" type="Area2D" parent="."]
-collision_mask = 0
+collision_mask = 8
 
 [node name="shape" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( 0, 7 )
+position = Vector2( 0, 8 )
 shape = SubResource( 5 )
 
 [node name="shadow" type="Sprite" parent="."]

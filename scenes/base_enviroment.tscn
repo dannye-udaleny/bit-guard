@@ -4,6 +4,8 @@
 extents = Vector2( 64, 64 )
 
 [node name="base_enviroment" type="Area2D"]
+collision_layer = 16
+collision_mask = 9
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 position = Vector2( 64, 64 )

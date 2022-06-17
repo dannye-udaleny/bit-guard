@@ -57,6 +57,7 @@ func take_damage(amount: int, normal: Vector2):
 
 func die():
 	stop_moving(target_body)
+	$body.set_deferred("disabled", true)
 	$hitbox.queue_free()
 	$sight_radius.queue_free()
 	$attack_radius.queue_free()
@@ -69,9 +70,20 @@ func die():
 
 
 func _on_hitbox_area_entered(area: Area2D):
-	#print(area)
 	if area is Projectile:
 		take_damage(area.contact_damage, global_position.direction_to(area.global_position))
 	if area.get_parent() is Player:
 		var player = area.get_parent()
-		player.take_damage(contact_damage, global_position.direction_to(player.global_position))
+		print("adlkdjfklds")
+		if player._is_dashing:
+			set_collision_mask_bit(0, false)
+			print("player: " + str(player.collision_mask) + " enemy: " + str(collision_mask))
+		else:
+			player.take_damage(contact_damage, player.global_position.direction_to(global_position))
+			print("HILSADLKAS:Lfd")
+
+
+func _on_hitbox_area_exited(area):
+	if area.get_parent() is Player:
+		var player = area.get_parent()
+		set_collision_mask_bit(0, true)

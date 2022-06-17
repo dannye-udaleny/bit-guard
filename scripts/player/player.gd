@@ -13,8 +13,8 @@ export var max_dash_depth: int
 export var max_health: int                         # Максимальное здоровье игрока (hp)
 export var knockback: float                        # На сколько игрок отталкивается при уроне (px)
 
-
 var _is_walking := false
+var _is_dashing := false
 var velocity := Vector2()
 
 var last_checkpoint := Vector2(-9999, -9999)
@@ -34,7 +34,6 @@ signal died
 func _ready() -> void:
 	if last_checkpoint == Vector2(-9999, -9999):
 		last_checkpoint = position
-	print("spawned")
 	call_deferred("_after_ready")
 	$body_sprite.play("idle")
 	$body_light.play("idle")
@@ -75,7 +74,6 @@ func set_walking(walking: bool) -> void:
 
 
 func _on_legs_area_entered(area: Area2D):
-	print(area.collision_layer)
 	if area is Conveyor:
 		conveyors.append(area)
 	elif area.collision_layer & 16 != 0: # ловушки
@@ -123,9 +121,12 @@ func dash():
 		emit_signal("dash_number_changed", dash_count)
 		$dash_reload.start(dash_reload_time)
 		create_dash_effect()
-		$hitbox/shape.disabled = true
+		set_collision_mask_bit(4, false)
+		
+		_is_dashing = true
 		yield (get_tree().create_timer(dash_duration),"timeout")
-		$hitbox/shape.disabled = false
+		set_collision_mask_bit(4, true)
+		_is_dashing = false
 
 
 func _on_weapon_slot_ammo_changed(amount: float):
@@ -133,6 +134,8 @@ func _on_weapon_slot_ammo_changed(amount: float):
 
 
 func reload_dash():
+	if dash_count >= dash_count_max:
+		return
 	dash_count += 1
 	emit_signal("dash_number_changed", dash_count)
 	if dash_count < dash_count_max:
