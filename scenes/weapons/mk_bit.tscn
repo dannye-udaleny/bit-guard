@@ -48,8 +48,8 @@ script = ExtResource( 2 )
 shoot_sound = ExtResource( 20 )
 reload_sound = ExtResource( 21 )
 projectile_scene = ExtResource( 3 )
-max_bullets = 2
-reload_cooldown = 1.0
+max_bullets = 1
+reload_cooldown = 0.5
 bullet_speed = 400.0
 
 [node name="tip" type="Position2D" parent="."]
