@@ -4,11 +4,11 @@
 [ext_resource path="res://scenes/projectiles/projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/effects/part_3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/effects/part_4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/projectiles/mk_comma_bullet.png" type="Texture" id=5]
+[ext_resource path="res://sprites/projectiles/mk_comma_bullet_tail.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 4, 2.5 )
-
-[sub_resource type="StreamTexture" id=21]
 
 [sub_resource type="Gradient" id=13]
 offsets = PoolRealArray( 0.210256, 0.702564 )
@@ -33,8 +33,6 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
-
-[sub_resource type="StreamTexture" id=22]
 
 [sub_resource type="Gradient" id=16]
 offsets = PoolRealArray( 0, 0.828452 )
@@ -85,7 +83,7 @@ visible = false
 
 [node name="sprite" type="Sprite" parent="." index="2"]
 modulate = Color( 1, 1.5, 1.3, 1 )
-texture = SubResource( 21 )
+texture = ExtResource( 5 )
 
 [node name="tail" type="Particles2D" parent="." index="3"]
 show_behind_parent = true
@@ -93,7 +91,7 @@ position = Vector2( 0, -0.5 )
 amount = 40
 speed_scale = 0.3
 process_material = SubResource( 15 )
-texture = SubResource( 22 )
+texture = ExtResource( 6 )
 
 [node name="digits" type="Particles2D" parent="." index="4"]
 modulate = Color( 0.94902, 0.282353, 1, 1 )
