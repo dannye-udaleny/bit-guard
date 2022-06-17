@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/menu/codex.gd" type="Script" id=1]
 [ext_resource path="res://scripts/codex/codex_entry.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://sprites/hud/1.png" type="Texture" id=10]
 [ext_resource path="res://sprites/hud/2.png" type="Texture" id=11]
 [ext_resource path="res://fonts/Hardpixel-nn51.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://sprites/enemies/noname_2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/enemies/noname_1.png" type="Texture" id=14]
 
 [sub_resource type="AnimatedTexture" id=2]
 frames = 5
@@ -28,7 +30,7 @@ frame_4/delay_sec = 0.0
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
-name = "Morris"
+name = "Морис"
 icon = SubResource( 2 )
 health = 5
 contact_damage = 1
@@ -37,11 +39,19 @@ description = "Морис - один из первых сетевых черве
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 2 )
-name = "Not morris"
-icon = SubResource( 2 )
+name = "???"
+icon = ExtResource( 14 )
 health = 5
 contact_damage = 1
-description = "not a cool creature"
+description = "[ДАННЫЕ ОТСУТСТВУЮТ]"
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 2 )
+name = "???"
+icon = ExtResource( 13 )
+health = 0
+contact_damage = 0
+description = "[ДАННЫЕ ОТСУТСТВУЮТ]"
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 11 )
@@ -69,7 +79,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 entry_scene = ExtResource( 8 )
-entries = [ SubResource( 1 ), SubResource( 3 ) ]
+entries = [ SubResource( 1 ), SubResource( 3 ), SubResource( 7 ) ]
 
 [node name="color_rect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -84,6 +94,7 @@ margin_bottom = 320.0
 custom_fonts/font = ExtResource( 9 )
 custom_styles/selected_focus = SubResource( 5 )
 custom_styles/bg = SubResource( 4 )
+fixed_icon_size = Vector2( 48, 48 )
 
 [node name="nine_patch_rect" type="NinePatchRect" parent="."]
 margin_left = 27.0
@@ -104,39 +115,39 @@ margin_top = 41.0
 margin_right = 96.0
 margin_bottom = 73.0
 rect_scale = Vector2( 3, 3 )
+expand = true
+stretch_mode = 5
 
 [node name="name" type="Label" parent="."]
-margin_left = 208.0
-margin_top = 64.0
-margin_right = 340.0
-margin_bottom = 84.0
+margin_left = 192.0
+margin_top = 48.0
+margin_right = 372.0
+margin_bottom = 68.0
 custom_fonts/font = ExtResource( 9 )
-text = "Select someone"
+text = "Выберите экземпляр"
 
 [node name="description" type="Label" parent="."]
 margin_left = 48.0
 margin_top = 144.0
 margin_right = 384.0
-margin_bottom = 339.0
+margin_bottom = 304.0
 custom_fonts/font = SubResource( 6 )
-text = "Морис - один из первых сетевых червей, распространявшихся через Интернет. Написан аспирантом Корнельского университета Робертом Таппаном Моррисом и запущен в 1988 году в Массачусетском технологическом институте.
-Это был первый вирус, получивший значительное внимание в средствах массовой информации. Морис поразил более 6000 компьютеров, но его действие было практически безвредным"
 autowrap = true
 
 [node name="health" type="Label" parent="."]
-margin_left = 208.0
-margin_top = 95.0
-margin_right = 248.0
-margin_bottom = 115.0
+margin_left = 192.0
+margin_top = 79.0
+margin_right = 232.0
+margin_bottom = 99.0
 custom_fonts/font = ExtResource( 9 )
-text = "h: 0"
+text = "-"
 
 [node name="contact_damage" type="Label" parent="."]
-margin_left = 263.0
-margin_top = 95.0
-margin_right = 306.0
-margin_bottom = 115.0
+margin_left = 247.0
+margin_top = 79.0
+margin_right = 290.0
+margin_bottom = 99.0
 custom_fonts/font = ExtResource( 9 )
-text = "cd: 0"
+text = "-"
 
 [connection signal="item_selected" from="item_list" to="." method="_on_item_list_item_selected"]

@@ -22,7 +22,7 @@
 [ext_resource path="res://scenes/player/death_shader_material.tres" type="Material" id=20]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 2.0
+radius = 10.0
 height = 12.0
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -64,7 +64,6 @@ walk_speed = 50
 knockback = 500.0
 
 [node name="body" parent="." index="0"]
-position = Vector2( 0, 4 )
 rotation = -1.5708
 shape = SubResource( 5 )
 

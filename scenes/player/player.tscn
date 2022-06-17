@@ -139,6 +139,8 @@ weapons = [ ExtResource( 12 ), ExtResource( 17 ), ExtResource( 27 ) ]
 
 [node name="dash_reload" type="Timer" parent="."]
 
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="area_entered" from="legs" to="." method="_on_legs_area_entered"]
 [connection signal="area_exited" from="legs" to="." method="_on_legs_area_exited"]
 [connection signal="dashed" from="input_handler" to="." method="dash"]
