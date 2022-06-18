@@ -22,7 +22,6 @@
 [ext_resource path="res://scenes/player/death_shader_material.tres" type="Material" id=20]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 10.0
 height = 12.0
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -35,6 +34,11 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "attack",
@@ -44,11 +48,6 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 15.0
-}, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "death",
-"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -83,6 +82,7 @@ animation = "idle"
 
 [node name="sight_radius" parent="." index="3"]
 visible = false
+collision_layer = 0
 
 [node name="attack_radius" parent="." index="4"]
 visible = false
