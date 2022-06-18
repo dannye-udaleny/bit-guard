@@ -78,7 +78,8 @@ func _on_legs_area_entered(area: Area2D):
 		conveyors.append(area)
 	elif area.collision_layer & 16 != 0: # ловушки
 		take_damage(1, velocity.normalized())
-	elif area.collision_layer & 32 != 0: # чекпоинты
+	elif area.get_collision_layer_bit(6): # чекпоинты
+		print("checkpoint")
 		last_checkpoint = area.position
 
 

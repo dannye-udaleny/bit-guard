@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/levels/level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gimmicks/conveyor.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/enviroment/environment_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/enviroment/environment_3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/enviroment/environment_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/player/checkpoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=11]
 
 [node name="level" instance=ExtResource( 1 )]
 position = Vector2( 95, 0 )
@@ -433,3 +435,41 @@ position = Vector2( 3169, 105 )
 
 [node name="environment_8" parent="y_sort" index="42" instance=ExtResource( 7 )]
 position = Vector2( 2913, -80 )
+
+[node name="checkpoints" type="Node" parent="." index="8"]
+
+[node name="checkpoint" parent="checkpoints" index="0" instance=ExtResource( 10 )]
+position = Vector2( 617, 19 )
+
+[node name="checkpoint2" parent="checkpoints" index="1" instance=ExtResource( 10 )]
+position = Vector2( 1316, 12 )
+
+[node name="checkpoint3" parent="checkpoints" index="2" instance=ExtResource( 10 )]
+position = Vector2( 1951, 11 )
+
+[node name="checkpoint4" parent="checkpoints" index="3" instance=ExtResource( 10 )]
+position = Vector2( 2808, 271 )
+
+[node name="label" type="Label" parent="checkpoints" index="4"]
+margin_left = -79.0
+margin_top = 126.0
+margin_right = 105.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 11 )
+text = "WASD - ходить"
+
+[node name="label2" type="Label" parent="checkpoints" index="5"]
+margin_left = 1022.0
+margin_top = 141.0
+margin_right = 1206.0
+margin_bottom = 161.0
+custom_fonts/font = ExtResource( 11 )
+text = "ЛКМ - стрелять"
+
+[node name="label3" type="Label" parent="checkpoints" index="6"]
+margin_left = 1279.0
+margin_top = 127.0
+margin_right = 1463.0
+margin_bottom = 147.0
+custom_fonts/font = ExtResource( 11 )
+text = "ПРОБЕЛ - рывок"

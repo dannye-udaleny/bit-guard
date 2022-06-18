@@ -1,6 +1,7 @@
 extends Enemy
 class_name Morris
 
+export var dash_speed: float
 
 func _ready():
 	$body_sprite.play("idle")
@@ -27,10 +28,9 @@ func stop_moving(target: Node2D):
 	if not target is Player:
 		return
 	$body_sprite.play("idle")
-	target_body = null
 	is_walking = false
 	velocity = Vector2.ZERO
 
 
 func attack():
-	pass
+	velocity = global_position.direction_to(target_body.global_position) * dash_speed

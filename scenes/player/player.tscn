@@ -90,7 +90,7 @@ position = Vector2( 0, 11 )
 shape = SubResource( 4 )
 
 [node name="legs" type="Area2D" parent="."]
-collision_mask = 16
+collision_mask = 80
 
 [node name="shape" type="CollisionShape2D" parent="legs"]
 position = Vector2( 0, 21 )
