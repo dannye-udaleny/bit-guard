@@ -8,6 +8,7 @@
 extents = Vector2( 16, 8 )
 
 [node name="environment_1" instance=ExtResource( 3 )]
+modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
 
 [node name="collision_shape_2d" parent="." index="0"]
 shape = SubResource( 1 )
